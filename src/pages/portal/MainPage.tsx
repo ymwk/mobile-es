@@ -60,20 +60,6 @@ const MainPage: React.FC = () => {
               }}
               centeredSlides={true}
             >
-              <SwiperSlide className="portal-slide-fp">
-                <div className="slide-cont">
-                  <span className="slide-title">
-                    Flight <br />
-                    Plan
-                  </span>
-                  <p>운항계획</p>
-                  <Link to="/" className="slide-link">
-                    <span className="blind">바로가기</span>
-                  </Link>
-                </div>
-                <div className="slide-thumb slide-title">FP</div>
-              </SwiperSlide>
-
               <SwiperSlide className="portal-slide-rs">
                 <div className="slide-cont">
                   <span className="slide-title">
@@ -142,6 +128,20 @@ const MainPage: React.FC = () => {
                   </Link>
                 </div>
                 <div className="slide-thumb slide-title">AM</div>
+              </SwiperSlide>
+
+              <SwiperSlide className="portal-slide-fp">
+                <div className="slide-cont">
+                  <span className="slide-title">
+                    Flight <br />
+                    Plan
+                  </span>
+                  <p>운항계획</p>
+                  <Link to="/" className="slide-link">
+                    <span className="blind">바로가기</span>
+                  </Link>
+                </div>
+                <div className="slide-thumb slide-title">FP</div>
               </SwiperSlide>
             </Swiper>
           </div>

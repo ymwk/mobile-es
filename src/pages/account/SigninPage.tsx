@@ -5,6 +5,7 @@ import { Tabs, TabContent } from '@components/tabs';
 import { useModal } from '@hooks/useModal';
 import { AutoModal } from '@pages/modal/AuthModal';
 import { Alert } from '@components/modal';
+import { useNavigate } from 'react-router-dom';
 import logo from '@assets/images/logo/logo_incheon.svg';
 import pass_pattern from '@assets/images/login/img_pass_pattern.svg';
 import pass_finger from '@assets/images/login/img_pass_finger.svg';
@@ -45,6 +46,7 @@ const LockAlertOpen = () => {
 
 const SignupPage: React.FC = () => {
   const [isView, setIsView] = useState(false);
+  const navigate = useNavigate();
 
   const toggleHandler = () => {
     setIsView(!isView);
@@ -109,7 +111,11 @@ const SignupPage: React.FC = () => {
                       </div>
                     </div>
 
-                    <button type="submit" className="index-login-btn">
+                    <button
+                      type="button"
+                      className="index-login-btn"
+                      onClick={() => navigate('/portal')}
+                    >
                       LOGIN
                     </button>
                     <div className="index-login-link">

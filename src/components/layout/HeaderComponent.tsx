@@ -43,9 +43,7 @@ const Header: React.FC<HeaderProps> = (props) => {
           isOpen={isOpen}
           onClose={closeModal}
           type={'alert'}
-          onConfirm={() => {
-            navigate('/');
-          }}
+          onConfirm={() => navigate('/')}
           onCancel={closeModal}
         >
           <p>로그아웃 하시겠습니까?</p>
