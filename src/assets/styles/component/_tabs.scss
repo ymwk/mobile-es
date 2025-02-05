@@ -1,0 +1,88 @@
+@use "../base/mixin";
+
+.tabs-root {
+  &.login {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .tabs-btn-wrap {
+      gap: 0.8rem;
+      margin-bottom: 1.7rem;
+    }
+
+    .tabs-btn {
+      flex: 1;
+      height: 2.14em;
+      border: 1px solid #cae7ea;
+      border-radius: 2.14em;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #616161;
+      background: linear-gradient(180deg, #ffffff 0%, #eaeaea 100%);
+    }
+  }
+
+  &.main {
+    .tabs-btn-wrap {
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .tabs-btn {
+      flex: 1;
+      padding: 0;
+      border-radius: 1em;
+      white-space: nowrap;
+    }
+  }
+  
+  &.cdm {
+    --h: 4.2rem;
+    padding-top: var(--h);
+    
+    .tabs-btn-wrap {
+      z-index: 100;
+      position: fixed;
+      inset: var(--header-h) 0 auto 0;
+      @include mixin.width;
+      margin-bottom: 0;
+      background-color: #fff;
+      box-shadow: 0px 0px 4px 0px #00000040, inset 0 1px 1px #00000033;
+
+    }
+    .tabs-btn {
+      flex: 1;
+      height: var(--h);
+      border-radius: 0;
+      font-weight: 600;
+
+      &.active {
+        background: #00AAB5 !important;
+        box-shadow: inset 0px 0px 4px 0px #00000040;
+      }
+    }
+  }
+}
+
+.tabs-btn-wrap {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.tabs-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 2em;
+  padding: 0 1.2em;
+  border-radius: 1em;
+  font-size: 1.5rem;
+
+  &.active {
+    background: var(--primary) !important;
+    color: #fff !important;
+    border: 0 !important;
+    font-weight: 700;
+  }
+}

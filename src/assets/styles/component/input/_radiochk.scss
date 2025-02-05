@@ -1,0 +1,218 @@
+.checkbox-root {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  font-size: 1.5rem;
+  
+  [type="checkbox"] {
+    appearance: none;
+    flex-shrink: 0;
+    position: relative;
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    color: #A8A8A8;
+    transition: background-color .2s, color .2s, border-color .2s;
+
+    &:checked {
+      border-color: transparent;
+      background: var(--primary) url(/src/assets/images/icon/ico_check_w.svg) no-repeat center 55% / 1rem;
+    }
+
+    &:hover,
+    &:hover + span {
+        cursor: pointer
+    }
+
+    &:disabled,
+    &:disabled + span {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+
+    &:disabled {
+      border: 0;
+      background-color: #d1d1d1;
+    }
+  }
+
+  &.type2 {
+    [type="checkbox"] {
+      width: 2.2rem;
+      height: 2.2rem;
+      border-width: 2px;
+      border-radius: 50%;
+      background: url(/src/assets/images/icon/ico_check.svg) no-repeat center 55% / 1.2rem;
+
+      &:checked {
+        background: var(--primary) url(/src/assets/images/icon/ico_check_w.svg) no-repeat center 55% / 1.2rem;
+      }
+    }
+  }
+
+  &.type3 {
+    height: 4.8rem;
+    padding: 1rem 0.9rem 1rem 3.9rem;
+    color: #B3B0B0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: unset;
+    word-break: keep-all;
+    text-align: center;
+
+    .label { position: relative }
+
+    [type="checkbox"] {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      border-color: #F0F0F0;
+      border-radius: .8rem;
+      color: #A8A8A8;
+      background: none;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: .8rem;
+        width: 2rem;
+        height: 2rem;
+        border: 1px solid currentColor;
+        border-radius: 50%;
+        background: url(/src/assets/images/icon/ico_check.svg) no-repeat center 55% / 1rem;
+        transform: translateY(-50%);
+      }
+
+      &:checked {
+        border: 0;
+        background-color: var(--primary);
+
+        &::before {
+          color: #fff;
+          background-image: url(/src/assets/images/icon/ico_check_w.svg);
+        }
+        
+        & ~ .label { color: #fff }
+      }
+    }
+  }
+}
+
+.chk-list-btn {
+  display: flex;
+  gap: 0.6rem;
+
+  & > * {
+    flex: 1 1 0
+  }
+}
+
+
+
+.radiogroup-root {
+  display: flex;
+  flex-wrap: wrap;
+
+  .label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    font-size: 1.5rem;
+  }  
+  
+  [type="radio"] {
+    appearance: none;
+    flex-shrink: 0;
+    position: relative;
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    transition: background-color .2s, color .2s, border-color .2s;
+
+    &:checked {
+      border-color: transparent;
+      background: var(--primary) url(/src/assets/images/icon/ico_check_w.svg) no-repeat center 55% / 1rem;
+    }
+
+    &:hover,
+    &:hover + span {
+        cursor: pointer
+    }
+
+    &:disabled,
+    &:disabled + span {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+
+    &:disabled {
+      border: 0;
+      background-color: #d1d1d1;
+    }
+  }
+
+  &.type3 {
+    .label {
+      height: 4.8rem;
+      padding: 1rem 1.5rem 1rem 3.9rem;
+      color: #B3B0B0;
+      font-size: 1.3rem;
+      font-weight: 600;
+      line-height: 1.2;
+      white-space: unset;
+      word-break: keep-all;
+      text-align: center;
+      justify-content: center;
+    }
+
+    [type="radio"] {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      border-color: #F0F0F0;
+      border-radius: .8rem;
+      color: #A8A8A8;
+      background: none;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: .8rem;
+        width: 2rem;
+        height: 2rem;
+        border: 1px solid currentColor;
+        border-radius: 50%;
+        background: url(/src/assets/images/icon/ico_check.svg) no-repeat center 55% / 1rem;
+        transform: translateY(-50%);
+      }
+
+      &:checked {
+        border: 0;
+        background-color: var(--primary);
+        color: #fff;
+
+        &::before {
+          color: #fff;
+          background-image: url(/src/assets/images/icon/ico_check_w.svg);
+        }
+        
+        & ~ * { color: #fff }
+      }
+
+      & ~ * { position: relative }
+    }
+  }
+}

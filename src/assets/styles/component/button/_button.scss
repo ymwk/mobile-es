@@ -1,0 +1,53 @@
+.button-root {
+  flex-shrink: 0;
+  min-width: 8rem;
+  height: var(--form-h);
+  padding: 0 2.4rem;
+  border-radius: 0.8rem;
+  background-color: #edeeef;
+  font-weight: 600;
+  font-size: 1.5rem;
+  white-space: nowrap;
+
+  &:disabled { 
+    color: #9B9B9B;
+    opacity: .6;
+  }
+
+  &.confirm {
+    background-color: var(--primary);
+    color: #fff
+  }
+
+  &.action {
+    background-color: #1A858C;
+    color: #fff
+  }
+
+  &.small {
+    height: 3.1rem;
+    padding: 0 1.8rem;
+    border-radius: 0.3rem;
+    background-color: #50C8D9;
+    color: #fff;
+    font-size: 1.4rem;
+  }
+}
+
+.button-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-self: center;
+  width: 3.6rem;
+  height: 3.6rem;
+
+  .ico-root {
+    position: absolute;
+    inset: 0;
+    display: block;
+    margin: auto;
+    width: auto;
+    height: auto;
+  }
+}

@@ -1,0 +1,67 @@
+@use "../base/mixin";
+
+.header-portal {
+  z-index: 99;
+  position: fixed;
+  inset: 0 0 auto 0;
+  @include mixin.width;
+  display: flex;
+  flex-direction: column;
+  height: var(--header-h);
+  padding: 8px;
+  background-color: #fff;
+  box-shadow: 0px 6px 12px 0px #0000000D, 0px 1px 0px 0px #0000001A;
+
+  &.header-main {
+    flex-direction: row-reverse;
+    align-items: center;
+    height: unset;
+    box-shadow: none
+  }
+}
+
+.header-portal-title {
+  display: flex;
+  align-items: center;
+  // height: 3.6rem;
+  height: 2.8rem;
+  gap: .5rem;
+
+  .btn-ico {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .title {
+    font-size: 2.2rem
+  }
+}
+
+.header-portal-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  font-size: 1.6rem;
+
+  img { width: 4.7rem }
+}
+
+.header-portal-utils {
+  display: flex;
+  align-items: center;
+  height: 3.6rem;
+  margin-left: auto;
+
+  .time {
+    display: inline-block;
+    padding-left: 2rem;
+    padding-right: 0.4rem;
+    font-family: var(--nanum);
+    font-size: 1.3rem;
+    font-weight: 800;
+    background: url(/src/assets/images/icon/ico_clock.svg) no-repeat left center;
+  }
+}

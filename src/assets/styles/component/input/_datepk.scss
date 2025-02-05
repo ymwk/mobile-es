@@ -1,0 +1,90 @@
+.search-calendar {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+
+  .form-textfield {
+    padding-left: 3.4rem;
+    background: url(/src/assets/images/icon/ico_calendar-s.svg) no-repeat 1.1rem center / 1.4rem;
+  }
+}
+
+.datepk-header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.5rem;
+  background-color: #00AAB5;
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: 700;
+
+  .button-icon {
+    position: absolute;
+    top: 0;
+    color: currentColor;
+    height: 3.2rem;
+
+    &.prev { left: .5rem }
+    &.next { right: .5rem }
+  }
+}
+
+// .MuiDateCalendar-root {}
+.MuiDialog-root {
+  &:has(.MuiDateCalendar-root) {
+    .MuiBackdrop-root { background-color: rgba(0, 0, 0, 0.8) }
+    .MuiDialog-paper { box-shadow: none }
+  }
+  .MuiDateCalendar-root { height: auto }
+}
+
+.MuiDateCalendar-root {
+  .MuiDayCalendar-header {
+    height: 3rem;
+    background-color: #50C8D9;
+    color: #fff;
+    font-family: var(--pretendard);
+  }
+
+  .MuiDayCalendar-weekDayLabel {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: var(--pretendard);
+  }
+
+  .MuiPickersDay-root {
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: var(--pretendard);
+
+    &:focus { background-color: inherit }
+
+    &.Mui-selected {
+      &, &:hover, &:focus {
+        background-color: var(--primary-t);
+      }
+    }
+
+    &:not(.Mui-selected) {
+      &, &:focus {
+        border-color: var(--primary-t);
+      }
+    }
+  }
+
+  [aria-colindex="1"],
+  [aria-label="일요일"] {
+    color: #FF574E
+  }
+
+  [aria-colindex="7"],
+  [aria-label="토요일"] {
+    color: #007AFF
+  }
+
+  // .MuiDayCalendar-slideTransition { min-height: 200px }
+}
+

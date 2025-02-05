@@ -1,0 +1,133 @@
+.Arrivalscard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.Arrivalscard-wrap {
+  position: relative;
+  & > button {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.Arrivalscard-root {
+  --mg: 0 1.8rem;
+
+  position: relative;
+  border-radius: 1.2rem;
+  background-color: #fff;
+  box-shadow: 0px 0px 4px 0px #00000040;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.4;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: linear-gradient(to top, rgba(245, 245, 245, 100) 60%, rgba(245, 245, 245, 0) 100%);
+    box-shadow: inset 0px -3px 2px 0px #00000011;
+    transform: translate(-50%, -50%);
+  }
+
+  &::after {
+    top: auto;
+    bottom: 0;
+    transform: translate(-50%, 50%) scaleY(-1);
+  }
+
+  .card-section {
+    margin: var(--mg);
+  }
+
+  // section1
+  .card-detail {
+    display: flex;
+    padding: 2rem 0;
+    margin: var(--mg);
+    border-bottom: 1px dashed #979797;
+  }
+
+  .card-logo {
+    width: 7rem;
+
+    img {
+      width: 4rem;
+      height: 4rem;
+      object-fit: contain;
+    }
+  }
+
+  .card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    .name {
+      font-size: 2.4rem;
+      font-weight: 700;
+    }
+
+    .line1 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .card-option {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: auto;
+
+    .msg {
+      margin-top: auto;
+      text-align: center;
+      color: var(--error);
+    }
+  }
+
+  // section2
+
+  .card-timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 2rem 0;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.4rem;
+      font-weight: 500;
+
+      .num {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  // section3
+  .title {
+    font-size: 2.2rem;
+    font-weight: 700;
+  }
+
+  .card-section2 {
+    padding-top: 2rem;
+    background-color: #f8f5f5;
+    box-shadow: inset 0px 6px 12px 0px #0000000d, inset 0px 1px 0px 0px #0000001a;
+  }
+
+  .card-section3 {
+    padding-top: 2rem;
+  }
+}

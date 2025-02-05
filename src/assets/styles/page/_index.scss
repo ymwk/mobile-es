@@ -1,0 +1,68 @@
+.index-wrapper {
+  padding-top: 2.4rem;
+  background: linear-gradient(180deg, #E9EBEC 0%, #BEE7EA 71%, #9CE3E8 99.98%, #0DD4E1 99.99%);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 18.4rem;
+    height: 23.3rem;
+    background: url(/src/assets/images/login/bg_index.png) no-repeat right top / contain
+  }
+
+  .index-box {
+    background-color: #fff;
+  }
+}
+
+.index-header {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 13.3rem;
+}
+
+.index-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 2rem;
+  font-size: 2.4rem;
+
+  img { width: 9.1rem }
+}
+
+.index-box {
+  border-radius: 1.6rem;
+  background-color: #F5F4F4;
+}
+
+.index-section {
+  margin-top: 1.8rem;
+}
+
+.index-notice {
+  padding: 1.5rem 2rem;
+  font: 400 1.2rem/2em var(--nanum);
+  color: #333;
+
+  li {
+    display: flex;
+    gap: 1em;
+
+    .title {
+      flex-grow: 1;
+      text-align: left;
+      // @include ellipsis;
+    }
+
+    .date {
+      flex-shrink: 0;
+      opacity: .5;
+    }
+  }
+}

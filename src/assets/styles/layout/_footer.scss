@@ -1,0 +1,38 @@
+.portal-footer {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5.9rem;
+  padding-bottom: .7rem;
+  margin-top: auto;
+  font-size: 1.3rem;
+
+  .contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    height: 1em;
+
+    &::before {
+      content: '';
+      width: 1.2rem;
+      height: 1.4rem;
+      background: url(/src/assets/images/icon/ico_phone.svg) no-repeat left bottom / contain;
+    }
+  }
+
+  .link {
+    display: inline-flex;
+    align-items: center;
+    height: 1rem;
+    font-size: 1.2rem;
+    padding-left: 1em;
+    margin-left: 1em;
+
+    &:not(:first-child) {
+      border-left: 1px solid currentColor
+    }
+  }
+}

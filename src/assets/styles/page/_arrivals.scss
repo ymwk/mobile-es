@@ -1,0 +1,16 @@
+.arrivals-main {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg);
+
+  & + .portal-footer {
+    background-color: var(--bg);
+  }
+
+  .search-result {
+    padding-left: var(--spd);
+    padding-right: var(--spd);
+  }
+}
