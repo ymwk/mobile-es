@@ -4,6 +4,7 @@ import { Alert } from '@components/modal';
 import { Button, IconButton } from '@components/button'
 import { useNavigate } from 'react-router-dom';
 import { Sitemap } from './SitemapComponent';
+import { LoginselectModal } from '@pages/modal/LoginselectModal';
 
 interface HeaderProps {
   title?: string
@@ -52,6 +53,17 @@ const Header: React.FC<HeaderProps> = (props) => {
     );
   };
 
+  const LoginModalOpen = () => {
+    const { isOpen, openModal, closeModal } = useModal();
+  
+    return (
+      <>
+        <Button styleType="small" label="로그인방식" onClick={openModal} />
+        <LoginselectModal isOpen={isOpen} onClose={closeModal} />
+      </>
+    );
+  };
+
   return (
     <>
       <header className={`header-portal ${main ? 'header-main' : ''} ${className ? className : ''}`}>
@@ -87,7 +99,7 @@ const Header: React.FC<HeaderProps> = (props) => {
             <i className="ico-root user" />
             <em>Mjcourage님</em>
 
-            <Button styleType="small" label="로그인방식" />
+            <LoginModalOpen />
           </div>
         </div>
 

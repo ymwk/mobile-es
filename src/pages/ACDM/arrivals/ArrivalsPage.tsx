@@ -9,7 +9,7 @@ const ArrivalsPage: React.FC = () => {
       <div className="wrapper">
         <Header title="ARRIVALS" />
 
-        <main className="arrivals-main">
+        <main className="search-main">
           <ArrovalsSearch />
 
           <div className="search-result">

@@ -1,4 +1,4 @@
-@use "../base/mixin";
+@use '../base/mixin';
 
 .header-portal {
   z-index: 99;
@@ -10,13 +10,13 @@
   height: var(--header-h);
   padding: 8px;
   background-color: #fff;
-  box-shadow: 0px 6px 12px 0px #0000000D, 0px 1px 0px 0px #0000001A;
+  box-shadow: 0 6px 12px 0 #0000000d, 0 1px 0 0 #0000001a;
 
   &.header-main {
     flex-direction: row-reverse;
     align-items: center;
     height: unset;
-    box-shadow: none
+    box-shadow: none;
   }
 }
 
@@ -25,7 +25,7 @@
   align-items: center;
   // height: 3.6rem;
   height: 2.8rem;
-  gap: .5rem;
+  gap: 0.5rem;
 
   .btn-ico {
     display: inline-flex;
@@ -36,7 +36,7 @@
   }
 
   .title {
-    font-size: 2.2rem
+    font-size: 2.2rem;
   }
 }
 
@@ -46,7 +46,9 @@
   gap: 0.25em;
   font-size: 1.6rem;
 
-  img { width: 4.7rem }
+  img {
+    width: 4.7rem;
+  }
 }
 
 .header-portal-utils {

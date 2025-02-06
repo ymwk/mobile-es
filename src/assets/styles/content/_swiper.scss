@@ -25,7 +25,7 @@
   }
 
   .swiper-slide-active {
-    box-shadow: 4px 4px 24px 0px #00000040;
+    box-shadow: 4px 4px 24px 0 #00000040;
 
     .slide-cont {
       visibility: visible;
@@ -133,15 +133,15 @@
 }
 
 .portal-slide-ac {
-  background: #d4ffea;
+  background: #ade7cb;
   .slide-link {
     color: #9fddbf;
   }
 }
 
 .portal-slide-ca {
-  background: #e6cbdd;
+  background: #b6a8a1;
   .slide-link {
-    color: #dfb2d0;
+    color: #b6a8a1;
   }
 }

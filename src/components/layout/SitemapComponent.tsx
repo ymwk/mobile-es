@@ -102,7 +102,7 @@ const Sitemap = () => {
       child: [
         {
           name: 'ARRIVALS',
-          link: '/',
+          link: '/arrivals',
         },
         {
           name: 'DEPARTURES',
@@ -193,7 +193,7 @@ const Sitemap = () => {
     <>
       <div className="nav-wrapper">
         <ul className="nav-list">
-          {Sitelist.map((item) => {
+          {Sitelist.map((item, index) => {
             const [isFold, setisFold] = useState(true);
 
             const handleOpen = () => {
@@ -201,7 +201,7 @@ const Sitemap = () => {
             };
 
             return (
-              <li key={item.name}>
+              <li key={index}>
                 {item.type === 'link' && (
                   <Link to={item.link} className="menu-root">
                     <span className="name">
@@ -222,8 +222,8 @@ const Sitemap = () => {
                     </button>
                     <div className={`accordion-root ${isFold ? 'fold' : ''}`}>
                       <div className="child-list">
-                        {item.child.map((child) => (
-                          <Link to={child.link} className="link-child">
+                        {item.child.map((child, index) => (
+                          <Link key={index} to={child.link} className="link-child">
                             {child.name}
                           </Link>
                         ))}

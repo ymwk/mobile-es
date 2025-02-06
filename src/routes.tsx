@@ -25,6 +25,11 @@ const AccountUserEdit = lazy(() => import('@pages/account/manage/AccountUserEdit
 const Arrivals = lazy(() => import('@pages/ACDM/arrivals/ArrivalsPage'));
 const ArrivalsDetail = lazy(() => import('@pages/ACDM/arrivals/ArrivalsDetailPage'));
 
+const NoticeList = lazy(() => import('@pages/notice/NoticelistPage'));
+const NoticeResult = lazy(() => import('@pages/notice/NoticeresultPage'));
+const Noticedetail = lazy(() => import('@pages/notice/NoticedetailPage'));
+const Noticewrite = lazy(() => import('@pages/notice/NoticeWritePage'));
+
 export const routes = [
   {
     path: '/',
@@ -51,6 +56,11 @@ export const routes = [
 
       { path: '/arrivals', element: <Arrivals /> },
       { path: '/arrivals-detail', element: <ArrivalsDetail /> },
+
+      { path: '/notice', element: <NoticeList /> },
+      { path: '/notice-search', element: <NoticeResult /> },
+      { path: '/notice-detail', element: <Noticedetail /> },
+      { path: '/notice-write', element: <Noticewrite /> },
     ],
   },
 ];
@@ -77,4 +87,9 @@ export const pages = [
 
   { route: '/arrivals' },
   { route: '/arrivals-detail' },
+
+  { route: '/notice' },
+  { route: '/notice-search' },
+  { route: '/notice-detail' },
+  { route: '/notice-write' },
 ];

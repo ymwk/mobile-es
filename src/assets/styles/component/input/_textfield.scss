@@ -4,7 +4,6 @@
   display: flex;
   align-items: flex-end;
   gap: 0.4rem;
-  font-weight: 500;
   font-size: 1.5rem;
 
   label {
@@ -33,18 +32,32 @@
       border-color: var(--primary);
     }
   }
+
+  &.flex-grow {
+    align-items: unset;
+  }
 }
 
 .form-textfield {
-  flex: 1;
+  flex-grow: 1;
+  flex-basis: auto;
+  display: inline-flex;
+  align-items: center;
   width: 100%;
   height: var(--form-h);
+  max-height: var(--form-h);
   border: 1px solid #bbb;
   border-radius: 0.4rem;
   padding: 0 1.2rem;
-  font-weight: 500;
   font-size: 1.5rem;
 
+  &.form-search {
+    padding-left: 4rem;
+    background: #fff url(/src/assets/images/icon/ico_search.svg) no-repeat 1.5rem center;
+  }
+}
+
+input.form-textfield {
   &::placeholder { color: #979797 }
   &:focus {
     outline: 0;
@@ -54,11 +67,6 @@
   &:read-only {
     background-color: #edeeef;
     color: #9b9b9b;
-  }
-
-  &.form-search {
-    padding-left: 4rem;
-    background: url(/src/assets/images/icon/ico_search.svg) no-repeat 1.5rem center;
   }
 }
 
@@ -109,5 +117,50 @@
 
   .form-textfield {
     flex-basis: auto;
+  }
+}
+
+.form-textarea {
+  flex-grow: 1;
+  flex-basis: auto;
+  width: 100%;
+  min-height: 100px;
+  border: 1px solid #bbb;
+  border-radius: 0.4rem;
+  padding: 1.2rem;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  resize: none;
+
+  &:focus {
+    outline: 0;
+    border-color: var(--primary);
+  }
+}
+
+.form-filefield {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+
+  &:focus + .form-textfield {
+    border-color: var(--primary);
+  }
+}
+
+.form-filelist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  & > li {
+    display: flex;
+    gap: 0.4rem;
+
+    .forms-row { flex-grow: 1 }
   }
 }

@@ -23,7 +23,7 @@ const ListPage: React.FC = () => {
                   Login
                 </Link>
               </td>
-              <td>OTP전송-본인인증 Modal</td>
+              <td>본인인증 Modal</td>
             </tr>
             <tr>
               <td>공지사항 Modal</td>

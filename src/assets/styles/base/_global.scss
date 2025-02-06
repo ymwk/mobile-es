@@ -1,8 +1,9 @@
 @use "./mixin";
 
 :root{
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  color: #222
+  font-family: var(--pretendard);
+  color: #222;
+  font-weight: 500
 }
 
 html, body, div, span, applet, object, iframe,
@@ -72,6 +73,10 @@ em {
   font-weight: bold;
 }
 
+small {
+  font-size: .92em
+}
+
 h1, h2, h3, h4, h5, h6 { font-weight: 700 }
 
 hr {
@@ -94,6 +99,15 @@ hr {
 
 .ellipsis {
   @include mixin.ellipsis
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }
 
 #root {

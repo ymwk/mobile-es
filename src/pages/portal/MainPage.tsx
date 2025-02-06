@@ -45,12 +45,11 @@ const MainPage: React.FC = () => {
             <Swiper
               className="portal-swiper"
               modules={[Autoplay, EffectCards]}
-              loop={true}
+              // loop={true}
               autoplay={{
-                delay: 4000,
+                delay: 5000,
                 disableOnInteraction: false,
               }}
-              initialSlide={2}
               slidesPerView={1.4}
               effect="cards"
               cardsEffect={{
@@ -60,20 +59,6 @@ const MainPage: React.FC = () => {
               }}
               centeredSlides={true}
             >
-              <SwiperSlide className="portal-slide-rs">
-                <div className="slide-cont">
-                  <span className="slide-title">
-                    Resource <br />
-                    Schedule
-                  </span>
-                  <p>자원배정</p>
-                  <Link to="/" className="slide-link">
-                    <span className="blind">바로가기</span>
-                  </Link>
-                </div>
-                <div className="slide-thumb slide-title">RS</div>
-              </SwiperSlide>
-
               <SwiperSlide className="portal-slide-acdm">
                 <div className="slide-cont">
                   <span className="slide-title">
@@ -116,32 +101,32 @@ const MainPage: React.FC = () => {
                 <div className="slide-thumb slide-title">RS</div>
               </SwiperSlide>
 
-              <SwiperSlide className="portal-slide-acdm">
+              <SwiperSlide className="portal-slide-ac">
                 <div className="slide-cont">
                   <span className="slide-title">
-                    A-CDM
-                    <i className="ico-root bookmark active" />
+                    Resource <br />
+                    Schedule
                   </span>
-                  <p>협동운항관리시스템</p>
+                  <p>항공기 관제</p>
                   <Link to="/" className="slide-link">
                     <span className="blind">바로가기</span>
                   </Link>
                 </div>
-                <div className="slide-thumb slide-title">AM</div>
+                <div className="slide-thumb slide-title">AC</div>
               </SwiperSlide>
 
-              <SwiperSlide className="portal-slide-fp">
+              <SwiperSlide className="portal-slide-ca">
                 <div className="slide-cont">
                   <span className="slide-title">
-                    Flight <br />
-                    Plan
+                    Resource <br />
+                    Schedule
                   </span>
-                  <p>운항계획</p>
+                  <p>공통관리</p>
                   <Link to="/" className="slide-link">
                     <span className="blind">바로가기</span>
                   </Link>
                 </div>
-                <div className="slide-thumb slide-title">FP</div>
+                <div className="slide-thumb slide-title">CA</div>
               </SwiperSlide>
             </Swiper>
           </div>

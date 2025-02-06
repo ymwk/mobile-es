@@ -1,5 +1,8 @@
 .button-root {
   flex-shrink: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   min-width: 8rem;
   height: var(--form-h);
   padding: 0 2.4rem;
@@ -31,6 +34,12 @@
     background-color: #50C8D9;
     color: #fff;
     font-size: 1.4rem;
+  }
+
+  &.icon {
+    width: var(--form-h);
+    min-width: var(--form-h);
+    padding: 0;
   }
 }
 

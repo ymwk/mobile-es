@@ -7,22 +7,21 @@ interface ModalProps {
 	isOpen: boolean;
 	onClose: () => void;
 	title?: string;
-	width?: number;
 	children: React.ReactNode;
 	fullSize?: boolean
 }
 
 const Modal: React.FC<ModalProps> = (props) => {
-	const { id, isOpen, onClose, title, width, children, fullSize=false } = props;
+	const { id, isOpen, onClose, title, children, fullSize=false } = props;
 
 	return (
     <>
       {isOpen && (
         <ModalPortal>
-          <div id={id} className={`modal-root ${fullSize ? 'modal-maxh' : ''}`}>
+          <div id={id} className={`modal-root ${fullSize ? 'modal-max' : ''}`}>
             <div className="modal-backdrop" onClick={onClose} />
 
-            <div className="modal-panel" style={{ maxWidth: width }}>
+            <div className="modal-panel">
               {title && (
                 <div className="modal-header">
                   <h2 className="modal-title">{title}</h2>

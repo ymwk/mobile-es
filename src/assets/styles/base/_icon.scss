@@ -46,6 +46,13 @@
     }
   }
 
+  &.nodata {
+    width: 6.3rem;
+    height: 7.4rem;
+    margin-left: 1rem;
+    background: url(/src/assets/images/pic/pic_nodata.png) no-repeat center center / contain;
+  }
+
   &.bookmark {
     background: url(/src/assets/images/icon/ico_bookmark.svg) no-repeat center center / 2rem;
   }
@@ -114,6 +121,24 @@
     &::before { transform: translate(-50%, calc(-50% - 7px)) }
     &::after { transform: translate(-50%, calc(-50% + 7px)) }
   }
+
+  &.add, &.del {
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 50%;
+      left: 50%;
+      width: 12px;
+      height: 2px;
+      background-color: #222;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &.add::after { transform: translate(-50%, -50%) rotate(90deg) }
+  &.del::after { content: none }
 
   &.prev, &.next {
     width: 0;
