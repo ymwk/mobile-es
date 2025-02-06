@@ -1,0 +1,1 @@
+import{j as t}from"./index-BWmKVhX8.js";const l=o=>{const{type:e="button",styleType:n,label:s,disabled:r,onClick:a,...c}=o;return t.jsx(t.Fragment,{children:t.jsx("button",{type:e,className:`button-action ${n||""}`,onClick:a,disabled:r,...c,children:s})})};export{l as A};
