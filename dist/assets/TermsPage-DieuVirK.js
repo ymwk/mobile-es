@@ -1,0 +1,1 @@
+import{j as r}from"./index-Dj7l0eY2.js";import{H as s}from"./HeaderComponent-DYGvOyX_.js";import"./img_pass_pin-By5_xdyl.js";import"./IconButtonComponent-C2s1SYqT.js";const i=()=>r.jsx(r.Fragment,{children:r.jsxs("div",{className:"wrapper",children:[r.jsx(s,{title:"이용약관"}),r.jsx("main",{className:"portal-main"})]})});export{i as default};

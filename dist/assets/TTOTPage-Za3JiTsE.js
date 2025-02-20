@@ -1,1 +1,0 @@
-import{j as r}from"./index-CIrZASbG.js";import{H as a}from"./HeaderComponent-BjHbUxLh.js";import"./img_pass_pin-AE7R2-Rr.js";import"./IconButtonComponent-BaJHF1iP.js";const i=()=>r.jsx(r.Fragment,{children:r.jsxs("div",{className:"wrapper",children:[r.jsx(a,{title:"목표 이륙시간"}),r.jsx("main",{className:"portal-main"})]})});export{i as default};
