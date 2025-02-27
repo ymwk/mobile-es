@@ -1,0 +1,1 @@
+import{j as a}from"./index-BwDgEk8t.js";import{H as r}from"./HeaderComponent-B36z81EG.js";import"./img_pass_pin-C-g5Rh_s.js";import"./IconButtonComponent-ByAfMyV3.js";const i=()=>a.jsx(a.Fragment,{children:a.jsxs("div",{className:"wrapper",children:[a.jsx(r,{title:"Stand Change Alarm"}),a.jsx("main",{className:"portal-main"})]})});export{i as default};
