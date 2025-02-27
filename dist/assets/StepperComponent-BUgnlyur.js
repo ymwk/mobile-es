@@ -1,1 +1,0 @@
-import{j as e}from"./index-C-olFRf4.js";const i=r=>{const{items:t,active:a}=r;return e.jsx(e.Fragment,{children:e.jsx("ol",{className:"stepper-root",children:t.map((s,c)=>e.jsx("li",{className:a-1===c?"active":"",children:s},s))})})};export{i as S};
