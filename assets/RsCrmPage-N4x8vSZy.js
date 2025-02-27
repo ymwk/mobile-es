@@ -1,1 +1,0 @@
-import{j as r}from"./index-apG0duki.js";import{H as e}from"./HeaderComponent-B793G9Gr.js";import"./img_pass_pin-BOCBvyHm.js";import"./IconButtonComponent-usVH2Zgc.js";const m=()=>r.jsx(r.Fragment,{children:r.jsxs("div",{className:"wrapper",children:[r.jsx(e,{title:"Change Request Monitoring"}),r.jsx("main",{className:"portal-main"})]})});export{m as default};
