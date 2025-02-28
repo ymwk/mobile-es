@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import { Modal, ModalAction } from '@components/modal'
 import { ModalButton } from '@components/button'
 import { Radiogroup } from '@components/input';
@@ -11,18 +11,11 @@ interface props {
 export const RefreshModal: React.FC<props> = (props) => {
   const { isOpen, onClose } = props;
 
-  //RadioGroup
-  const [radioVal, setRadioVal] = useState('30');
-  const onChangeRadio = useCallback((getvalue: string) => {
-    setRadioVal(getvalue);
-  }, []);
-
   return (
-    <Modal id={'privacy-modal'} isOpen={isOpen} onClose={onClose} title={'새로고침 시간설정'}>
+    <Modal id={'modal'} isOpen={isOpen} onClose={onClose} title={'새로고침 시간설정'}>
       <>
         <Radiogroup
           name={'setlist'}
-          onChange={onChangeRadio}
           type="type3"
           className="refreshset-group"
           items={[
@@ -43,7 +36,6 @@ export const RefreshModal: React.FC<props> = (props) => {
               value: '300',
             },
           ]}
-          getvalue={radioVal}
         />
         <ModalAction>
           <ModalButton label="취소" onClick={onClose} />

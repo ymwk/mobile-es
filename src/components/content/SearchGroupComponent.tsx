@@ -58,10 +58,10 @@ const SearchGroup: React.FC<SearchGroupProps> = (props) => {
               ~
               <Textfield /> */}
 
-              <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale='ko'>
-                <Datepk />
+              <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ko">
+                <Datepk format={'MM-DD'} />
                 ~
-                <Datepk />
+                <Datepk format={'MM-DD'} />
               </LocalizationProvider>
             </div>
           </div>

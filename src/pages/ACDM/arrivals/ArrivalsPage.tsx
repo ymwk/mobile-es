@@ -9,10 +9,10 @@ const ArrivalsPage: React.FC = () => {
       <div className="wrapper">
         <Header title="ARRIVALS" />
 
-        <main className="search-main">
-          <ArrovalsSearch />
+        <ArrovalsSearch />
 
-          <div className="search-result">
+        <main className="portal-main search-main">
+          <div className="portal-cont">
             <div className="search-result-top">
               <span className="date">2024.12.17</span>
               <span className="time">10~14</span>

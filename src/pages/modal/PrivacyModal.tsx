@@ -11,7 +11,7 @@ export const PrivacyModal: React.FC<props> = (props) => {
   const { isOpen, onClose } = props;
 
   return (
-    <Modal id={'privacy-modal'} isOpen={isOpen} onClose={onClose} title={'개인정보 처리방침'} fullSize>
+    <Modal id={'modal'} isOpen={isOpen} onClose={onClose} title={'개인정보 처리방침'} fullSize>
       <>
         <div className="privacy-header">
           <div className="select-root">

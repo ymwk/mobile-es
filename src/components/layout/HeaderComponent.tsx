@@ -26,11 +26,24 @@ const Header: React.FC<HeaderProps> = (props) => {
 
   const navigate = useNavigate();
 
-  const handleBackClick = () => {}
-  const handleBellClick = () => { }
-  const handleSetClick = () => {};
+  const handleBackClick = () => {
+    navigate(-1)
+  }
+
   const handleHbgClick = () => {
-    setisOpen(!isOpen)
+    // if (!isOpen) {
+    //   const currentY = window.scrollY;
+    //   document.body.style.cssText = `
+    //     top: -${currentY}px;
+    //     overflow: hidden
+    //   `;
+    // } else {
+    //   const scrollY = document.body.style.top;
+    //   document.body.style.cssText = '';
+    //   window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+    // }
+
+    setisOpen(!isOpen);
   }
 
   const SignoutAlertOpen = () => {
@@ -68,16 +81,20 @@ const Header: React.FC<HeaderProps> = (props) => {
     <>
       <header className={`header-portal ${main ? 'header-main' : ''} ${className ? className : ''}`}>
         <div className="header-portal-utils">
-          <span className="time">
-            <span className="ico_clock" />
-            UTC 10 : 21
-          </span>
+          {!main && <IconButton icon="home" label="Home" onClick={() => navigate('/portal')} />}
 
-          <IconButton icon="bell" label="알림" className={`active`} onClick={handleBellClick}>
-            <span className="badge" />
-          </IconButton>
+          <div className="utils">
+            <span className="time">
+              <span className="ico_clock" />
+              UTC 10 : 21
+            </span>
 
-          <IconButton icon="hamburger" label="전체메뉴" onClick={handleHbgClick} />
+            <IconButton icon="bell" label="알림" className={`active`} onClick={() => navigate('/notify')}>
+              <span className="badge" />
+            </IconButton>
+
+            <IconButton icon="hamburger" label="전체메뉴" onClick={handleHbgClick} />
+          </div>
         </div>
         <div className="header-portal-title">
           {backspace && <IconButton icon="back" label="이전" onClick={handleBackClick} />}
@@ -90,9 +107,11 @@ const Header: React.FC<HeaderProps> = (props) => {
         <h2 className="blind">전체메뉴</h2>
         <div className="header-portal">
           <div className="header-portal-utils">
-            <SignoutAlertOpen />
-            <IconButton icon="set" label="Setting" onClick={handleSetClick} />
-            <IconButton icon="hamburger" label="전체메뉴" className="active" onClick={handleHbgClick} />
+            <div className="utils">
+              <SignoutAlertOpen />
+              <IconButton icon="set" label="Setting" onClick={() => navigate('/setting')} />
+              <IconButton icon="hamburger" label="전체메뉴 닫기" className="active" onClick={handleHbgClick} />
+            </div>
           </div>
 
           <div className="full-user">

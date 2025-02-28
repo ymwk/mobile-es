@@ -28,7 +28,7 @@ const AccountSearchCancelPage: React.FC = () => {
               <li>
                 <div className="textfield-root">
                   <label>
-                    <span className="label">핸드폰 번호</span>
+                    <span className="label">휴대폰 번호</span>
                     <div className="forms-row">
                       <div className="select-root" style={{ width: 100 }}>
                         <select>
@@ -55,7 +55,9 @@ const AccountSearchCancelPage: React.FC = () => {
               </tr>
               <tr>
                 <th>상태</th>
-                <td>신청대기</td>
+                <td>
+                  <span className="c-state">신청대기</span>
+                </td>
               </tr>
             </tbody>
           </table>

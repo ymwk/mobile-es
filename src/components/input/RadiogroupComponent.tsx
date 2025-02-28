@@ -1,48 +1,51 @@
-import React, { useCallback } from 'react';
+import React, { useState } from 'react';
 
 interface RadiogroupProps {
-  type?: 'type1' | 'type3';
+  id?: string;
+  type?: 'type1' | 'type2' | 'type3' | 'type4';
   name?: string;
   items: Array<RadioItems>;
-  getvalue: string;
   className?: string;
-  onChange: (getvalue: string) => void;
+  select?: boolean | string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 interface RadioItems {
   label?: string;
   value?: any;
 }
+const Radiogroup: React.FC<RadiogroupProps> = ({ id, items, name, className, type, select, onChange }) => {
+  const [radioVal, setRadioVal] = useState(items[0].value);
 
-const Radiogroup: React.FC<RadiogroupProps> = (props) => {
-  const { type, items, name, getvalue, className, onChange } = props;
-
-  const onChangeRadio = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      onChange(e.target.value);
-    },
-    [onChange]
-  );
+  const onChangeRadio = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (onChange) {
+      onChange(event);
+    } else {
+      const selectedValue = event.target.value;
+      setRadioVal(selectedValue);
+      console.log(selectedValue);
+    }
+  };
 
   return (
-    <>
-      <div className={`radiogroup-root ${type} ${className ? className : ''}`}>
-        {items.map((item) => {
-          return (
-            <label className="label" key={item.label}>
-              <input
-                type="radio"
-                name={name}
-                value={item.value}
-                checked={getvalue.toString() === item.value}
-                onChange={onChangeRadio}
-              />
-              {item.label && <span>{item.label}</span>}
-            </label>
-          );
-        })}
-      </div>
-    </>
+    <div className={`radiogroup-root ${type} ${className ? className : ''}`}>
+      {items.map((item) => {
+        return (
+          <label className="label" key={item.value}>
+            <input
+              key={item.label}
+              id={id}
+              type="radio"
+              name={name}
+              value={item.value}
+              checked={select ? select === item.value.toString() : radioVal === item.value.toString()}
+              onChange={onChangeRadio}
+            />
+            {item.label && <span>{item.label}</span>}
+          </label>
+        );
+      })}
+    </div>
   );
 };
 

@@ -26,11 +26,11 @@ const Alert: React.FC<AlertProps> = (props) => {
 
             <div className="modal-panel" style={{ maxWidth: width }}>
               <div className="modal-body">
-                <p className="modal-msg">{children}</p>
+                <div className="modal-msg">{children}</div>
 
                 {type === 'confirm' ? (
                   <ModalAction>
-                    <ModalButton type="button" styleType="confirm" label="확인" onClick={onClose} />
+                    <ModalButton type="button" styleType="confirm" label="확인" onClick={onConfirm} />
                   </ModalAction>
                 ) : (
                   <ModalAction>

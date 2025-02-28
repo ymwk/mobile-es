@@ -6,6 +6,23 @@ const List = lazy(() => import('@pages/ListPage'));
 const Index = lazy(() => import('@pages/account/SigninPage'));
 const PortalIndex = lazy(() => import('@pages/portal/MainPage'));
 
+const Error = lazy(() => import('@pages/portal/ErrorPage'));
+const Guide = lazy(() => import('@pages/portal/GuidePage'));
+const Manual = lazy(() => import('@pages/portal/ManualPage'));
+const Terms = lazy(() => import('@pages/portal/TermsPage'));
+const Notify = lazy(() => import('@pages/portal/NotifyPage'));
+const NotifyEmpty = lazy(() => import('@pages/portal/NotifyemptyPage'));
+const Setting = lazy(() => import('@pages/portal/SettingPage'));
+const SetPush = lazy(() => import('@pages/portal/SetpushPage'));
+const SetLogin = lazy(() => import('@pages/portal/SetloginPage'));
+const SetNote = lazy(() => import('@pages/portal/SetnotePage'));
+const SetFinger = lazy(() => import('@pages/portal/SetfingerPage'));
+const SetFingerErr = lazy(() => import('@pages/portal/SetfingererrPage'));
+const SetFingerRec = lazy(() => import('@pages/portal/SetfingerrecPage'));
+const SetFingerFail = lazy(() => import('@pages/portal/SetfingerfailPage'));
+const SetFingerEdit = lazy(() => import('@pages/portal/SetfingereditPage'));
+const SetFingerBreak = lazy(() => import('@pages/portal/SetfingerbreakPage'));
+
 const SignupIndex = lazy(() => import('@pages/account/signup/SignupPage'));
 const SignupStep2 = lazy(() => import('@pages/account/signup/SignupStep2Page'));
 const SignupStep3 = lazy(() => import('@pages/account/signup/SignupStep3Page'));
@@ -19,30 +36,84 @@ const AccountSearchCancel = lazy(() => import('@pages/account/manage/AccountSear
 const AccountCancel = lazy(() => import('@pages/account/manage/AccountCancelPage'));
 const AccountUser = lazy(() => import('@pages/account/manage/AccountUserPage'));
 const AccountEditManage = lazy(() => import('@pages/account/manage/AccountEditManagePage'));
-const AccountSearch2 = lazy(() => import('@pages/account/manage/AccountSearch2Page'));
 const AccountUserEdit = lazy(() => import('@pages/account/manage/AccountUserEditPage'));
 
 const Arrivals = lazy(() => import('@pages/ACDM/arrivals/ArrivalsPage'));
 const ArrivalsDetail = lazy(() => import('@pages/ACDM/arrivals/ArrivalsDetailPage'));
 
+const Departures = lazy(() => import('@pages/ACDM/departures/DeparturesPage'));
+const DeparturesDetail = lazy(() => import('@pages/ACDM/departures/DeparturesDetailPage'));
+
+const Weather = lazy(() => import('@pages/ACDM/WeatherPage'));
+const Notam = lazy(() => import('@pages/ACDM/notam/NotamPage'));
+const NotamDetail = lazy(() => import('@pages/ACDM/notam/NotamdetailPage'));
+
 const NoticeList = lazy(() => import('@pages/notice/NoticelistPage'));
 const NoticeResult = lazy(() => import('@pages/notice/NoticeresultPage'));
-const Noticedetail = lazy(() => import('@pages/notice/NoticedetailPage'));
+const NoticeDetail = lazy(() => import('@pages/notice/NoticedetailPage'));
 const Noticewrite = lazy(() => import('@pages/notice/NoticeWritePage'));
+
+const TTOT = lazy(() => import('@pages/ttot/TTOTPage'));
+const Stats = lazy(() => import('@pages/stats/StatsPage'));
+const Flight = lazy(() => import('@pages/stats/FlightPage'));
+const Bookmark = lazy(() => import('@pages/bookmark/BookmarkPage'));
+const FlightPlan = lazy(() => import('@pages/fp/FlightplanPage'));
+const FlightPlanDetail = lazy(() => import('@pages/fp/FlightplandetailPage'));
+const FlightPlanDetail2 = lazy(() => import('@pages/fp/Flightplandetail2Page'));
+const Bookmarkempty = lazy(() => import('@pages/bookmark/BookmarkemptyPage'));
+
+const AcTotal = lazy(() => import('@pages/ac/AcTotalPage'));
+const AcDeicing = lazy(() => import('@pages/ac/AcDeicingPage'));
+
+const RsSCA = lazy(() => import('@pages/rs/RsScaPage'));
+const RsSF = lazy(() => import('@pages/rs/RsSfPage'));
+const RsRPM = lazy(() => import('@pages/rs/RsRpmPage'));
+const RsHPM = lazy(() => import('@pages/rs/RsHpmPage'));
+const RsModify = lazy(() => import('@pages/rs/RsModifyPage'));
+const RsCRM = lazy(() => import('@pages/rs/RsCrmPage'));
+const RsSearch = lazy(() => import('@pages/rs/RsSearchPage'));
+const RsComm = lazy(() => import('@pages/rs/RsCommPage'));
+const RsGIMS = lazy(() => import('@pages/rs/RsGimsPage'));
+
+const Test = lazy(() => import('@pages/TestPage'));
 
 export const routes = [
   {
     path: '/',
     element: <Layout />,
     children: [
+      { path: '/test', element: <Test /> },
       { path: '/list', element: <List /> },
       { path: '/', element: <Index /> },
+
+      // 메인
       { path: '/portal', element: <PortalIndex /> },
+      { path: '/error', element: <Error /> },
+
+      // 설정
+      { path: '/guide', element: <Guide /> },
+      { path: '/manual', element: <Manual /> },
+      { path: '/terms', element: <Terms /> },
+      { path: '/notify', element: <Notify /> },
+      { path: '/notify-empty', element: <NotifyEmpty /> },
+      { path: '/setting', element: <Setting /> },
+      { path: '/set-push', element: <SetPush /> },
+      { path: '/set-login', element: <SetLogin /> },
+      { path: '/set-note', element: <SetNote /> },
+      { path: '/set-finger', element: <SetFinger /> },
+      { path: '/set-finger-err', element: <SetFingerErr /> },
+      { path: '/set-finger-rec', element: <SetFingerRec /> },
+      { path: '/set-finger-fail', element: <SetFingerFail /> },
+      { path: '/set-finger-edit', element: <SetFingerEdit /> },
+      { path: '/set-finger-break', element: <SetFingerBreak /> },
+
+      // 계정신청
       { path: '/signup', element: <SignupIndex /> },
       { path: '/signup2', element: <SignupStep2 /> },
       { path: '/signup3', element: <SignupStep3 /> },
       { path: '/signup4', element: <SignupComplete /> },
 
+      // 계정관리
       { path: '/account-search', element: <AccountSearch /> },
       { path: '/account-edit', element: <AccountEdit /> },
       { path: '/account-edit-rec', element: <AccountEditRec /> },
@@ -51,24 +122,81 @@ export const routes = [
       { path: '/account-cancel', element: <AccountCancel /> },
       { path: '/account-user', element: <AccountUser /> },
       { path: '/account-edit-manage', element: <AccountEditManage /> },
-      { path: '/account-search-2', element: <AccountSearch2 /> },
       { path: '/account-user-edit', element: <AccountUserEdit /> },
 
+      // A-CDM
       { path: '/arrivals', element: <Arrivals /> },
       { path: '/arrivals-detail', element: <ArrivalsDetail /> },
 
+      { path: '/departures', element: <Departures /> },
+      { path: '/departures-detail', element: <DeparturesDetail /> },
+
+      { path: '/weather', element: <Weather /> },
+      { path: '/notam', element: <Notam /> },
+      { path: '/notam-detail', element: <NotamDetail /> },
+
+      // 공지사항
       { path: '/notice', element: <NoticeList /> },
       { path: '/notice-search', element: <NoticeResult /> },
-      { path: '/notice-detail', element: <Noticedetail /> },
+      { path: '/notice-detail', element: <NoticeDetail /> },
       { path: '/notice-write', element: <Noticewrite /> },
+
+      // 통계
+      { path: '/stats', element: <Stats /> },
+      { path: '/flight', element: <Flight /> },
+
+      // 목표이륙시간
+      { path: '/ttot', element: <TTOT /> },
+
+      // 즐겨찾기
+      { path: '/bookmark', element: <Bookmark /> },
+      { path: '/bookmark-empty', element: <Bookmarkempty /> },
+
+      // 운항계획
+      { path: '/fp', element: <FlightPlan /> },
+      { path: '/fp-detail', element: <FlightPlanDetail /> },
+      { path: '/fp-detail2', element: <FlightPlanDetail2 /> },
+
+      // 항공기관제
+      { path: '/ac-total', element: <AcTotal /> },
+      { path: '/ac-deicing', element: <AcDeicing /> },
+
+      // 자원배정
+      { path: '/rs-sca', element: <RsSCA /> },
+      { path: '/rs-sf', element: <RsSF /> },
+      { path: '/rs-rpm', element: <RsRPM /> },
+      { path: '/rs-hpm', element: <RsHPM /> },
+      { path: '/rs-modify', element: <RsModify /> },
+      { path: '/rs-crm', element: <RsCRM /> },
+      { path: '/rs-search', element: <RsSearch /> },
+      { path: '/rs-cpmm', element: <RsComm /> },
+      { path: '/rs-gims', element: <RsGIMS /> },
     ],
   },
 ];
 
 export const pages = [
+  { route: '/test' },
   { route: '/list' },
   { route: '/' },
   { route: '/portal' },
+  { route: '/error' },
+
+  { route: '/guide' },
+  { route: '/manual' },
+  { route: '/terms' },
+  { route: '/notify' },
+
+  { route: '/setting' },
+  { route: '/set-push' },
+  { route: '/set-login' },
+  { route: '/set-note' },
+  { route: '/set-finger' },
+  { route: '/set-finger-err' },
+  { route: '/set-finger-rec' },
+  { route: '/set-finger-fail' },
+  { route: '/set-finger-edit' },
+  { route: '/set-finger-break' },
 
   { route: '/signup' },
   { route: '/signup2' },
@@ -87,9 +215,33 @@ export const pages = [
 
   { route: '/arrivals' },
   { route: '/arrivals-detail' },
+  { route: '/departures' },
+  { route: '/departures-detail' },
+  { route: '/weather' },
+  { route: '/notam' },
 
   { route: '/notice' },
   { route: '/notice-search' },
   { route: '/notice-detail' },
   { route: '/notice-write' },
+
+  { route: '/ttot' },
+  { route: '/stats' },
+  { route: '/bookmark' },
+  { route: '/bookmark-empty' },
+  { route: '/fp' },
+  { route: '/fp-detail' },
+
+  { route: '/ac-total' },
+  { route: '/ac-deicing' },
+
+  { route: '/rs-sca' },
+  { route: '/rs-sf' },
+  { route: '/rs-rpm' },
+  { route: '/rs-hpm' },
+  { route: '/rs-modify' },
+  { route: '/rs-crm' },
+  { route: '/rs-search' },
+  { route: '/rs-comm' },
+  { route: '/rs-gims' },
 ];

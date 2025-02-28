@@ -43,11 +43,11 @@ const NoticelistPage: React.FC = () => {
 
         <Tabs>
           <TabContent label="전체">
-            <main className="search-main">
-              <div className="search-box">
-                <Textfield placeholder="제목 또는 내용을 입력해주세요" className="form-search" />
-              </div>
-              <div className="search-result">
+            <div className="search-root">
+              <Textfield placeholder="제목 또는 내용을 입력해주세요" className="form-search" />
+            </div>
+            <main className="portal-main search-main">
+              <div className="portal-cont">
                 <div className="search-result-top">
                   <span className="count">
                     전체<em>26</em>건

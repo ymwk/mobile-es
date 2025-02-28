@@ -15,16 +15,12 @@
     border: 1px solid currentColor;
     border-radius: 2px;
     color: #A8A8A8;
+    background-color: #fff;
     transition: background-color .2s, color .2s, border-color .2s;
 
     &:checked {
       border-color: transparent;
       background: var(--primary) url(/src/assets/images/icon/ico_check_w.svg) no-repeat center 55% / 1rem;
-    }
-
-    &:hover,
-    &:hover + span {
-        cursor: pointer
     }
 
     &:disabled,
@@ -40,6 +36,10 @@
   }
 
   &.type2 {
+    .label {
+      font-weight: 600
+    }
+
     [type="checkbox"] {
       width: 2.2rem;
       height: 2.2rem;
@@ -56,7 +56,7 @@
   &.type3 {
     height: 4.8rem;
     padding: 1rem 0.9rem 1rem 3.9rem;
-    color: #B3B0B0;
+    color: #333;
     font-size: 1.3rem;
     font-weight: 600;
     line-height: 1.2;
@@ -119,6 +119,8 @@
 .radiogroup-root {
   display: flex;
   flex-wrap: wrap;
+  gap: 3rem;
+  font-size: 1.5rem;
 
   .label {
     position: relative;
@@ -126,7 +128,7 @@
     align-items: center;
     gap: 6px;
     white-space: nowrap;
-    font-size: 1.5rem;
+    line-height: 1.8rem;
   }  
   
   [type="radio"] {
@@ -135,18 +137,15 @@
     position: relative;
     width: 1.8rem;
     height: 1.8rem;
+    margin: 0;
     border: 2px solid currentColor;
     border-radius: 50%;
+    background-color: #fff;
     transition: background-color .2s, color .2s, border-color .2s;
 
     &:checked {
       border-color: transparent;
       background: var(--primary) url(/src/assets/images/icon/ico_check_w.svg) no-repeat center 55% / 1rem;
-    }
-
-    &:hover,
-    &:hover + span {
-        cursor: pointer
     }
 
     &:disabled,
@@ -161,11 +160,59 @@
     }
   }
 
+  &.type2 {
+    gap: 0;
+    border-radius: 4px;
+    background-color: #EDEEEF;
+
+    .label {
+      height: 3.4rem;
+      padding: 1rem 1.5rem;
+      min-width: 6.8rem;
+      color: #333;
+      font-size: 1.4rem;
+      font-weight: 600;
+      line-height: 1.2;
+      white-space: unset;
+      word-break: keep-all;
+      text-align: center;
+      justify-content: center;
+    }
+
+    [type="radio"] {
+      position: absolute;
+      inset: 2px;
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
+      margin: 0;
+      border-color: #F0F0F0;
+      border-radius: 4px;
+      color: #A8A8A8;
+      background: none;
+
+      &:checked {
+        border: 0;
+        background-color: var(--primary);
+        color: #fff;
+
+        &::before {
+          color: #fff;
+          background-image: url(/src/assets/images/icon/ico_check_w.svg);
+        }
+        
+        & ~ * { color: #fff }
+      }
+
+      & ~ * { position: relative }
+    }
+  }
+
   &.type3 {
+    gap: 0;
     .label {
       height: 4.8rem;
       padding: 1rem 1.5rem 1rem 3.9rem;
-      color: #B3B0B0;
+      color: #333;
       font-size: 1.3rem;
       font-weight: 600;
       line-height: 1.2;
@@ -213,6 +260,35 @@
       }
 
       & ~ * { position: relative }
+    }
+  }
+
+  &.type4 {
+    flex-wrap: nowrap;
+    gap: 1rem;
+    font-size: 1.3rem;
+
+    [type="radio"] {
+      position: relative;
+      border: 1px solid #999;
+
+      &:checked {
+        border-color: #999;
+        background: inherit;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          margin: auto;
+          width: 1rem;
+          height: 1rem;
+          border-radius: 50%;
+          background-color: var(--primary);
+        }
+      }
     }
   }
 }

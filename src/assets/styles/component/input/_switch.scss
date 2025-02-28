@@ -40,11 +40,6 @@
       }
     }
 
-    &:hover,
-    &:hover + span {
-      cursor: pointer;
-    }
-
     &:disabled,
     &:disabled + span {
       opacity: 0.7;

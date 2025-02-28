@@ -2,7 +2,7 @@ import React from 'react';
 
 interface ModalButtonProps {
   type?: 'button' | 'submit' | 'reset'
-  styleType?: 'confirm'
+  styleType?: 'confirm' | 'delete'
   label?: string
   disabled?: boolean
   onClick?: any

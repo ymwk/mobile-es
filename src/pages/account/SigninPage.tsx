@@ -1,25 +1,39 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Footer } from '@components/layout';
 import Notice from '@components/content/NoticeComponent';
 import { Tabs, TabContent } from '@components/tabs';
 import { useModal } from '@hooks/useModal';
-import { AutoModal } from '@pages/modal/AuthModal';
+import { AuthModal } from '@pages/modal/AuthModal';
+import { IdfindModal } from '@pages/modal/IdfindModal';
 import { Alert } from '@components/modal';
-import { useNavigate } from 'react-router-dom';
 import logo from '@assets/images/logo/logo_incheon.svg';
 import pass_pattern from '@assets/images/login/img_pass_pattern.svg';
 import pass_finger from '@assets/images/login/img_pass_finger.svg';
 import pass_pin from '@assets/images/login/img_pass_pin.svg';
 
-const AutoModalOpen = () => {
+const AuthModalOpen = () => {
   const { isOpen, openModal, closeModal } = useModal();
   return (
     <>
-      <button type="button" className="index-cont-btn" onClick={openModal}>
-        OTP 전송
+      <button type="button" onClick={openModal}>
+        비밀번호 초기화
       </button>
+      <AuthModal isOpen={isOpen} onClose={closeModal} />
+    </>
+  );
+};
 
-      <AutoModal isOpen={isOpen} onClose={closeModal} />
+const IdfindModalOpen = () => {
+  const { isOpen, openModal, closeModal } = useModal();
+
+  return (
+    <>
+      <button type="button" onClick={openModal}>
+        아이디 찾기
+      </button>
+      <IdfindModal isOpen={isOpen} onClose={closeModal} />
     </>
   );
 };
@@ -54,6 +68,15 @@ const SignupPage: React.FC = () => {
 
   return (
     <>
+      <div
+        style={{
+          position: 'absolute',
+          top: 20,
+          left: 20,
+        }}
+      >
+        <Link to="/test">TABLE</Link>
+      </div>
       <div className="wrapper index-wrapper">
         <header className="index-header">
           <h1 className="index-logo">
@@ -99,28 +122,27 @@ const SignupPage: React.FC = () => {
                             <option>인증방법 선택</option>
                           </select>
                         </div>
-                        <AutoModalOpen />
+                        <button type="button" className="index-cont-btn">
+                          OTP 전송
+                        </button>
                       </div>
                       <div className="item">
                         <div className="pw-input-root">
                           <input type="password" className="form-textfield" title="인증번호 입력" />
                           <div className="btns">
+                            {/* active className on/off */}
                             <span className="ico-root chk active" />
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <button
-                      type="button"
-                      className="index-login-btn"
-                      onClick={() => navigate('/portal')}
-                    >
+                    <button type="button" className="index-login-btn" onClick={() => navigate('/portal')}>
                       LOGIN
                     </button>
                     <div className="index-login-link">
-                      <button type="button">아이디 찾기</button>
-                      <button type="button">비밀번호 찾기</button>
+                      <IdfindModalOpen />
+                      <AuthModalOpen />
                       <LockAlertOpen />
                     </div>
                   </div>

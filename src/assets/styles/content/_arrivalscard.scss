@@ -1,18 +1,19 @@
-.Arrivalscard-list {
+.arrivalscard-list {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
 }
 
-.Arrivalscard-wrap {
+.arrivalscard-wrap {
   position: relative;
-  & > button {
+
+  .arrivalscard-link {
     position: absolute;
     inset: 0;
   }
 }
 
-.Arrivalscard-root {
+.arrivalscard-root {
   --mg: 0 1.8rem;
 
   position: relative;
@@ -25,6 +26,7 @@
   &::before,
   &::after {
     content: '';
+    z-index: 1;
     position: absolute;
     top: 0;
     left: 50%;
@@ -45,6 +47,21 @@
 
   .card-section {
     margin: var(--mg);
+  }
+
+  .card-section-toggle {
+    position: relative;
+    padding: 1.8rem 0 1rem;
+
+    .btn-toggle {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      border: 1px solid #F0F0F0;
+      border-radius: 50%;
+      background-color: #fff;
+      transform: translate(-50%, 50%);
+    }
   }
 
   // section1
@@ -70,14 +87,12 @@
     flex-direction: column;
     gap: 0.2rem;
 
-    .name {
+    .flt {
       font-size: 2.4rem;
       font-weight: 700;
     }
 
-    .line1 {
-      font-size: 1.5rem;
-    }
+    .info { font-size: 1.5rem }
   }
 
   .card-option {
@@ -91,29 +106,39 @@
       text-align: center;
       color: var(--error);
     }
-  }
 
-  // section2
-
-  .card-timeline {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 2rem 0;
-
-    li {
+    .icons {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 1.4rem;
-
-      .num {
-        font-size: 2rem;
-        font-weight: 700;
-      }
     }
   }
 
+  .btn-bookmark {
+    position: relative;
+    z-index: 1
+  }
+
   // section3
+  .title-bar {
+    display: flex;
+    align-items: center;
+    margin: var(--mg);
+  }
+
+  .title-option {
+    display: flex;
+    gap: 1rem;
+    margin: 0 -1rem 0 auto;
+
+    .button-icon {
+      height: 3rem
+    }
+
+    .switch-root {
+      gap: .5rem;
+      font-size: 1.2rem
+    }
+  }
+
   .title {
     font-size: 2.2rem;
     font-weight: 700;
@@ -128,4 +153,161 @@
   .card-section3 {
     padding-top: 2rem;
   }
+}
+
+// section2
+.card-schedule {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc((100% - 3rem) / 4), 1fr));
+  // grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  justify-items: center;
+  padding: 2rem 0;
+  line-height: 1.4;
+
+  .column-2 {
+    grid-column: span 2
+  }
+
+  li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1.4rem;
+  }
+
+  .time {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+
+    small {
+      font-size: 1.4rem;
+      font-weight: 500
+    }
+  }
+
+  .btn {
+    position: absolute;
+    inset: 0;
+    border-radius: 0.8rem;
+    background: rgba(0,0,0,0.03);
+    box-shadow: 0px 0px 4px 0px rgba(187, 187, 187, 1);
+  }
+}
+
+.departures-legend {
+  display: flex;
+  align-items: center;
+  margin-top: -0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.departures-legend-list {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 1.1rem;
+
+  & > li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    white-space: nowrap;
+  }
+
+  .legend {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    margin-top: -1px;
+  }
+}
+
+.departures-legend-btn {
+  margin-left: auto;
+
+  .button-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+
+.milestone-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.4rem;
+
+  & > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .legend {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.5rem;
+    font-size: 1.2rem;
+    line-height: 1em;
+    color: #fff;
+    border-radius: 2px;
+    background-color: #000;
+  }
+}
+
+.mile-t-01 { color: #0f7d00 !important}
+.mile-t-02 { color: #DD0000 !important}
+.mile-t-03 { color: #0039a2 !important}
+.mile-t-04 { color: #DD9200 !important}
+.mile-t-05 { color: #DD0000 !important}
+
+.mile-b-01 { background-color: #0f7d00 !important }
+.mile-b-02 { background-color: #dd0000 !important }
+.mile-b-03 { background-color: #0039a2 !important }
+.mile-b-04 { background-color: #dd9200 !important }
+.mile-b-05 { background-color: #dd0000 !important }
+
+.mile-btn-01 {
+  background: rgba(7, 170, 89, 0.05) !important;
+  box-shadow: 0px 0px 4px 0px rgba(7, 170, 89, 0.8) !important;
+}
+
+.card-detail.card-badge::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2rem;
+  border-radius: 1.2rem 1.2rem 0 0;
+}
+
+.card-section-toggle.card-badge {
+  border-top: 4px solid;
+  margin-top: -1px
+}
+
+.card-b-01 {
+  .card-detail.card-badge::before {background: linear-gradient(180deg, #c0c0c0, #b6b6b6)}
+  .card-section-toggle.card-badge { border-top-color: #d9d9d9 }
+}
+.card-b-02 {
+  .card-detail.card-badge::before {background: linear-gradient(180deg, #0f7d00, #0d6d00)}
+  .card-section-toggle.card-badge { border-top-color: #0f7d00 }
+}
+.card-b-03 {
+  .card-detail.card-badge::before {background: linear-gradient(180deg, #dd0000, #ca0000)}
+  .card-section-toggle.card-badge { border-top-color: #dd0000 }
+}
+
+.departures-legend-list .legend {
+  &.card-b-01 { background-color: #d9d9d9 }
+  &.card-b-02 { background-color: #0f7d00 }
+  &.card-b-03 { background-color: #dd0000 }
 }

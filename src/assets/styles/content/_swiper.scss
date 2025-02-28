@@ -1,11 +1,18 @@
 // Swiper
 .portal-swiper-wrapper {
   position: relative;
+  flex-grow: 1;
+  max-height: 38rem;
+  min-height: 32rem;
+
+  .portal-swiper {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+  }
 }
 
 .portal-swiper {
-  height: 32rem;
-
   &.swiper-3d {
     perspective: unset;
   }
@@ -103,7 +110,7 @@
 
   .ico-root.bookmark {
     position: absolute;
-    top: 50%;
+    top: 2rem;
     right: 0;
     width: 2rem;
     height: 2rem;
@@ -112,36 +119,89 @@
 }
 
 .portal-slide-acdm {
-  background: var(--primary) url(/src/assets/images/main/img_swiper_acdm.png) no-repeat right bottom / 20.1rem;
+  background: var(--primary) url(/src/assets/images/main/img_swiper_acdm.png) no-repeat right -1rem bottom -1rem / 20.1rem;
   .slide-link {
     color: #0aa1b7;
   }
 }
 
 .portal-slide-rs {
-  background: #ffc68f url(/src/assets/images/main/img_swiper_rs.png) no-repeat right 10% bottom 16% / 12rem;
+  background: #ffc68f url(/src/assets/images/main/img_swiper_rs.png) no-repeat right -1rem bottom -1rem / 20.1rem;
   .slide-link {
     color: #dc9f65;
   }
 }
 
 .portal-slide-fp {
-  background: #82adff url(/src/assets/images/main/img_swiper_fp.png) no-repeat right bottom / 20.1rem;
+  background: #82adff url(/src/assets/images/main/img_swiper_fp.png) no-repeat right -1rem bottom -1rem / 20.1rem;
   .slide-link {
     color: #6a90d6;
   }
 }
 
 .portal-slide-ac {
-  background: #ade7cb;
+  background: #C2AFFD url(/src/assets/images/main/img_swiper_ac.png) no-repeat right -1rem bottom -1rem / 20.1rem;
   .slide-link {
-    color: #9fddbf;
+    color: #A385FF;
   }
 }
 
 .portal-slide-ca {
-  background: #b6a8a1;
+  background: #74EDD0 url(/src/assets/images/main/img_swiper_ca.png) no-repeat right -1rem bottom -1rem / 20.1rem;
   .slide-link {
-    color: #b6a8a1;
+    color: #1BB792;
+  }
+}
+
+// time picker
+.timepk-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  &.hourpk-group { gap: 2rem }
+}
+
+.timepk-swiper-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.timepk-swiper {
+  width: 3rem;
+  height: 9em;
+  margin: 0 !important;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    height: 3em;
+    border-top: 1px solid #D8D8D8;
+    border-bottom: 1px solid #D8D8D8
+  }
+
+  .swiper-slide {
+    .value {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #D9D9D9;
+      text-align: center;
+      transition: color .3s, font-size .3s;
+    }
+  }
+
+  .swiper-slide-active {
+    .value {
+      color: #333;
+      font-size: 1.8rem
+    }
   }
 }

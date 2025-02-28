@@ -1,12 +1,7 @@
 .search-calendar {
   display: flex;
   align-items: center;
-  gap: 0.3rem;
-
-  .form-textfield {
-    padding-left: 3.4rem;
-    background: url(/src/assets/images/icon/ico_calendar-s.svg) no-repeat 1.1rem center / 1.4rem;
-  }
+  gap: 0.3rem !important;
 }
 
 .datepk-header {
@@ -28,6 +23,16 @@
 
     &.prev { left: .5rem }
     &.next { right: .5rem }
+  }
+}
+
+.form-datepk {
+  padding-left: 3.4rem;
+  background: #fff url(/src/assets/images/icon/ico_calendar-s.svg) no-repeat 1.1rem center / 1.4rem;
+
+  &:read-only {
+    background-color: #fff !important;
+    color: inherit !important;
   }
 }
 

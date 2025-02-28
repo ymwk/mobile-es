@@ -12,7 +12,7 @@ export const OtpModal: React.FC<props> = (props) => {
   const { isOpen, onClose } = props;
 
   return (
-    <Modal id={'privacy-modal'} isOpen={isOpen} onClose={onClose} title={'OTP 확인'}>
+    <Modal id={'modal'} isOpen={isOpen} onClose={onClose} title={'OTP 확인'}>
       <>
         <form method="post">
           <ul className="form-input-list">

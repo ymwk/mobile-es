@@ -2,7 +2,27 @@ import React from 'react';
 
 interface IconButtonProps {
   type?: 'button' | 'submit' | 'reset';
-  icon: 'close' | 'back' | 'bell' | 'hamburger' | 'refresh' | 'bookmark' | 'prev' | 'next' | 'lt' | 'gt' | 'user' | 'set' | 'out';
+  icon:
+    | 'close'
+    | 'back'
+    | 'bell'
+    | 'hamburger'
+    | 'refresh'
+    | 'bookmark'
+    | 'prev'
+    | 'next'
+    | 'lt'
+    | 'gt'
+    | 'dt'
+    | 'ut'
+    | 'user'
+    | 'set'
+    | 'out'
+    | 'help'
+    | 'history'
+    | 'pdf'
+    | 'home'
+    | 'search';
   label: string;
   className?: string;
   disabled?: boolean;

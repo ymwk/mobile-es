@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 interface TabsProps {
-  type?: 'login' | 'main' | 'cdm'
+  type?: 'login' | 'main' | 'cdm' | 'modal' | 'cdm-sm' | 'cdm-ttot';
   // children?: React.ReactNode
-  children?: any
+  children?: any;
   onTabChange?: (tabLabel: string) => void;
 }
 
@@ -26,23 +26,24 @@ const Tabs: React.FC<TabsProps> = (props) => {
     <div className={`tabs-root ${type}`}>
       {/*tabButton*/}
       <div className="tabs-btn-wrap">
-      {children &&
-        React.Children.toArray(children).map((child) => (
-          <button
+        {children &&
+          React.Children.toArray(children).map((child) => (
+            <button
               className={`tabs-btn ${activeTab === (child as React.ReactElement).props.label ? 'active' : ''}`}
               key={(child as React.ReactElement).props.label}
               onClick={() => handleTabClick((child as React.ReactElement).props.label)}
-          >
-            {(child as React.ReactElement).props.label}
-          </button>
-        ))}
+              disabled={(child as React.ReactElement).props.disabled}
+            >
+              {(child as React.ReactElement).props.label}
+            </button>
+          ))}
       </div>
 
       {/*tabContent*/}
       {children &&
-				React.Children.toArray(children).map((child) =>
-					(child as React.ReactElement).props.label === activeTab ? (child as React.ReactElement).props.children : null
-      )}
+        React.Children.toArray(children).map((child) =>
+          (child as React.ReactElement).props.label === activeTab ? (child as React.ReactElement).props.children : null
+        )}
     </div>
   );
 };

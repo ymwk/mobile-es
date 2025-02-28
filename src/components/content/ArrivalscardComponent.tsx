@@ -1,75 +1,32 @@
-import React, { useState } from 'react';
-import { useModal } from '@hooks/useModal';
-import { Alert } from '@components/modal';
-import { IconButton } from '@components/button';
+import React from 'react';
+import { BookmarkAlertOpen, LangAlertOpen } from '@components/content/ModalopenComponent';
 import logo_default from '@assets/images/logo/logo_incheon.svg';
 
 interface ArrivalscardProps {
   company: string;
   logo?: any;
   extend?: boolean;
+  isBookmark?: boolean;
+  className?: string;
 }
 
 const Arrivalscard: React.FC<ArrivalscardProps> = (props) => {
-  const { company, logo, extend, ...other } = props;
-
-  const BookmarkAlertOpen = () => {
-    const { isOpen, openModal, closeModal } = useModal();
-    const [isMark, setIsMark] = useState(false);
-
-    const toggleHandler = () => {
-      if (isMark) {
-        setIsMark(false);
-      } else {
-        setIsMark(true);
-        openModal();
-      }
-    };
-
-    const cancelHandler = () => {
-      setIsMark(false);
-      closeModal();
-    };
-
-    return (
-      <>
-        <IconButton icon="bookmark" label="즐겨찾기" className={isMark ? 'active' : ''} onClick={toggleHandler} />
-
-        <Alert isOpen={isOpen} onClose={closeModal} onCancel={cancelHandler} onConfirm={closeModal}>
-          <p>즐겨찾기에 추가되었습니다.</p>
-        </Alert>
-      </>
-    );
-  };
-
-  const LangAlertOpen = () => {
-    const { isOpen, openModal, closeModal } = useModal();
-
-    return (
-      <>
-        <button type="button" onClick={openModal}></button>
-
-        <Alert isOpen={isOpen} onClose={closeModal} type={'confirm'}>
-          <p>시용언어를 선택하지 않으시면<br/>한국어로 제공됩니다.</p>
-        </Alert>
-      </>
-    );
-  };
+  const { company, logo, extend, className, isBookmark, ...other } = props;
 
   return (
     <>
-      <div className="Arrivalscard-root" {...other}>
+      <div className={`arrivalscard-root ${className ? className : ''}`} {...other}>
         <div className="card-detail">
           <div className="card-logo">
             <img src={logo ? logo : logo_default} alt={company} />
           </div>
           <div className="card-info">
-            <em className="name">KE011</em>
-            <span className="line1">SIBT 12:10</span>
-            <span className="line2">CDG, B748, 230, Dep</span>
+            <em className="flt">KE011</em>
+            <span className="info">SIBT 12:10</span>
+            <span>CDG, B748, 230, Dep</span>
           </div>
           <div className="card-option">
-            <BookmarkAlertOpen/>
+            <BookmarkAlertOpen isBookmark={isBookmark} />
             <span className="msg">
               64분 지연
               <br />
@@ -78,50 +35,50 @@ const Arrivalscard: React.FC<ArrivalscardProps> = (props) => {
           </div>
         </div>
 
-        <ul className="card-timeline">
+        <ul className="card-schedule">
           <li>
             <span>ELDT</span>
-            <em className="num">11:50</em>
+            <em className="time">11:50</em>
           </li>
           <li>
             <span>ALDT</span>
-            <em className="num">12:00</em>
+            <em className="time">12:00</em>
           </li>
           <li>
             <span>EIBT</span>
-            <em className="num">12:10</em>
+            <em className="time">12:10</em>
           </li>
           <li>
             <span>ELDT</span>
-            <em className="num">12:10</em>
+            <em className="time">12:10</em>
           </li>
         </ul>
 
         {extend && (
           <>
             <div className="card-section2">
-              <div className="card-section">
+              <div className="title-bar">
                 <span className="title">TIMES</span>
               </div>
 
-              <ul className="card-timeline">
+              <ul className="card-schedule">
                 <li>
                   <span>TIMES</span>
-                  <em className="num">11:50</em>
+                  <em className="time">11:50</em>
                 </li>
                 <li>
                   <span>ARIT</span>
-                  <em className="num">--:--</em>
+                  <em className="time">--:--</em>
                 </li>
               </ul>
             </div>
 
             <div className="card-section3">
-              <div className="card-section">
+              <div className="title-bar">
                 <span className="title">RESOURCES</span>
               </div>
 
-              <ul className="card-timeline">
+              <ul className="card-schedule">
                 <li>
                   <span>GATE</span>
                   <em className="num">230</em>
@@ -140,8 +97,7 @@ const Arrivalscard: React.FC<ArrivalscardProps> = (props) => {
         )}
       </div>
 
-      <LangAlertOpen
-      />
+      <LangAlertOpen />
     </>
   );
 };

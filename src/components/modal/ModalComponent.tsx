@@ -3,16 +3,17 @@ import ModalPortal from './ModalPortal';
 import { IconButton } from '@components/button';
 
 interface ModalProps {
-	id?: string;
-	isOpen: boolean;
-	onClose: () => void;
-	title?: string;
-	children: React.ReactNode;
-	fullSize?: boolean
+  id?: string;
+  isOpen: boolean;
+  onClose: () => void;
+  title?: string;
+  header?: React.ReactNode;
+  children: React.ReactNode;
+  fullSize?: boolean;
 }
 
 const Modal: React.FC<ModalProps> = (props) => {
-	const { id, isOpen, onClose, title, children, fullSize=false } = props;
+	const { id, isOpen, onClose, title, header, children, fullSize=false } = props;
 
 	return (
     <>
@@ -22,12 +23,12 @@ const Modal: React.FC<ModalProps> = (props) => {
             <div className="modal-backdrop" onClick={onClose} />
 
             <div className="modal-panel">
-              {title && (
-                <div className="modal-header">
-                  <h2 className="modal-title">{title}</h2>
-                  <IconButton icon="close" label="Close" onClick={onClose} />
-                </div>
-              )}
+              <div className="modal-header">
+                <IconButton icon="close" label="Close" onClick={onClose} />
+                {title && <h2 className="modal-title">{title}</h2>}
+
+                {header && header}
+              </div>
 
               <div className="modal-body">{children}</div>
             </div>

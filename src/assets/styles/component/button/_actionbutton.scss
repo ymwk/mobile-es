@@ -22,6 +22,7 @@
 
   &:not(:first-of-type) { border-left: 1px solid #d8d8d8 }
   &.confirm { color: var(--primary) }
+  &.delete { color: var(--error) }
 }
 
 .button-action {

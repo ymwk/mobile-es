@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from '@components/layout';
-import { ActionButton } from '@components/button';
 import { Tabs, TabContent } from '@components/tabs';
 import { Textfield } from '@components/input';
 
@@ -54,11 +53,11 @@ const NoticeresultPage: React.FC = () => {
 
         <Tabs>
           <TabContent label="전체">
-            <main className="search-main">
-              <div className="search-box">
-                <Textfield placeholder="제목 또는 내용을 입력해주세요" value="ATFM" className="form-search" />
-              </div>
-              <div className="search-result">
+            <div className="search-root">
+              <Textfield placeholder="제목 또는 내용을 입력해주세요" value="ATFM" className="form-search" />
+            </div>
+            <main className="portal-main search-main">
+              <div className="portal-cont">
                 <div className="search-result-top">
                   <span>
                     <em>"ATFM"</em>에 대한 검색결과
@@ -90,14 +89,14 @@ const NoticeresultPage: React.FC = () => {
             </main>
           </TabContent>
           <TabContent label="A-CDM">
-            <main className="search-main">
-              <div className="search-box">
-                <Textfield placeholder="제목 또는 내용을 입력해주세요" value="ATFMXX" className="form-search" />
-              </div>
-              <div className="search-result">
+            <div className="search-root">
+              <Textfield placeholder="제목 또는 내용을 입력해주세요" value="ATFMXX" className="form-search" />
+            </div>
+            <main className="portal-main search-main">
+              <div className="portal-cont">
                 <div className="notice-list">
                   <div className="notice-item noresult">
-                    <div className="notice-result">
+                    <div className="nodata-item">
                       <i className="ico-root nodata" />
                       <p className="title">"ATFMXX"에 대한 내역이 없습니다.</p>
                       <p>키워드를 변경한 후 다시 검색하세요.</p>
@@ -108,14 +107,14 @@ const NoticeresultPage: React.FC = () => {
             </main>
           </TabContent>
           <TabContent label="AC">
-            <main className="search-main">
-              <div className="search-box">
-                <Textfield placeholder="제목 또는 내용을 입력해주세요" value="뷁" className="form-search" />
-              </div>
-              <div className="search-result">
+            <div className="search-root">
+              <Textfield placeholder="제목 또는 내용을 입력해주세요" value="뷁" className="form-search" />
+            </div>
+            <main className="portal-main search-main">
+              <div className="portal-cont">
                 <div className="notice-list">
                   <div className="notice-item noresult">
-                    <div className="notice-result">
+                    <div className="nodata-item">
                       <i className="ico-root nodata" />
                       <p className="title">해당 내역이 없습니다.</p>
                       <p>데이터를 변경한 후 다시 검색하세요.</p>

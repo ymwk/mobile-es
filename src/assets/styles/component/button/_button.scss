@@ -3,6 +3,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
   min-width: 8rem;
   height: var(--form-h);
   padding: 0 2.4rem;
@@ -28,6 +29,7 @@
   }
 
   &.small {
+    min-width: unset;
     height: 3.1rem;
     padding: 0 1.8rem;
     border-radius: 0.3rem;
@@ -36,10 +38,37 @@
     font-size: 1.4rem;
   }
 
+  &.common {
+    height: 3.1rem;
+    padding: 0 1.8rem;
+    border-radius: 0.3rem;
+  }
+
   &.icon {
     width: var(--form-h);
     min-width: var(--form-h);
     padding: 0;
+  }
+
+  &.outlined {
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 0px #BBBBBB;
+
+    &.s-sm {
+      min-width: unset;
+      padding: 0 1rem;
+      height: 2.6rem;
+      border-radius: 0.4rem;
+      font-size: 1.3rem;
+      font-weight: 500;
+      line-height: 0.5
+    }
+
+    .ico-root {
+      width: 1.6rem;
+      height: 1.6rem;
+      background-size: contain;
+    }
   }
 }
 
@@ -58,5 +87,27 @@
     margin: auto;
     width: auto;
     height: auto;
+  }
+
+  &.small {
+    .close { font-size: 3rem }
+  }
+}
+
+.button-switch {
+  gap: 1rem;
+  width: 10rem;
+  height: 5.4rem;
+  padding: 0;
+  color: #000;
+  font-size: 2rem;
+
+  &:not(.confirm) {
+    background-color: #d9d9d9;
+  }
+
+  .ico-root {
+    width: 1.8rem;
+    height: 1.8rem
   }
 }

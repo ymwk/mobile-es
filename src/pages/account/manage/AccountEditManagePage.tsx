@@ -1,6 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'
-import { Header } from '@components/layout'
+import { useNavigate } from 'react-router-dom';
+import { Header } from '@components/layout';
 import { ActionButton } from '@components/button';
 import { Textfield, Checkbox, Switch } from '@components/input';
 import { useModal } from '@hooks/useModal';
@@ -8,7 +8,7 @@ import { Alert } from '@components/modal';
 import { ReturnModal } from '@pages/modal/ReturnModal';
 
 const AccountEditManagePage: React.FC = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const ConfirmAlertOpen = () => {
     const { isOpen, openModal, closeModal } = useModal();
@@ -17,7 +17,7 @@ const AccountEditManagePage: React.FC = () => {
       <>
         <ActionButton styleType="confirm" label="승인" onClick={openModal} />
 
-        <Alert isOpen={isOpen} onClose={closeModal} type={'confirm'}>
+        <Alert isOpen={isOpen} onClose={closeModal} onConfirm={closeModal} type={'confirm'}>
           <p>승인하시겠습니까?</p>
         </Alert>
       </>
@@ -71,7 +71,7 @@ const AccountEditManagePage: React.FC = () => {
               <li>
                 <div className="textfield-root">
                   <label>
-                    <span className="label">핸드폰 번호</span>
+                    <span className="label">휴대폰 번호</span>
                     <Textfield name="" value="010-1234-5678" readOnly />
                   </label>
                 </div>

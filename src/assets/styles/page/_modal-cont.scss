@@ -1,18 +1,92 @@
-.timeset-group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  font-size: 1.5rem; 
-
-  .select-root {
-    min-width: 10rem
-  }
-}
-
 .refreshset-group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.2rem;
-  font-size: 1.3rem
+  font-size: 1.3rem;
+
+  .label { margin: 6px }
+}
+
+.modal-req {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 4rem 0 3rem;
+  font-size: 1.8rem;
+  text-align: center;
+  word-break: keep-all;
+  line-height: 1.4;
+
+  .noti {
+    font-size: 1.3rem;
+    color: #979797;
+  }
+}
+
+.req-switch {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 4rem;
+  font-size: 1.3rem;
+  text-align: center;
+
+  .req-btns {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+.modal-cols {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: var(--vpd) 0;
+
+  .box-msg {
+    min-height: 7rem;
+  }
+
+  &.portal-cont {
+    gap: 1rem
+  }
+}
+
+.pop-title {
+  margin-bottom: 0.3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.pop-finger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.tobt-group {
+  .select-root {
+    min-width: 8rem;
+  }
+
+  .msg {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+}
+
+.timepk-wrap {
+  display: flex;
+  gap: 0.4rem;
+  position: relative;
+
+  .timepk-btn {
+    position: absolute;
+    inset: 0;
+  }
 }

@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
 
 interface TabContentProps {
-	label: string;
-	children?: React.ReactNode;
+  label: string;
+  children?: React.ReactNode;
+  disabled?: boolean
 }
 
 const TabContent: React.FC<TabContentProps> = ({ children }) => {

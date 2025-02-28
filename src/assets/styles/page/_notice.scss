@@ -11,6 +11,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   gap: .6rem;
   padding: 1.6rem 1.5rem 1.6rem 6.5rem;
   border: 1px solid #F0F0F0;
@@ -21,8 +22,12 @@
   font-size: 1.2rem;
 
   .title {
+    display: flex;
+    flex-direction: column;
     font-size: 1.5rem;
     word-break: keep-all;
+
+    em { font-weight: 600 }
 
     .result {
       color: var(--primary-t)
@@ -46,6 +51,14 @@
     &.new {
       background-image: url(/src/assets/images/pic/pic_notice_new.png);
     }
+
+    &.appoint {
+      background-image: url(/src/assets/images/pic/pic_notice_appoint.png);
+    }
+
+    &.edit {
+      background-image: url(/src/assets/images/pic/pic_notice_edit.png);
+    }
   }
   
   &.noresult {
@@ -56,29 +69,12 @@
     justify-content: center;
     align-items: center;
     padding: 0;
-    font-size: 1.4rem;
-    color: #979797;
-
-    .title {
-      margin-top: 0.5rem;
-      color: #222;
-      font-size: 1.6rem
-    }
-  }
-  
-  .notice-result {
-    position: absolute;
-    top: 10%;
-    bottom: 25%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.4rem;
   }
 }
 
 .notice-header {
+  display: flex;
+  flex-direction: column;
   padding: 2rem 0;
   border-bottom: 1px solid #f0f0f0;
   word-break: keep-all;
@@ -86,6 +82,8 @@
   .title {
     font-size: 1.6rem;
     line-height: 1.3;
+    font-weight: 700;
+    line-height: 1.5
   }
 
   .info {
@@ -94,6 +92,11 @@
     margin-top: 1rem;
     font-size: 1.2rem;
     color: #979797;
+  }
+
+  .ico-label {
+    margin-top: -1.6rem;
+    margin-bottom: 0.6rem
   }
 }
 
@@ -137,26 +140,24 @@
   a {
     width: 100%;
     text-decoration: underline;
-  }
-}
 
-.notice-nav {
-  
+    .ico-root { margin-right: 4px }
+  }
 }
 
 .notice-nav-item {
   display: flex;
   align-items: center;
   gap: 1rem;
-  height: 5rem;
+  min-height: 5rem;
   padding: 1rem var(--spd);
   border-top: 1px solid #F0F0F0;
   font-size: 1.3rem;
   line-height: 1.3;
-  white-space: nowrap;
 
   small {
-    color: #999
+    color: #999;
+    white-space: nowrap;
   }
 
   .title {

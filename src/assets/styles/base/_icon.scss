@@ -42,7 +42,7 @@
     &::after {
       content: '×';
       display: block;
-      transform: translateY(-0.05em);
+      line-height: 3rem
     }
   }
 
@@ -51,19 +51,6 @@
     height: 7.4rem;
     margin-left: 1rem;
     background: url(/src/assets/images/pic/pic_nodata.png) no-repeat center center / contain;
-  }
-
-  &.bookmark {
-    background: url(/src/assets/images/icon/ico_bookmark.svg) no-repeat center center / 2rem;
-  }
-
-  &.back {
-    transform: rotate(90deg);
-    background: url(/src/assets/images/icon/ico_arr.svg) no-repeat center center / 2rem
-  }
-
-  &.refresh {
-    background: url(/src/assets/images/icon/ico_refresh.svg) no-repeat center center / 2rem;
   }
 
   &.download {
@@ -82,6 +69,19 @@
     }
   }
 
+  &.bookmark {
+    background: url(/src/assets/images/icon/ico_bookmark.svg) no-repeat center center / 2rem;
+  }
+
+  &.back {
+    transform: rotate(90deg);
+    background: url(/src/assets/images/icon/ico_arr.svg) no-repeat center center / 2rem
+  }
+
+  &.refresh {
+    background: url(/src/assets/images/icon/ico_refresh.svg) no-repeat center center / 2rem;
+  }
+
   &.user {
     background: url(/src/assets/images/icon/ico_user.svg) no-repeat center center / 2rem;
   }
@@ -96,6 +96,41 @@
 
   &.out {
     background: url(/src/assets/images/icon/ico_out.svg) no-repeat center center / 1.8rem;
+  }
+
+  &.help {
+    background: url(/src/assets/images/icon/ico_help.svg) no-repeat center center / 2.8rem
+  }
+
+  &.snow {
+    background: url(/src/assets/images/icon/ico_snow.svg) no-repeat center center / 2.1rem
+  }
+
+  &.history {
+    background: url(/src/assets/images/icon/ico_history.svg) no-repeat center center / 2.3rem
+  }
+
+  &.power {
+    background: url(/src/assets/images/icon/ico_power.svg) no-repeat center center / 1.8rem
+  }
+
+  &.home {
+    background: url(/src/assets/images/icon/ico_home.svg) no-repeat center center / 2.1rem
+  }
+
+  &.search {
+    background: url(/src/assets/images/icon/ico_search.svg) no-repeat center center / 1.5rem
+  }
+
+  &.pdf {
+    height: 4rem;
+    background: url(/src/assets/images/pic/pic_pdf.png) no-repeat center center / 3.4rem
+  }
+
+  &.finger {
+    width: 4.8rem;
+    height: 4.8rem;
+    background: url(/src/assets/images/pic/pic_finger.png) no-repeat center center / contain
   }
 
   &.hamburger {
@@ -161,8 +196,8 @@
     &::before {
       content: '';
       position: absolute;
-      top: 50%;
-      left: 50%;
+      top: calc(50% - 1px);
+      left: calc(50% + 1px);
       width: 1rem;
       height: 1rem;
       display: block;
@@ -205,4 +240,54 @@
     box-sizing: content-box;
     visibility: hidden;
   } 
+}
+
+.ico-weather {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.6rem;
+  height: 3.6rem;
+
+  img {
+    max-width: 100%;
+    object-fit: contain;
+    margin: auto;
+  }
+
+  .ico-lightning {
+    width: 2.8rem
+  }
+}
+
+
+.ico-label {
+  display: flex;
+  margin-right: auto;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  background-color: #50C8D9;
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1;
+
+  &.c-err {
+    color: #fff !important;
+    background-color: var(--error);
+  }
+}
+
+.badge-root {
+  display: inline-block;
+  min-width: 2.6rem;
+  height: 2rem;
+  line-height: 2rem;
+  border-radius: 2px;
+  background-color: #53BCF8;
+  font-size: 1.4rem;
+  color: #fff;
+  text-align: center;
+
+  &.c-b02 { background-color: #4ECE2F }
+  &.c-b03 { background-color: #FF2C8A }
 }

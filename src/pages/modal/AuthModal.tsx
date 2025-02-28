@@ -2,17 +2,30 @@ import React from 'react';
 import { Modal, ModalAction } from '@components/modal';
 import { Button, ModalButton } from '@components/button';
 import { Textfield } from '@components/input';
+import { useModal } from '@hooks/useModal';
+import { PwchangeModal } from '@pages/modal/PwchangeModal';
 
 interface props {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export const AutoModal: React.FC<props> = (props) => {
+const PwchangeModalOpen = () => {
+  const { isOpen, openModal, closeModal } = useModal();
+
+  return (
+    <>
+      <ModalButton type="button" styleType="confirm" label="확인" onClick={openModal} />
+      <PwchangeModal isOpen={isOpen} onClose={closeModal} />
+    </>
+  );
+};
+
+export const AuthModal: React.FC<props> = (props) => {
   const { isOpen, onClose } = props;
 
   return (
-    <Modal id={'privacy-modal'} isOpen={isOpen} onClose={onClose} title={'본인인증'}>
+    <Modal id={'modal'} isOpen={isOpen} onClose={onClose} title={'본인인증'}>
       <>
         <form method="post">
           <ul className="form-input-list">
@@ -27,7 +40,7 @@ export const AutoModal: React.FC<props> = (props) => {
             <li>
               <div className="textfield-root">
                 <label>
-                  <span className="label">휴대폰번호 </span>
+                  <span className="label">휴대폰 번호 </span>
                   <Textfield name="" placeholder="- 없이 숫자만 입력하세요." />
                 </label>
 
@@ -61,7 +74,7 @@ export const AutoModal: React.FC<props> = (props) => {
           </ul>
           <ModalAction>
             <ModalButton label="취소" onClick={onClose} />
-            <ModalButton type="submit" styleType="confirm" label="확인" onClick={onClose} />
+            <PwchangeModalOpen />
           </ModalAction>
         </form>
       </>

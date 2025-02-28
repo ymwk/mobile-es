@@ -74,7 +74,7 @@ input.form-textfield {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-  padding: 2rem 0 3.3rem;
+  padding: var(--vpd) 0 3.3rem;
 
   .select-root {
     width: 100%;
@@ -163,4 +163,11 @@ input.form-textfield {
 
     .forms-row { flex-grow: 1 }
   }
+}
+
+.textfield-table-search {
+  width: 10rem;
+  height: 2.8rem;
+  color: var(--primary-t);
+  text-align: center;
 }

@@ -1,10 +1,7 @@
 import React from 'react';
-import { Header } from '@components/layout'
+import { Header } from '@components/layout';
 import { ActionButton } from '@components/button';
-import {
-  SearchGroup
-  
- } from '@components/content/SearchGroupComponent';
+import { SearchGroup } from '@components/content/SearchGroupComponent';
 const AccountUserPage: React.FC = () => {
   return (
     <>
@@ -14,7 +11,7 @@ const AccountUserPage: React.FC = () => {
         <SearchGroup />
 
         <main className="portal-main">
-          <div className="search-result">
+          <div className="portal-cont">
             <div className="search-result-top">
               <span className="date">2024.12.17 ~ 2024.12.31</span>
               <span className="count">

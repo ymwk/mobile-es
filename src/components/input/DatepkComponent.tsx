@@ -1,5 +1,6 @@
 import React from 'react';
 import { Dayjs } from 'dayjs';
+import dayjs from 'dayjs';
 import { MobileDatePicker, MobileDatePickerProps } from '@mui/x-date-pickers/MobileDatePicker';
 import { PickersCalendarHeaderProps } from '@mui/x-date-pickers/PickersCalendarHeader';
 import { IconButton } from '@components/button';
@@ -24,23 +25,27 @@ interface DateInputProps {
   setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function DateInput(props: DateInputProps) {
-  const { setOpen, label } = props;
-
-  return (
-    <input
-      type="text"
-      value={label ? label : '날짜선택'}
-      className="form-textfield"
-      onClick={() => setOpen?.((prev) => !prev)}
-      readOnly
-    />
-  );
-}
-
-function Datepk(props: Omit<MobileDatePickerProps<Dayjs>, 'open' | 'onOpen' | 'onClose' | 'onChange'>) {
+function Datepk(
+  props: Omit<MobileDatePickerProps<Dayjs>, 'open' | 'onOpen' | 'onClose' | 'onChange'>
+) {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState<Dayjs | null>(null);
+  const { format } = props;
+  const today = dayjs(new Date());
+
+  function DateInput(props: DateInputProps) {
+    const { setOpen, label } = props;
+
+    return (
+      <input
+        type="text"
+        value={label ? label : today.format('YYYY-MM-DD')}
+        className="form-textfield form-datepk"
+        onClick={() => setOpen?.((prev) => !prev)}
+        readOnly
+      />
+    );
+  }
 
   return (
     <MobileDatePicker
@@ -56,9 +61,10 @@ function Datepk(props: Omit<MobileDatePickerProps<Dayjs>, 'open' | 'onOpen' | 'o
         actionBar: { actions: [] },
       }}
       open={open}
+      defaultValue={today}
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
-      label={value == null ? null : value.format('MM-DD')}
+      label={value == null ? null : format ? value.format(format) : value.format('YYYY-MM-DD')}
       onChange={(newValue) => {
         setValue(newValue);
         setOpen(false);

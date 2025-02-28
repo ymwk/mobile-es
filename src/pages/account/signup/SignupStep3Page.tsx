@@ -40,7 +40,7 @@ const SignupStep3Page: React.FC = () => {
                   <li>
                     <div className="textfield-root">
                       <label>
-                        <span className="label">핸드폰 번호</span>
+                        <span className="label">휴대폰 번호</span>
                         <div className="forms-row">
                           <div className="select-root" style={{ width: 100 }}>
                             <select>

@@ -3,18 +3,7 @@ import { Textfield, Checkbox } from '@components/input';
 import { IconButton } from '@components/button';
 import { useModal } from '@hooks/useModal';
 import { RefreshModal } from '@pages/modal/RefreshModal';
-import { TimeSetModal } from '@pages/modal/TimeSetModal';
-
-const TimeSetModalOpen = () => {
-  const { isOpen, openModal, closeModal } = useModal();
-
-  return (
-    <>
-      <button type="button" onClick={openModal} />
-      <TimeSetModal isOpen={isOpen} onClose={closeModal} />
-    </>
-  );
-};
+import { HourpkModalOpen } from '@components/content/ModalopenComponent';
 
 const RefreshModalOpen = () => {
   const { isOpen, openModal, closeModal } = useModal();
@@ -32,7 +21,7 @@ const ArrovalsSearch: React.FC = () => {
   return (
     <>
       <form method="post">
-        <div className="search-root search-arrovals">
+        <div className="search-root">
           <div className="search-row">
             <div className="search-date">
               <div className="search-month">
@@ -44,11 +33,11 @@ const ArrovalsSearch: React.FC = () => {
                 <IconButton icon="next" label="다음" />
               </div>
             </div>
-            <div className="search-time">
-              <Textfield value="10~14" width={80} />
-              <TimeSetModalOpen />
+            <div className="timepk-wrap">
+              <Textfield value="10~14" width={80} readOnly />
+              <HourpkModalOpen />
             </div>
-            <div className="select-root">
+            <div className="select-root flex-grow">
               <select>
                 <option>전체</option>
                 <option>종료편 제외</option>
@@ -59,7 +48,7 @@ const ArrovalsSearch: React.FC = () => {
           </div>
           <div className="search-row">
             <Textfield placeholder="편명, 도착지를 입력하세요" className="form-search" />
-            <Checkbox name="" label="전체" onChange={() => {}} />
+            <Checkbox name="" label="전체" />
             <RefreshModalOpen />
           </div>
         </div>

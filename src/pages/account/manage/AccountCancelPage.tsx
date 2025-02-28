@@ -1,8 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'
-import { Header } from '@components/layout'
+import { useNavigate } from 'react-router-dom';
+import { Header } from '@components/layout';
 import { ActionButton } from '@components/button';
-import ImgAirplane from '@assets/images/login/img_airplane.png'
+import ImgAirplane from '@assets/images/pic/pic_airplane.png';
 
 const AccountCancelPage: React.FC = () => {
   const navigate = useNavigate();

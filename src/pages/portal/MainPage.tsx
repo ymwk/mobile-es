@@ -16,13 +16,13 @@ const MainPage: React.FC = () => {
   return (
     <>
       <div className="wrapper">
-        <Header main>
+        <Header main backspace={false}>
           <h1 className="header-portal-logo">
             <img src={logo} alt="인천공항 로고" />
             <span>모바일 ES</span>
           </h1>
         </Header>
-        <main className="portal-main">
+        <main className="portal-main index-main">
           <div className="portal-panel">
             <div className="portal-panel-title">
               <span className="title">Welcome</span>
@@ -45,7 +45,8 @@ const MainPage: React.FC = () => {
             <Swiper
               className="portal-swiper"
               modules={[Autoplay, EffectCards]}
-              // loop={true}
+              loop={true}
+              speed={400}
               autoplay={{
                 delay: 5000,
                 disableOnInteraction: false,
@@ -57,7 +58,7 @@ const MainPage: React.FC = () => {
                 perSlideRotate: 0,
                 rotate: false,
               }}
-              centeredSlides={true}
+              // centeredSlides={true}
             >
               <SwiperSlide className="portal-slide-acdm">
                 <div className="slide-cont">
@@ -78,6 +79,7 @@ const MainPage: React.FC = () => {
                   <span className="slide-title">
                     Flight <br />
                     Plan
+                    <i className="ico-root bookmark" />
                   </span>
                   <p>운항계획</p>
                   <Link to="/" className="slide-link">
@@ -87,27 +89,14 @@ const MainPage: React.FC = () => {
                 <div className="slide-thumb slide-title">FP</div>
               </SwiperSlide>
 
-              <SwiperSlide className="portal-slide-rs">
-                <div className="slide-cont">
-                  <span className="slide-title">
-                    Resource <br />
-                    Schedule
-                  </span>
-                  <p>자원배정</p>
-                  <Link to="/" className="slide-link">
-                    <span className="blind">바로가기</span>
-                  </Link>
-                </div>
-                <div className="slide-thumb slide-title">RS</div>
-              </SwiperSlide>
-
               <SwiperSlide className="portal-slide-ac">
                 <div className="slide-cont">
                   <span className="slide-title">
-                    Resource <br />
-                    Schedule
+                    Airside <br />
+                    Control
+                    <i className="ico-root bookmark" />
                   </span>
-                  <p>항공기 관제</p>
+                  <p>에어사이드 운영관리</p>
                   <Link to="/" className="slide-link">
                     <span className="blind">바로가기</span>
                   </Link>
@@ -118,31 +107,122 @@ const MainPage: React.FC = () => {
               <SwiperSlide className="portal-slide-ca">
                 <div className="slide-cont">
                   <span className="slide-title">
-                    Resource <br />
-                    Schedule
+                    Common <br />
+                    Admin
+                    <i className="ico-root bookmark" />
                   </span>
-                  <p>공통관리</p>
+                  <p>공동업무관리</p>
                   <Link to="/" className="slide-link">
                     <span className="blind">바로가기</span>
                   </Link>
                 </div>
                 <div className="slide-thumb slide-title">CA</div>
               </SwiperSlide>
+
+              <SwiperSlide className="portal-slide-rs">
+                <div className="slide-cont">
+                  <span className="slide-title">
+                    Resource <br />
+                    Schedule
+                    <i className="ico-root bookmark" />
+                  </span>
+                  <p>자원배정</p>
+                  <Link to="/" className="slide-link">
+                    <span className="blind">바로가기</span>
+                  </Link>
+                </div>
+                <div className="slide-thumb slide-title">RS</div>
+              </SwiperSlide>
+
+              {/* 슬라이드 갯수가 6개 이상이어야 loop가 동작하므로 copy하여 넣음 */}
+              <SwiperSlide className="portal-slide-acdm">
+                <div className="slide-cont">
+                  <span className="slide-title">
+                    A-CDM
+                    <i className="ico-root bookmark active" />
+                  </span>
+                  <p>협동운항관리시스템</p>
+                  <Link to="/" className="slide-link">
+                    <span className="blind">바로가기</span>
+                  </Link>
+                </div>
+                <div className="slide-thumb slide-title">AM</div>
+              </SwiperSlide>
+
+              <SwiperSlide className="portal-slide-fp">
+                <div className="slide-cont">
+                  <span className="slide-title">
+                    Flight <br />
+                    Plan
+                    <i className="ico-root bookmark" />
+                  </span>
+                  <p>운항계획</p>
+                  <Link to="/" className="slide-link">
+                    <span className="blind">바로가기</span>
+                  </Link>
+                </div>
+                <div className="slide-thumb slide-title">FP</div>
+              </SwiperSlide>
+
+              <SwiperSlide className="portal-slide-ac">
+                <div className="slide-cont">
+                  <span className="slide-title">
+                    Airside <br />
+                    Control
+                    <i className="ico-root bookmark" />
+                  </span>
+                  <p>에어사이드 운영관리</p>
+                  <Link to="/" className="slide-link">
+                    <span className="blind">바로가기</span>
+                  </Link>
+                </div>
+                <div className="slide-thumb slide-title">AC</div>
+              </SwiperSlide>
+
+              <SwiperSlide className="portal-slide-ca">
+                <div className="slide-cont">
+                  <span className="slide-title">
+                    Common <br />
+                    Admin
+                    <i className="ico-root bookmark" />
+                  </span>
+                  <p>공동업무관리</p>
+                  <Link to="/" className="slide-link">
+                    <span className="blind">바로가기</span>
+                  </Link>
+                </div>
+                <div className="slide-thumb slide-title">CA</div>
+              </SwiperSlide>
+
+              <SwiperSlide className="portal-slide-rs">
+                <div className="slide-cont">
+                  <span className="slide-title">
+                    Resource <br />
+                    Schedule
+                    <i className="ico-root bookmark" />
+                  </span>
+                  <p>자원배정</p>
+                  <Link to="/" className="slide-link">
+                    <span className="blind">바로가기</span>
+                  </Link>
+                </div>
+                <div className="slide-thumb slide-title">RS</div>
+              </SwiperSlide>
             </Swiper>
           </div>
 
           <section className="index-section">
             <Tabs type={'main'}>
-              <TabContent label="Notice">
+              <TabContent label="전체">
                 <Notice />
               </TabContent>
               <TabContent label="A-CDM">
                 <Notice />
               </TabContent>
-              <TabContent label="RS">
+              <TabContent label="AC">
                 <Notice />
               </TabContent>
-              <TabContent label="AC">
+              <TabContent label="RS">
                 <Notice />
               </TabContent>
             </Tabs>

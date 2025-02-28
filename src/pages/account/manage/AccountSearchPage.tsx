@@ -25,7 +25,7 @@ const AccountSearchPage: React.FC = () => {
               <li>
                 <div className="textfield-root">
                   <label>
-                    <span className="label">핸드폰 번호</span>
+                    <span className="label">휴대폰 번호</span>
                     <div className="forms-row">
                       <div className="select-root" style={{ width: 100 }}>
                         <select>
@@ -52,7 +52,9 @@ const AccountSearchPage: React.FC = () => {
               </tr>
               <tr>
                 <th>상태</th>
-                <td>계정신청</td>
+                <td>
+                  <span className="c-state">계정신청</span>
+                </td>
               </tr>
             </tbody>
           </table>

@@ -12,7 +12,7 @@ export const ReturnModal: React.FC<props> = (props) => {
   const { isOpen, onClose } = props;
 
   return (
-    <Modal id={'privacy-modal'} isOpen={isOpen} onClose={onClose} title={'반려사유'}>
+    <Modal id={'modal'} isOpen={isOpen} onClose={onClose} title={'반려사유'}>
       <>
         <form method="post">
           <ul className="form-input-list">

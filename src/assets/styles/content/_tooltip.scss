@@ -1,0 +1,30 @@
+.tooltip-root {
+  .MuiTooltip-tooltip {
+    position: relative;
+    padding: 1.6rem 2rem;
+    border-radius: 0.8rem;
+    border: 1px solid var(--primary);
+    background-color: #fff;
+    font-size: 1.4rem;
+    font-family: var(--pretandard);
+    color: var(--default);
+    font-weight: 500;
+  }
+  .tooltip-title {
+    padding-right: 3rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-t)
+  }
+
+  .button-icon {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.4rem;
+    
+    .ico-root {
+      font-size: 3rem;
+    }
+  }
+}

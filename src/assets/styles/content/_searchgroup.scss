@@ -1,19 +1,13 @@
 .search-root {
+  position: relative;
+  z-index: 1;
+  padding: var(--vpd) var(--spd);
+  background-color: #fff;  
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.05), 0 1px 0 0 rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 2.2rem var(--spd);
-  background-color: #fff;
   font-size: 1.5rem;
-  box-shadow: 0 6px 12px 0 #0000000d, 0 1px 0 0 #0000001a;
-
-  &.search-arrovals {
-    box-shadow: none;
-
-    .select-root {
-      flex-grow: 1;
-    }
-  }
 }
 
 .search-row {
@@ -24,9 +18,13 @@
   .label {
     white-space: nowrap;
   }
+
+  &.flex-grow {
+    gap: 0.5rem
+  }
 }
 
-.search-grow {
+.search-grow { 
   flex: 1;
 }
 
@@ -75,37 +73,38 @@
   }
 }
 
-.search-time {
+.timepk-wrap {
   position: relative;
+  display: flex;
+  gap: 0.4rem;
 
   input {
     padding: 0;
     text-align: center;
-  }
 
-  button {
-    position: absolute;
-    inset: 0;
+    &:read-only {
+      background-color: inherit;
+      color: inherit
+    }
   }
 }
 
 .search-btns {
   text-align: right;
-  margin: 1rem var(--spd);
+  padding: 1rem var(--spd) 0
 }
 
-// result
-.search-result {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem 0;
+.portal-cont > .search-btns:first-child { margin-top: -0.5rem }
+
+.search-result-btns {
+  text-align: right;
+  margin: -1rem 0 0.6rem
 }
 
 .search-result-top {
   display: flex;
-  height: 2.5rem;
-  margin-top: .5rem;
+  min-height: 1.8rem;
+  margin-bottom: .7rem;
   font-size: 1.5rem;
   line-height: 1.2;
   
@@ -151,26 +150,19 @@
   }
 }
 
-.search-main {
+.flt-search {
   position: relative;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--bg);
 
-  & + .portal-footer {
-    background-color: var(--bg);
+  .button-icon {
+    position: absolute;
+    inset: 0 auto 0 3px;
+    margin-top: auto;
+    margin-bottom: auto
   }
 
-  .search-result {
-    padding-left: var(--spd);
-    padding-right: var(--spd);
-  }
+  .form-textfield {
+    padding-left: 4rem;
 
-  .search-box {
-    @extend .search-result;
-    flex-grow: 0;
-    background-color: #fff;
-    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.05), 0 1px 0 0 rgba(0, 0, 0, 0.1);
+    &:read-only { background-color: inherit }
   }
 }

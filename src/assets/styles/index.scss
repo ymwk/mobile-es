@@ -28,9 +28,11 @@
 
 // content
 @use './content/swiper';
+@use './content/tooltip';
 @use './content/table';
 @use './content/searchgroup';
 @use './content/arrivalscard';
+@use './content/dnd';
 
 // page
 @use './page/index';
@@ -39,5 +41,4 @@
 @use './page/account';
 @use './page/terms';
 @use './page/modal-cont';
-@use './page/arrivals';
 @use './page/notice';

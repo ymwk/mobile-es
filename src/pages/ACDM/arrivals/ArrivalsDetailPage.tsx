@@ -9,8 +9,8 @@ const ArrivalsDetailPage: React.FC = () => {
       <div className="wrapper">
         <Header title="ARRIVALS" />
 
-        <main className="search-main">
-          <div className="search-result">
+        <main className="portal-main search-main">
+          <div className="portal-cont">
             <Arrivalscard company={'대한항공'} logo={logo_koreanair} extend />
           </div>
         </main>

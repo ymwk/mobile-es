@@ -27,10 +27,22 @@
     max-width: 320px;
     word-break: keep-all;
   }
+
+  .title-em {
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: #222
+  }
 }
 
 .account-complete-img {
-  width: 27.5vw;
-  max-width: 200px;
+  width: 10rem;
+  // max-width: 200px;
+  margin-bottom: 2vh
+}
+.account-fail-img {
+  width: 6.3rem;
+  margin-left: 1rem;
+  // max-width: 200px;
   margin-bottom: 2vh
 }
