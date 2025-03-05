@@ -84,7 +84,7 @@ const SignupPage: React.FC = () => {
             <span>모바일 ES</span>
           </h1>
         </header>
-        <main className="portal-main">
+        <main className="index-main">
           <div className="index-box index-login">
             <Tabs type={'login'}>
               <TabContent label="일반로그인">

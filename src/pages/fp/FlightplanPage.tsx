@@ -52,7 +52,7 @@ const FlightplanPage: React.FC = () => {
                   <tbody>
                     <tr
                       onClick={() => {
-                        navigate('/fp-detail');
+                        navigate('/fp-arrivals');
                       }}
                     >
                       <td>
@@ -66,7 +66,7 @@ const FlightplanPage: React.FC = () => {
                     </tr>
                     <tr
                       onClick={() => {
-                        navigate('/fp-detail');
+                        navigate('/fp-arrivals');
                       }}
                     >
                       <td>
@@ -80,7 +80,7 @@ const FlightplanPage: React.FC = () => {
                     </tr>
                     <tr
                       onClick={() => {
-                        navigate('/fp-detail');
+                        navigate('/fp-arrivals');
                       }}
                     >
                       <td>
@@ -115,7 +115,7 @@ const FlightplanPage: React.FC = () => {
                   <tbody>
                     <tr
                       onClick={() => {
-                        navigate('/fp-detail');
+                        navigate('/fp-arrivals');
                       }}
                     >
                       <td>
@@ -129,7 +129,7 @@ const FlightplanPage: React.FC = () => {
                     </tr>
                     <tr
                       onClick={() => {
-                        navigate('/fp-detail');
+                        navigate('/fp-arrivals');
                       }}
                     >
                       <td>
@@ -143,7 +143,7 @@ const FlightplanPage: React.FC = () => {
                     </tr>
                     <tr
                       onClick={() => {
-                        navigate('/fp-detail');
+                        navigate('/fp-arrivals');
                       }}
                     >
                       <td>
@@ -178,7 +178,7 @@ const FlightplanPage: React.FC = () => {
                   <tbody>
                     <tr
                       onClick={() => {
-                        navigate('/fp-detail2');
+                        navigate('/fp-departures');
                       }}
                     >
                       <td>
@@ -192,7 +192,7 @@ const FlightplanPage: React.FC = () => {
                     </tr>
                     <tr
                       onClick={() => {
-                        navigate('/fp-detail2');
+                        navigate('/fp-departures');
                       }}
                     >
                       <td>
@@ -206,7 +206,7 @@ const FlightplanPage: React.FC = () => {
                     </tr>
                     <tr
                       onClick={() => {
-                        navigate('/fp-detail2');
+                        navigate('/fp-departures');
                       }}
                     >
                       <td>

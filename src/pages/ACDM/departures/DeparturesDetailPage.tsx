@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Footer } from '@components/layout';
+import { Header } from '@components/layout';
 import Departurescarddetail from '@components/content/DeparturescarddetailComponent';
 import logo_koreanair from '@assets/images/logo/logo_koreanair.png';
 
@@ -22,7 +22,6 @@ const DeparturesDetailPage: React.FC = () => {
             />
           </div>
         </main>
-        <Footer />
       </div>
     </>
   );

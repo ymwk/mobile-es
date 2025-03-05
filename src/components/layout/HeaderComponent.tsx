@@ -1,34 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { useModal } from '@hooks/useModal';
 import { Alert } from '@components/modal';
-import { Button, IconButton } from '@components/button'
+import { Button, IconButton } from '@components/button';
 import { useNavigate } from 'react-router-dom';
 import { Sitemap } from './SitemapComponent';
 import { LoginselectModal } from '@pages/modal/LoginselectModal';
 
 interface HeaderProps {
-  title?: string
-  className?: string
-  backspace?: boolean
-  children?: React.ReactNode
-  main?: boolean
+  title?: string;
+  className?: string;
+  backspace?: boolean;
+  children?: React.ReactNode;
+  main?: boolean;
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
-  const {
-    title,
-    className,
-    backspace = true,
-    children,
-    main
-  } = props;
+  const { title, className, backspace = true, children, main } = props;
   const [isOpen, setisOpen] = useState(false);
 
   const navigate = useNavigate();
 
   const handleBackClick = () => {
-    navigate(-1)
-  }
+    navigate(-1);
+  };
 
   const handleHbgClick = () => {
     // if (!isOpen) {
@@ -44,7 +38,7 @@ const Header: React.FC<HeaderProps> = (props) => {
     // }
 
     setisOpen(!isOpen);
-  }
+  };
 
   const SignoutAlertOpen = () => {
     const { isOpen, openModal, closeModal } = useModal();
@@ -68,7 +62,7 @@ const Header: React.FC<HeaderProps> = (props) => {
 
   const LoginModalOpen = () => {
     const { isOpen, openModal, closeModal } = useModal();
-  
+
     return (
       <>
         <Button styleType="small" label="로그인방식" onClick={openModal} />
@@ -126,5 +120,5 @@ const Header: React.FC<HeaderProps> = (props) => {
       </nav>
     </>
   );
-}
-export {Header};
+};
+export { Header };

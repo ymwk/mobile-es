@@ -26,9 +26,8 @@ const ListPage: React.FC = () => {
               </td>
               <td>본인인증 Modal / 아이디찾기결과 Modal / 공지사항 Modal / 개인정보처리방침 Modal</td>
             </tr>
-
             <tr>
-              <th rowSpan={11}>Portal</th>
+              <th rowSpan={2}>Portal</th>
               <td>
                 <Link to="/portal" target="_blank">
                   Main
@@ -37,6 +36,15 @@ const ListPage: React.FC = () => {
               <td></td>
             </tr>
             <tr>
+              <td>
+                <Link to="/error" target="_blank">
+                  시스템점검
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <th rowSpan={10}>설정</th>
               <td>
                 <Link to="/setting" target="_blank">
                   설정
@@ -54,7 +62,7 @@ const ListPage: React.FC = () => {
             </tr>
             <tr>
               <td>
-                <Link to="/set-push" target="_blank">
+                <Link to="/set-login" target="_blank">
                   로그인 방식 설정
                 </Link>
               </td>
@@ -116,9 +124,8 @@ const ListPage: React.FC = () => {
               </td>
               <td></td>
             </tr>
-
             <tr>
-              <th rowSpan={4}>Signup</th>
+              <th rowSpan={4}>계정신청</th>
               <td>
                 <Link to="/signup" target="_blank">
                   개인정보수집
@@ -150,12 +157,67 @@ const ListPage: React.FC = () => {
               </td>
               <td></td>
             </tr>
+            {/* 공통관리 */}
             <tr>
-              <th rowSpan={9}>
-                Account
-                <br />
-                Manage
-              </th>
+              <th rowSpan={7}>공통관리</th>
+              <td>
+                <Link to="/guide" target="_blank">
+                  이용가이드
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/manual" target="_blank">
+                  매뉴얼
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/terms" target="_blank">
+                  이용약관
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/notify" target="_blank">
+                  알림
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/notify-empty" target="_blank">
+                  알림내용 없음
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/account-user" target="_blank">
+                  사용자관리
+                </Link>
+              </td>
+              <td>날짜 선택 Modal</td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/account-user-edit" target="_blank">
+                  사용자정보관리
+                </Link>
+              </td>
+              <td>비번초기화 OTP 발송 Confirm</td>
+            </tr>
+            {/* 계정관리 */}
+            <tr>
+              <th rowSpan={7}>계정관리</th>
               <td>
                 <Link to="/account-search" target="_blank">
                   계정신청 조회
@@ -203,15 +265,6 @@ const ListPage: React.FC = () => {
               </td>
               <td></td>
             </tr>
-
-            <tr>
-              <td>
-                <Link to="/account-user" target="_blank">
-                  사용자관리
-                </Link>
-              </td>
-              <td>날짜 선택 Modal</td>
-            </tr>
             <tr>
               <td>
                 <Link to="/account-edit-manage" target="_blank">
@@ -220,15 +273,7 @@ const ListPage: React.FC = () => {
               </td>
               <td>변경 승인 Confirm / 변경 반려 Modal</td>
             </tr>
-            <tr>
-              <td>
-                <Link to="/account-user-edit" target="_blank">
-                  사용자정보변경
-                </Link>
-              </td>
-              <td>비번초기화 OTP 발송 Confirm</td>
-            </tr>
-
+            {/* 공지사항 */}
             <tr>
               <th rowSpan={4}>공지사항</th>
               <td>
@@ -262,9 +307,9 @@ const ListPage: React.FC = () => {
               </td>
               <td></td>
             </tr>
-
+            {/* A-CDM */}
             <tr>
-              <th rowSpan={4}>A-CDM</th>
+              <th rowSpan={7}>A-CDM</th>
               <td>
                 <Link to="/arrivals" target="_blank">
                   Arrivals
@@ -280,7 +325,6 @@ const ListPage: React.FC = () => {
               </td>
               <td>즐겨찾기 Alert / 언어선택 Confirm</td>
             </tr>
-
             <tr>
               <td>
                 <Link to="/departures" target="_blank">
@@ -296,6 +340,180 @@ const ListPage: React.FC = () => {
                 </Link>
               </td>
               <td>즐겨찾기 Alert / 언어선택 Confirm</td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/weather" target="_blank">
+                  기상정보
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/notam" target="_blank">
+                  NOTAM/ATFM
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/notam-detail" target="_blank">
+                  NOTAM/ATFM 상세
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            {/* TTOT */}
+            <tr>
+              <th>TTOT</th>
+              <td>
+                <Link to="/ttot" target="_blank">
+                  TTOT
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            {/* 통계 */}
+            <tr>
+              <th rowSpan={8}>통계</th>
+              <td>
+                <Link to="/stats" target="_blank">
+                  통계 메인
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/operstat" target="_blank">
+                  항공기 운항현황
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/traffstat" target="_blank">
+                  항공 교통량 현황
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/tranostat" target="_blank">
+                  항공 교통량 순위
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/rate" target="_blank">
+                  정시율
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/rateno" target="_blank">
+                  정시율 순위
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/tobtc" target="_blank">
+                  TOBT 변경 횟수
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/flystat" target="_blank">
+                  항공기 운항현황
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            {/* 즐겨찾기 */}
+            <tr>
+              <th rowSpan={2}>즐겨찾기</th>
+              <td>
+                <Link to="/bookmark" target="_blank">
+                  즐겨찾기
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/bookmark-empty" target="_blank">
+                  즐겨찾기 목록 없음
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            {/* 항공기관제 */}
+            <tr>
+              <th rowSpan={2}>항공기관제</th>
+              <td>
+                <Link to="/ac-total" target="_blank">
+                  Total Panel
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/ac-deicing" target="_blank">
+                  Deicing Information
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+
+            {/* 운항계획 */}
+            <tr>
+              <th rowSpan={3}>운항계획</th>
+              <td>
+                <Link to="/fp" target="_blank">
+                  현행 운항 스케쥴 조회
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/fp-arrivals" target="_blank">
+                  현행 도착 스케쥴 상세
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <Link to="/fp-departures" target="_blank">
+                  현행 출발 스케쥴 상세
+                </Link>
+              </td>
+              <td></td>
+            </tr>
+
+            {/* 자원배정 */}
+            <tr>
+              <th>자원배정</th>
+              <td>
+                <Link to="/rs-sca" target="_blank">
+                  자원배정
+                </Link>
+              </td>
+              <td></td>
             </tr>
           </table>
         </main>

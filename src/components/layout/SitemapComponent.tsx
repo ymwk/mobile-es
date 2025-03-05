@@ -160,35 +160,34 @@ const Sitemap = () => {
 
             return (
               <li key={index}>
-                {item.child.length === 0 ?
-                  (
-                    <Link to={item.link} className="menu-root">
+                {item.child.length === 0 ? (
+                  <Link to={item.link} className="menu-root">
+                    <span className="name">
+                      <i className={`ico-root nav-${item.icon}`} />
+                      {item.name}
+                    </span>
+                    <i className="ico-root gt" />
+                  </Link>
+                ) : (
+                  <>
+                    <button type="button" className="menu-root" onClick={handleOpen}>
                       <span className="name">
                         <i className={`ico-root nav-${item.icon}`} />
                         {item.name}
                       </span>
-                      <i className="ico-root gt" />
-                    </Link>
-                  ) : (
-                    <>
-                      <button type="button" className="menu-root" onClick={handleOpen}>
-                        <span className="name">
-                          <i className={`ico-root nav-${item.icon}`} />
-                          {item.name}
-                        </span>
-                        <i className={`ico-root ${isFold ? 'dt' : 'ut'}`} />
-                      </button>
-                      <div className={`accordion-root ${isFold ? 'fold' : ''}`}>
-                        <div className="child-list">
-                          {item.child.map((child, index) => (
-                            <Link key={index} to={child.link} className="link-child">
-                              {child.name}
-                            </Link>
-                          ))}
-                        </div>
+                      <i className={`ico-root ${isFold ? 'dt' : 'ut'}`} />
+                    </button>
+                    <div className={`accordion-root ${isFold ? 'fold' : ''}`}>
+                      <div className="child-list">
+                        {item.child.map((child, index) => (
+                          <Link key={index} to={child.link} className="link-child">
+                            {child.name}
+                          </Link>
+                        ))}
                       </div>
-                    </>
-                  )}
+                    </div>
+                  </>
+                )}
               </li>
             );
           })}

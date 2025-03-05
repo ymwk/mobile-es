@@ -81,7 +81,7 @@ const FlightplandetailPage: React.FC = () => {
 
         <div className="portal-action">
           <div className="action-inner">
-            <ActionButton label=" 조회" onClick={() => {}} styleType="confirm" />
+            <ActionButton label="목록" onClick={() => {}} styleType="confirm" />
           </div>
         </div>
       </div>

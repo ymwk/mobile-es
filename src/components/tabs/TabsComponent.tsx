@@ -8,18 +8,14 @@ interface TabsProps {
 }
 
 const Tabs: React.FC<TabsProps> = (props) => {
-  const {
-    type = 'cdm',
-    children,
-    onTabChange
-  } = props;
+  const { type = 'cdm', children, onTabChange } = props;
   const [activeTab, setActiveTab] = useState(children[0].props.label);
 
   const handleTabClick = (tabLabel: string) => {
     setActiveTab(tabLabel);
     if (onTabChange) {
-			onTabChange(tabLabel);
-		}
+      onTabChange(tabLabel);
+    }
   };
 
   return (
@@ -48,4 +44,4 @@ const Tabs: React.FC<TabsProps> = (props) => {
   );
 };
 
-export {Tabs}
+export { Tabs };

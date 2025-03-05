@@ -31,10 +31,17 @@ const SearchGroup: React.FC<SearchGroupProps> = (props) => {
               </div>
             </label>
 
-            <label className="search-row search-grow">
-              <span className="label">성명</span>
-              <Textfield />
-            </label>
+            <div className="search-row search-grow search-calendar">
+              {/* <Textfield />
+              ~
+              <Textfield /> */}
+
+              <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ko">
+                <Datepk format={'MM-DD'} />
+                ~
+                <Datepk format={'MM-DD'} />
+              </LocalizationProvider>
+            </div>
           </div>
 
           <div className="search-row-wrapper">
@@ -53,22 +60,13 @@ const SearchGroup: React.FC<SearchGroupProps> = (props) => {
               </div>
             </div>
 
-            <div className="search-row search-grow search-calendar">
-              {/* <Textfield />
-              ~
-              <Textfield /> */}
+            <label className="search-row search-grow">
+              <span className="label">성명</span>
+              <Textfield />
+            </label>
 
-              <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ko">
-                <Datepk format={'MM-DD'} />
-                ~
-                <Datepk format={'MM-DD'} />
-              </LocalizationProvider>
-            </div>
+            <Button label="초기화" styleType="confirm" />
           </div>
-        </div>
-
-        <div className="search-btns">
-          <Button label="초기화" styleType="small" />
         </div>
       </form>
     </>

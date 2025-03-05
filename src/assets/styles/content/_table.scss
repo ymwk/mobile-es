@@ -50,6 +50,10 @@
       color: var(--error)
     }
   }
+
+  &.table-center {
+    th, td { text-align: center }
+  }
 }
 
 .table-list {
@@ -100,6 +104,19 @@
       background-color: #D4FFEA
     }
   }
+}
+
+table caption {
+  padding: 1rem 0;
+  text-align: left;
+  font-size: 1.2rem;
+
+  em { font-size: 1.3rem }
+}
+
+.td-num {
+  text-align: right !important;
+  padding-right: 2rem !important
 }
 
 .table-header {
@@ -296,6 +313,10 @@
 
 .table-center {
   td { text-align: center }
+
+  & + & {
+    margin-top: 0.6rem
+  }
 }
 
 .flex-3 {
@@ -315,4 +336,27 @@
     justify-content: center;
     padding-left: 0
   }
+}
+
+.table-airline {
+  background-color: #fff;
+  font-size: 1.5rem;
+
+  thead th {
+    height: 4.2rem;
+    background: #CCEEF0;
+    color: #222;
+    vertical-align: middle;
+    font-weight: 600;
+  }
+
+  tbody td {
+    height: 5.8rem;
+    padding: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+    font-weight: 600
+  }
+
+  .flt-wrap { color: #666 }
 }

@@ -23,7 +23,7 @@ const FingerConfirmAlertOpen = () => {
 
   return (
     <>
-      <ActionButton type="button" label="지문 등록" onClick={openModal} />
+      <Button type="button" label="단말기 지문 등록" onClick={openModal} />
 
       <Alert
         isOpen={isOpen}
@@ -73,7 +73,7 @@ const SetfingererrPage: React.FC = () => {
                   사용하고 계신 기기는 <br />
                   <em className="c-err">지문이 등록되어 있지 않습니다</em>
                 </p>
-                <Button label="단말기 지문등록" onClick={() => {}} />
+                <FingerConfirmAlertOpen />
               </div>
             </div>
           </div>
@@ -81,7 +81,7 @@ const SetfingererrPage: React.FC = () => {
 
         <div className="portal-action">
           <div className="action-inner">
-            <FingerConfirmAlertOpen />
+            <ActionButton type="button" label="지문 등록" styleType='confirm' disabled/>
           </div>
         </div>
       </div>

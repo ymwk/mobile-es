@@ -22,7 +22,7 @@ const MainPage: React.FC = () => {
             <span>모바일 ES</span>
           </h1>
         </Header>
-        <main className="portal-main index-main">
+        <main className="portal-main">
           <div className="portal-panel">
             <div className="portal-panel-title">
               <span className="title">Welcome</span>
@@ -227,8 +227,9 @@ const MainPage: React.FC = () => {
               </TabContent>
             </Tabs>
           </section>
+
+          <Footer />
         </main>
-        <Footer />
       </div>
     </>
   );

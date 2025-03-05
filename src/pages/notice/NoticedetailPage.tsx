@@ -51,20 +51,20 @@ const NoticedetailPage: React.FC = () => {
             (소속 확인목적, 기존 엑셀 양식과 내용동일)
             <br />
           </div>
-        </main>
 
-        <div className="notice-nav">
-          <div className="notice-nav-item">
-            <small>이전글</small>
-            <p className="title">이전 글이 없습니다.</p>
+          <div className="notice-nav">
+            <div className="notice-nav-item">
+              <small>이전글</small>
+              <p className="title">이전 글이 없습니다.</p>
+            </div>
+            <div className="notice-nav-item">
+              <small>다음글</small>
+              <p className="title">
+                <Link to="#">[일반]흐름관리실행 발령번호</Link>
+              </p>
+            </div>
           </div>
-          <div className="notice-nav-item">
-            <small>다음글</small>
-            <p className="title">
-              <Link to="#">[일반]흐름관리실행 발령번호</Link>
-            </p>
-          </div>
-        </div>
+        </main>
 
         <div className="portal-action">
           <div className="action-inner">

@@ -1,17 +1,18 @@
 import { lazy } from 'react';
 import Layout from '@pages/_layout';
 
+const Test = lazy(() => import('@pages/TestPage'));
 const List = lazy(() => import('@pages/ListPage'));
-
 const Index = lazy(() => import('@pages/account/SigninPage'));
 const PortalIndex = lazy(() => import('@pages/portal/MainPage'));
-
 const Error = lazy(() => import('@pages/portal/ErrorPage'));
+
 const Guide = lazy(() => import('@pages/portal/GuidePage'));
 const Manual = lazy(() => import('@pages/portal/ManualPage'));
 const Terms = lazy(() => import('@pages/portal/TermsPage'));
 const Notify = lazy(() => import('@pages/portal/NotifyPage'));
 const NotifyEmpty = lazy(() => import('@pages/portal/NotifyemptyPage'));
+
 const Setting = lazy(() => import('@pages/portal/SettingPage'));
 const SetPush = lazy(() => import('@pages/portal/SetpushPage'));
 const SetLogin = lazy(() => import('@pages/portal/SetloginPage'));
@@ -54,8 +55,16 @@ const NoticeDetail = lazy(() => import('@pages/notice/NoticedetailPage'));
 const Noticewrite = lazy(() => import('@pages/notice/NoticeWritePage'));
 
 const TTOT = lazy(() => import('@pages/ttot/TTOTPage'));
+
 const Stats = lazy(() => import('@pages/stats/StatsPage'));
-const Flight = lazy(() => import('@pages/stats/FlightPage'));
+const Operstat = lazy(() => import('@pages/stats/OperstatPage'));
+const Traffstat = lazy(() => import('@pages/stats/TraffstatPage'));
+const Tranostat = lazy(() => import('@pages/stats/TranostatPage'));
+const Rate = lazy(() => import('@pages/stats/RatePage'));
+const Rateno = lazy(() => import('@pages/stats/RatenoPage'));
+const Tobtc = lazy(() => import('@pages/stats/TobtcPage'));
+const Flystat = lazy(() => import('@pages/stats/FlystatPage'));
+
 const Bookmark = lazy(() => import('@pages/bookmark/BookmarkPage'));
 const FlightPlan = lazy(() => import('@pages/fp/FlightplanPage'));
 const FlightPlanDetail = lazy(() => import('@pages/fp/FlightplandetailPage'));
@@ -75,7 +84,7 @@ const RsSearch = lazy(() => import('@pages/rs/RsSearchPage'));
 const RsComm = lazy(() => import('@pages/rs/RsCommPage'));
 const RsGIMS = lazy(() => import('@pages/rs/RsGimsPage'));
 
-const Test = lazy(() => import('@pages/TestPage'));
+
 
 export const routes = [
   {
@@ -86,16 +95,11 @@ export const routes = [
       { path: '/list', element: <List /> },
       { path: '/', element: <Index /> },
 
-      // 메인
+      // 포털
       { path: '/portal', element: <PortalIndex /> },
       { path: '/error', element: <Error /> },
 
       // 설정
-      { path: '/guide', element: <Guide /> },
-      { path: '/manual', element: <Manual /> },
-      { path: '/terms', element: <Terms /> },
-      { path: '/notify', element: <Notify /> },
-      { path: '/notify-empty', element: <NotifyEmpty /> },
       { path: '/setting', element: <Setting /> },
       { path: '/set-push', element: <SetPush /> },
       { path: '/set-login', element: <SetLogin /> },
@@ -106,6 +110,13 @@ export const routes = [
       { path: '/set-finger-fail', element: <SetFingerFail /> },
       { path: '/set-finger-edit', element: <SetFingerEdit /> },
       { path: '/set-finger-break', element: <SetFingerBreak /> },
+
+      //공통관리
+      { path: '/guide', element: <Guide /> },
+      { path: '/manual', element: <Manual /> },
+      { path: '/terms', element: <Terms /> },
+      { path: '/notify', element: <Notify /> },
+      { path: '/notify-empty', element: <NotifyEmpty /> },
 
       // 계정신청
       { path: '/signup', element: <SignupIndex /> },
@@ -143,7 +154,13 @@ export const routes = [
 
       // 통계
       { path: '/stats', element: <Stats /> },
-      { path: '/flight', element: <Flight /> },
+      { path: '/operstat', element: <Operstat /> },
+      { path: '/traffstat', element: <Traffstat /> },
+      { path: '/tranostat', element: <Tranostat /> },
+      { path: '/rate', element: <Rate /> },
+      { path: '/rateno', element: <Rateno /> },
+      { path: '/tobtc', element: <Tobtc /> },
+      { path: '/flystat', element: <Flystat /> },
 
       // 목표이륙시간
       { path: '/ttot', element: <TTOT /> },
@@ -154,8 +171,8 @@ export const routes = [
 
       // 운항계획
       { path: '/fp', element: <FlightPlan /> },
-      { path: '/fp-detail', element: <FlightPlanDetail /> },
-      { path: '/fp-detail2', element: <FlightPlanDetail2 /> },
+      { path: '/fp-arrivals', element: <FlightPlanDetail /> },
+      { path: '/fp-departures', element: <FlightPlanDetail2 /> },
 
       // 항공기관제
       { path: '/ac-total', element: <AcTotal /> },
@@ -182,11 +199,7 @@ export const pages = [
   { route: '/portal' },
   { route: '/error' },
 
-  { route: '/guide' },
-  { route: '/manual' },
-  { route: '/terms' },
-  { route: '/notify' },
-
+  // 설정
   { route: '/setting' },
   { route: '/set-push' },
   { route: '/set-login' },
@@ -198,10 +211,20 @@ export const pages = [
   { route: '/set-finger-edit' },
   { route: '/set-finger-break' },
 
+  //공통관리
+  { route: '/guide' },
+  { route: '/manual' },
+  { route: '/terms' },
+  { route: '/notify' },
+  { route: '/notify-empty' },
+
+  // 계정신청
   { route: '/signup' },
   { route: '/signup2' },
   { route: '/signup3' },
   { route: '/signup4' },
+
+  // 계정관리
   { route: '/account-search' },
   { route: '/account-edit' },
   { route: '/account-edit-rec' },
@@ -210,31 +233,52 @@ export const pages = [
   { route: '/account-cancel' },
   { route: '/account-user' },
   { route: '/account-edit-manage' },
-  { route: '/account-search-2' },
   { route: '/account-user-edit' },
 
+  // A-CDM
   { route: '/arrivals' },
   { route: '/arrivals-detail' },
-  { route: '/departures' },
+
+  { prouteth: '/departures' },
   { route: '/departures-detail' },
+
   { route: '/weather' },
   { route: '/notam' },
+  { route: '/notam-detail' },
 
+  // 공지사항
   { route: '/notice' },
   { route: '/notice-search' },
   { route: '/notice-detail' },
   { route: '/notice-write' },
 
-  { route: '/ttot' },
+  // 통계
   { route: '/stats' },
+  { route: '/operstat' },
+  { route: '/traffstat' },
+  { route: '/tranostat' },
+  { route: '/rate' },
+  { route: '/rateno' },
+  { route: '/tobtc' },
+  { route: '/flystat' },
+
+  // 목표이륙시간
+  { route: '/ttot' },
+
+  // 즐겨찾기
   { route: '/bookmark' },
   { route: '/bookmark-empty' },
-  { route: '/fp' },
-  { route: '/fp-detail' },
 
+  // 운항계획
+  { route: '/fp' },
+  { route: '/fp-arrivals' },
+  { route: '/fp-departures' },
+
+  // 항공기관제
   { route: '/ac-total' },
   { route: '/ac-deicing' },
 
+  // 자원배정
   { route: '/rs-sca' },
   { route: '/rs-sf' },
   { route: '/rs-rpm' },
@@ -242,6 +286,6 @@ export const pages = [
   { route: '/rs-modify' },
   { route: '/rs-crm' },
   { route: '/rs-search' },
-  { route: '/rs-comm' },
+  { route: '/rs-cpmm' },
   { route: '/rs-gims' },
 ];

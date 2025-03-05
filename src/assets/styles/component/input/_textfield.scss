@@ -74,7 +74,7 @@ input.form-textfield {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-  padding: var(--vpd) 0 3.3rem;
+  padding: var(--vpd) 0;
 
   .select-root {
     width: 100%;

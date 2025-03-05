@@ -13,9 +13,9 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = (props) => {
-	const { id, isOpen, onClose, title, header, children, fullSize=false } = props;
+  const { id, isOpen, onClose, title, header, children, fullSize = false } = props;
 
-	return (
+  return (
     <>
       {isOpen && (
         <ModalPortal>
@@ -39,4 +39,4 @@ const Modal: React.FC<ModalProps> = (props) => {
   );
 };
 
-export {Modal};
+export { Modal };

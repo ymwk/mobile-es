@@ -34,7 +34,7 @@
 
   &:not(:first-child) { border-left: 1px solid #d8d8d8 }
 
-  &.confirm {
+  &.confirm:not(:disabled) {
     border-color: var(--primary);
     background-color: var(--primary);
   }

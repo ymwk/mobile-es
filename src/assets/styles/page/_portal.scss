@@ -1,28 +1,5 @@
 @use "../base/mixin";
 
-.portal-main {
-  position: relative;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 0 var(--spd);
-}
-
-.search-main {
-  background-color: var(--bg);
-
-  & + .portal-footer {
-    background-color: var(--bg);
-  }
-}
-
-.portal-cont {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  padding: var(--vpd) 0;
-}
-
 .setting-list,
 .setting-wrap,
 .terms-root {
@@ -35,7 +12,7 @@
   justify-content: space-between;
   align-items: flex-start;
   padding-bottom: 2rem;
-  margin-top: -1.6rem;
+  margin-top: 1.6rem;
 
   .title {
     font-size: 2rem;
@@ -159,148 +136,8 @@
     font-weight: 700;
   }
 
-  .desc {
+  .c-state {
     margin-top: 0.8rem
-  }
-}
-
-.setting-list {
-  padding: 1.4rem;
-  border-radius: 0.8rem;
-  box-shadow: 0 0 4px 0 #00000040;
-  font-size: 1.4rem;
-  font-weight: 600;
-
-  & > li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 5rem;
-    padding: 0 0.3rem;
-    border-bottom: 1px solid #f0f0f0;
-  }
-
-  .setting-link {
-    border-bottom: 0;
-  }
-
-  .value {
-    padding: 0 1.3rem;
-  }
-
-  .button-root {
-    min-width: unset;
-  }
-}
-
-.setting-btns {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.setting-checklist {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  font-size: 1.4rem;
-
-  & > li {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .chk-list-btn {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-  }
-}
-
-.setting-wrap {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  .terms-box {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-    li {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .desc {
-      padding-left: 0.3rem;
-      font-size: 1.3rem;
-      line-height: 1.3;
-    }
-  }
-}
-
-.setting-finger-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1rem 0;
-
-  &.mc {
-    flex-grow: 1.2;
-  }
-  &.rg {
-    flex-grow: 0.8;
-  }
-
-  .setting-title {
-    font-size: 1.6rem;
-    font-weight: 600;
-    line-height: 1.4;
-    word-break: keep-all;
-  }
-
-  .setting-msg {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 600;
-    line-height: 1.4;
-    word-break: keep-all;
-  }
-
-  .setting-box {
-    padding: 4rem 2rem;
-    border-radius: 0.8rem;
-    box-shadow: 0px 0px 4px 0px #00000040;
-    text-align: center;
-    font-size: 1.4rem;
-    line-height: 1.4;
-
-    &.b-primary {
-      box-shadow: 0px 0px 4px 0px #00aab5;
-    }
-    &.b-err {
-      box-shadow: 0px 0px 4px 0px #ff3b30;
-    }
-    .c-primary,
-    .c-err {
-      font-size: 1.6rem;
-    }
-
-    .title {
-      margin-bottom: 3rem;
-      font-size: 2.2rem;
-      font-weight: 700;
-    }
-
-    .button-root {
-      min-width: 18.4rem;
-      margin-top: 2rem;
-      margin-bottom: -2rem;
-    }
   }
 }
 
@@ -315,84 +152,10 @@
   font-weight: 600
 }
 
-.notify-wrap {
-  --h: 6.6rem;
-  flex-grow: 1;
-  display: flex;
-  padding-top: var(--h);
-
-  .notify-header {
-    z-index: 98;
-    position: fixed;
-    inset: var(--header-h) 0 auto 0;
-    @include mixin.width;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: var(--spd);
-    background-color: #fff;
-    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.05), 0 1px 0 0 rgba(0, 0, 0, 0.05);
-    font-size: 1.3rem;
-    line-height: 1.3;
-    color: #979797;
-
-    .msg {
-      flex-grow: 1
-    }
-  }
-}
-
-.nodata-item { 
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.4rem;
-  padding-bottom: 20vh;
-  font-size: 1.4rem;
-  color: #979797;
-
-  .title {
-    margin-top: 0.5rem;
-    color: #222;
-    font-size: 1.6rem
-  }
-}
-
-.notify-list {
-  flex: 1;
-
-  & > li {
-    position: relative;
-    padding: var(--spd) 5.5rem var(--spd) 0;
-    border-bottom: 1px solid #f0f0f0;
-    font-size: 1.5rem;
-    color: #333;
-    font-weight: 600;
-    line-height: 1.3
-  }
-
-  .button-icon {
-    position: absolute;
-    top: var(--spd);
-    right: 1rem;
-
-    &.btn {
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
-
-  .cont {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.7rem
-  }
-
-  .date {
-    font-size: 1.2rem;
-    color: #666
-  }
+.portal-noti {
+  display: block;
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  word-break: keep-all;
 }

@@ -95,7 +95,7 @@ const Departurescarddetail: React.FC<DeparturescardProps> = (props) => {
               disablePortal: true,
             },
           }}
-          classes={{popper: 'tooltip-root'}}
+          classes={{ popper: 'tooltip-root' }}
           title={
             <React.Fragment>
               <div className="tooltip-title">Alfa South Zone(AS)</div>
@@ -108,7 +108,7 @@ const Departurescarddetail: React.FC<DeparturescardProps> = (props) => {
         </Tooltip>
       </ClickAwayListener>
     );
-  }
+  };
 
   return (
     <>

@@ -111,9 +111,9 @@ hr {
 }
 
 #root {
-  min-height: 100%;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .wrapper {
@@ -122,9 +122,9 @@ hr {
   flex: 1;
   display: flex;
   flex-direction: column;  
-  padding-top: var(--header-h);
+  // padding-top: var(--header-h);
+  min-height: 100%;
   overflow: hidden;
-  // box-shadow: 0 0 30px 3px rgba(0,0,0,0.1);
 
   &:not(.index-wrapper) {
     &::before,
@@ -144,4 +144,35 @@ hr {
       box-shadow: inset -1px 0 5px rgba(0,0,0,0.1);
     }
   }
+}
+
+.portal-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto
+}
+
+.portal-main {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--spd) var(--vpd);
+  overflow: hidden auto;
+}
+
+.search-main {
+  background-color: var(--bg);
+
+  & + .portal-footer {
+    background-color: var(--bg);
+  }
+}
+
+.portal-cont {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--vpd);
 }

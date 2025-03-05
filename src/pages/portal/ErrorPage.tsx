@@ -20,7 +20,7 @@ const ErrorPage: React.FC = () => {
 
             <div className="box-msg em">
               <em>점검시간</em>
-              <p className="desc c-state">
+              <p className="c-state">
                 2025년 7월 12일(월) 오후 10시 <br />~ 2025년 7월 13일 오전 06시
               </p>
             </div>

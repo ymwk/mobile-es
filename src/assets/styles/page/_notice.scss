@@ -75,7 +75,7 @@
 .notice-header {
   display: flex;
   flex-direction: column;
-  padding: 2rem 0;
+  padding: 2.6rem 0 2rem;
   border-bottom: 1px solid #f0f0f0;
   word-break: keep-all;
 
@@ -95,19 +95,14 @@
   }
 
   .ico-label {
-    margin-top: -1.6rem;
+    margin-top: -1rem;
     margin-bottom: 0.6rem
   }
-}
-
-.portal-main .notice-header {
-  padding-top: 3rem
 }
 
 .privacy-header {
   display: flex;
   justify-content: flex-end;
-  padding: 1.5rem 0 2.5rem;
 
   .select-root {
     min-width: 11rem;
@@ -145,10 +140,14 @@
   }
 }
 
+.portal-main .notice-nav {
+  margin: 0 calc(var(--spd) * -1) calc(var(--vpd) * -1)
+}
+
 .notice-nav-item {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   min-height: 5rem;
   padding: 1rem var(--spd);
   border-top: 1px solid #F0F0F0;

@@ -2,8 +2,9 @@
 
 .header-portal {
   z-index: 99;
-  position: fixed;
-  inset: 0 0 auto 0;
+  // position: fixed;
+  // inset: 0 0 auto 0;
+  position: relative;
   @include mixin.width;
   display: flex;
   flex-direction: column;

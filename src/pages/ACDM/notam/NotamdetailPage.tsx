@@ -13,7 +13,7 @@ const NoticedetailPage: React.FC = () => {
 
         <main className="portal-main">
           <div className="notice-header">
-            <span className='ico-label'>발령</span>
+            <span className="ico-label">발령</span>
             <h3 className="title">NOTAM번호 : A1511/24</h3>
             <div className="title">
               <p>발효일시 : 2410310000(UTC)</p>
@@ -38,26 +38,24 @@ const NoticedetailPage: React.FC = () => {
             (소속 확인목적, 기존 엑셀 양식과 내용동일)
             <br />
           </div>
-        </main>
 
-        <div className="notice-nav">
-          <div className="notice-nav-item">
-            <small>이전글</small>
-            <p>
-              <Link to="#">
-                (수정발령) NOTAM번호 : A1504/24 / 발효일시 : 2410280920(UTC) / 종료일시 : 2410290200(UTC)
-              </Link>
-            </p>
+          <div className="notice-nav">
+            <div className="notice-nav-item">
+              <small>이전글</small>
+              <p>
+                <Link to="#">
+                  (수정발령) NOTAM번호 : A1504/24 / 발효일시 : 2410280920(UTC) / 종료일시 : 2410290200(UTC)
+                </Link>
+              </p>
+            </div>
+            <div className="notice-nav-item">
+              <small>다음글</small>
+              <p>
+                <Link to="#">(발령) NOTAM번호 : A1484/24 / 발효일시 : 2410310000(UTC) / 종료일시: 2410310800(UTC)</Link>
+              </p>
+            </div>
           </div>
-          <div className="notice-nav-item">
-            <small>다음글</small>
-            <p>
-              <Link to="#">
-                (발령) NOTAM번호 : A1484/24 / 발효일시 : 2410310000(UTC) / 종료일시: 2410310800(UTC)
-              </Link>
-            </p>
-          </div>
-        </div>
+        </main>
 
         <div className="portal-action">
           <div className="action-inner">
