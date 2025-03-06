@@ -1,11 +1,35 @@
 import React from 'react';
 import { Header } from '@components/layout';
-import { ActionButton } from '@components/button';
 import { Tabs, TabContent } from '@components/tabs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { Datepk } from '@components/input';
-import 'dayjs/locale/ko';
+
+import logo_koreanair from '@assets/images/logo/logo_koreanair.png';
+import logo_asiana from '@assets/images/logo/logo_asiana.jpg';
+import logo_jin from '@assets/images/logo/logo_jinair.png';
+import logo_vj from '@assets/images/logo/logo_vj.png';
+import logo_mu from '@assets/images/logo/logo_mu.png';
+
+const Airlines = [
+  {
+    logo: logo_koreanair,
+    air: 'KE 대한항공',
+  },
+  {
+    logo: logo_asiana,
+    air: 'OZ 아시아나항공',
+  },
+  {
+    logo: logo_jin,
+    air: 'LJ 진 에어',
+  },
+  {
+    logo: logo_vj,
+    air: 'VJ 비엣젯항공',
+  },
+  {
+    logo: logo_mu,
+    air: 'MU 중국동방항공',
+  },
+];
 
 const RatenoPage: React.FC = () => {
   return (
@@ -13,28 +37,99 @@ const RatenoPage: React.FC = () => {
       <div className="wrapper">
         <Header title="정시율 순위" />
 
-        <div className="search-root">
-          <div className="search-row">
-            <span className="label">기준일자</span>
-            <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ko">
-              <Datepk />
-            </LocalizationProvider>
-          </div>
-        </div>
+        <div className="tabs-child">11 December</div>
 
         <main className="portal-main search-main">
           <div className="portal-cont">
+            <div className="search-result-top">
+              <span className="count">정시율 순위</span>
+            </div>
             <Tabs type="cdm-sm">
-              <TabContent label="운항현황"></TabContent>
-              <TabContent label="운항지연"></TabContent>
+              <TabContent label="Top 5 Airlines">
+                <table className="table-airline">
+                  <thead>
+                    <tr>
+                      <th className="text-left">Departure</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {Airlines.map((item, idx) => (
+                      <tr key={idx}>
+                        <td className="text-left">
+                          <div className="flt-wrap">
+                            <img src={item.logo} alt={item.air} />
+                            <span className="air">{item.air}</span>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+
+                <table className="table-airline">
+                  <thead>
+                    <tr>
+                      <th className="text-left">Arrive</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {Airlines.map((item, idx) => (
+                      <tr key={idx}>
+                        <td className="text-left">
+                          <div className="flt-wrap">
+                            <img src={item.logo} alt={item.air} />
+                            <span className="air">{item.air}</span>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </TabContent>
+              <TabContent label="Bottom 5 Airlines">
+                <table className="table-airline">
+                  <thead>
+                    <tr>
+                      <th className="text-left">Departure</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {Airlines.map((item, idx) => (
+                      <tr key={idx}>
+                        <td className="text-left">
+                          <div className="flt-wrap">
+                            <img src={item.logo} alt={item.air} />
+                            <span className="air">{item.air}</span>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+
+                <table className="table-airline">
+                  <thead>
+                    <tr>
+                      <th className="text-left">Arrive</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {Airlines.map((item, idx) => (
+                      <tr key={idx}>
+                        <td className="text-left">
+                          <div className="flt-wrap">
+                            <img src={item.logo} alt={item.air} />
+                            <span className="air">{item.air}</span>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </TabContent>
             </Tabs>
           </div>
         </main>
-        <div className="portal-action">
-          <div className="action-inner">
-            <ActionButton type="submit" styleType="confirm" label="조회" onClick={() => {}} />
-          </div>
-        </div>
       </div>
     </>
   );

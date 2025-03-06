@@ -9,7 +9,7 @@ const arrivalArray = [
     logo: logo_koreanair,
     company: '대한항공',
     url: '/departures-detail',
-    type: 'b-01',
+    type: 'auto',
     bookmark: true,
     snow: true,
     art: true,
@@ -19,7 +19,7 @@ const arrivalArray = [
     logo: logo_asiana,
     company: '아시아나',
     url: '/departures-detail',
-    type: 'b-02',
+    type: 'normal',
     bookmark: false,
     snow: true,
     art: true,
@@ -29,7 +29,7 @@ const arrivalArray = [
     logo: '',
     company: '항공사',
     url: '/departures-detail',
-    type: 'b-03',
+    type: 'edit',
     bookmark: false,
     snow: false,
     art: false,
@@ -54,7 +54,7 @@ const DeparturesList: React.FC = () => {
                 isSnow={item.snow}
                 isArt={item.art}
                 isTobt={item.tobt}
-                className={`card-` + item.type}
+                type={item.type}
               />
               <button
                 type="button"

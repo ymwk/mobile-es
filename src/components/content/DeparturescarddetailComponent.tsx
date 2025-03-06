@@ -8,11 +8,12 @@ import { ReqModal } from '@pages/modal/ReqModal';
 import { TOBTModal } from '@pages/modal/TOBTModal';
 import { EEZTModal } from '@pages/modal/EEZTModal';
 import { MilestonehistoryModal } from '@pages/modal/MilestonehistoryModal';
+import { TooltipHelp } from '@components/popover';
 import logo_default from '@assets/images/logo/logo_incheon.svg';
-import { Tooltip, ClickAwayListener, Grow } from '@mui/material';
+
 
 const Departurescarddetail: React.FC<DeparturescardProps> = (props) => {
-  const { company, logo, className, isBookmark, isSnow, isArt, isTobt, ...other } = props;
+  const { company, logo, isBookmark, isSnow, isArt, isTobt, type, ...other } = props;
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleHandler = () => {
@@ -59,60 +60,9 @@ const Departurescarddetail: React.FC<DeparturescardProps> = (props) => {
     );
   };
 
-  const TooltipComponent = () => {
-    const [open, setOpen] = React.useState(false);
-
-    const handleTooltipClose = () => {
-      setOpen(false);
-    };
-
-    const handleTooltipOpen = () => {
-      setOpen(true);
-    };
-
-    return (
-      <ClickAwayListener onClickAway={handleTooltipClose}>
-        <Tooltip
-          open={open}
-          onOpen={handleTooltipOpen}
-          onClose={handleTooltipClose}
-          // disableFocusListener
-          disableHoverListener
-          disableTouchListener
-          slots={{
-            transition: Grow,
-          }}
-          slotProps={{
-            popper: {
-              modifiers: [
-                {
-                  name: 'offset',
-                  options: {
-                    offset: [0, -20],
-                  },
-                },
-              ],
-              disablePortal: true,
-            },
-          }}
-          classes={{ popper: 'tooltip-root' }}
-          title={
-            <React.Fragment>
-              <div className="tooltip-title">Alfa South Zone(AS)</div>
-              <p>Zone No : 821, 822, 823, 825</p>
-              <IconButton label="닫기" icon="close" onClick={handleTooltipClose} />
-            </React.Fragment>
-          }
-        >
-          <IconButton label="도움말" icon="help" onClick={handleTooltipOpen} />
-        </Tooltip>
-      </ClickAwayListener>
-    );
-  };
-
   return (
     <>
-      <div className={`arrivalscard-root ${className ? className : ''}`} {...other}>
+      <div className={`arrivalscard-root ${type ? 'card-t-'+type : ''}`} {...other}>
         <div className="card-detail">
           <div className="card-logo">
             <img src={logo ? logo : logo_default} alt={company} />
@@ -216,7 +166,10 @@ const Departurescarddetail: React.FC<DeparturescardProps> = (props) => {
         <div className="card-section3">
           <div className="title-bar">
             <span className="title">DE-ICING</span>
-            <TooltipComponent />
+            <TooltipHelp>
+              <div className="tooltip-title">Alfa South Zone(AS)</div>
+              <p>Zone No : 821, 822, 823, 825</p>
+            </TooltipHelp>
 
             <div className="title-option">
               <HandleSwitchChange />

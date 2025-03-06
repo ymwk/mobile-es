@@ -1,13 +1,8 @@
-@use "../../base/mixin";
-
 .portal-action {
   height: 5rem;
+  flex-shrink: 0;
 
   .action-inner {
-    z-index: 99;
-    position: fixed;
-    inset: auto 0 0 0;
-    @include mixin.width;
     display: flex;
     height: 5rem;
     background-color: #fff;

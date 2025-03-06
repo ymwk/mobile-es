@@ -81,13 +81,15 @@ const TobtcPage: React.FC = () => {
                   <tbody>
                     {Airlines.map((item, idx) => (
                       <tr key={idx}>
-                        <td>
+                        <td className="text-left">
                           <div className="flt-wrap">
                             <img src={item.logo} alt={item.air} />
                             <span className="air">{item.air}</span>
                           </div>
                         </td>
-                        <td className='td-num'>{item.count}</td>
+                        <td className="text-right">
+                          <em>{item.count}</em>
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -95,8 +97,74 @@ const TobtcPage: React.FC = () => {
               </div>
             </main>
           </TabContent>
-          <TabContent label="Week"></TabContent>
-          <TabContent label="Year to date"></TabContent>
+          <TabContent label="Week">
+            <div className="tabs-child">5 December ~ 11 December</div>
+            <main className="portal-main search-main">
+              <div className="portal-cont">
+                <table className="table-airline">
+                  <thead>
+                    <tr>
+                      <th colSpan={2}>
+                        <span className="txt-between">
+                          <span>Avg. Daily 5</span>
+                          <span>Top 5 Airlines</span>
+                        </span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {Airlines.map((item, idx) => (
+                      <tr key={idx}>
+                        <td className="text-left">
+                          <div className="flt-wrap">
+                            <img src={item.logo} alt={item.air} />
+                            <span className="air">{item.air}</span>
+                          </div>
+                        </td>
+                        <td className="text-right">
+                          <em>{item.count}</em>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </main>
+          </TabContent>
+          <TabContent label="Year to date">
+            <div className="tabs-child">1 January ~ 11 December</div>
+            <main className="portal-main search-main">
+              <div className="portal-cont">
+                <table className="table-airline">
+                  <thead>
+                    <tr>
+                      <th colSpan={2}>
+                        <span className="txt-between">
+                          <span>Avg. Daily 5</span>
+                          <span>Top 5 Airlines</span>
+                        </span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {Airlines.map((item, idx) => (
+                      <tr key={idx}>
+                        <td className="text-left">
+                          <div className="flt-wrap">
+                            <img src={item.logo} alt={item.air} />
+                            <span className="air">{item.air}</span>
+                          </div>
+                        </td>
+                        <td className="text-right">
+                          <em>{item.count}</em>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </main>
+          </TabContent>
         </Tabs>
       </div>
     </>

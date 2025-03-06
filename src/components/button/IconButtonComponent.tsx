@@ -9,6 +9,7 @@ interface IconButtonProps {
     | 'hamburger'
     | 'refresh'
     | 'bookmark'
+    | 'bookmark-w'
     | 'prev'
     | 'next'
     | 'lt'

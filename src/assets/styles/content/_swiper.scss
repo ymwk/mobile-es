@@ -205,3 +205,38 @@
     }
   }
 }
+
+// stats swiper
+.stats-swiper {
+  flex-grow: 1;
+  width: 100%;
+
+  .swiper-pagination-bullets {
+    top: 47rem !important;
+    bottom: auto !important;
+  }
+
+  .swiper-pagination-bullet {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0 3px !important;
+    opacity: 1;
+    background-color: #D9D9D9;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #00AAB5;
+  }
+
+  .swiper-slide .stats-graph .motion {
+    transform: translateY(100%);
+  }
+
+  .swiper-slide-active .stats-graph .motion {
+    transform: translateY(0);
+  }
+
+  .portal-main {
+    height: 100%
+  }
+}

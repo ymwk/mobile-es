@@ -30,15 +30,15 @@ const DeparturesPage: React.FC = () => {
             <div className="departures-legend">
               <ul className="departures-legend-list">
                 <li>
-                  <span className="legend card-b-01" />
+                  <span className="legend card-t-auto" />
                   <span>TOBT 자동생성</span>
                 </li>
                 <li>
-                  <span className="legend card-b-02" />
+                  <span className="legend card-t-normal" />
                   <span>TOBT 정상입력</span>
                 </li>
                 <li>
-                  <span className="legend card-b-03" />
+                  <span className="legend card-t-edit" />
                   <span>TOBT 입력/수정필요</span>
                 </li>
               </ul>

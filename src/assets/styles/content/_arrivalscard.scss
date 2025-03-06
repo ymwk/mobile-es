@@ -14,7 +14,7 @@
 }
 
 .arrivalscard-root {
-  --mg: 0 1.8rem;
+  --mg: 1.8rem;
 
   position: relative;
   border-radius: 1.2rem;
@@ -46,7 +46,7 @@
   }
 
   .card-section {
-    margin: var(--mg);
+    margin: 0 var(--mg);
   }
 
   .card-section-toggle {
@@ -66,18 +66,39 @@
 
   // section1
   .card-detail {
+    position: relative;
     display: flex;
-    padding: 2rem 0;
-    margin: var(--mg);
-    border-bottom: 1px dashed #979797;
+    padding: 2rem  var(--mg);
+    border-radius: 1.2rem 1.2rem 0 0;
+
+    &:not(.card-badge) {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: var(--mg);
+        right: var(--mg);
+        border-bottom: 1px dashed #979797
+      }
+    }
+
+    > * { position: relative }
   }
 
   .card-logo {
-    width: 7rem;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    margin-right: 2.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    overflow: hidden;
 
     img {
-      width: 4rem;
-      height: 4rem;
+      width: 90%;
       object-fit: contain;
     }
   }
@@ -90,25 +111,29 @@
     .flt {
       font-size: 2.4rem;
       font-weight: 700;
+      // line-height: 1
     }
 
     .info { font-size: 1.5rem }
   }
 
   .card-option {
+    position: absolute;
+    top: 2.4rem;
+    right: var(--mg);
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin-left: auto;
+    gap: 0.5rem;
 
     .msg {
-      margin-top: auto;
       text-align: center;
       color: var(--error);
     }
 
     .icons {
       display: flex;
+      margin-top: -5px
     }
   }
 
@@ -121,7 +146,7 @@
   .title-bar {
     display: flex;
     align-items: center;
-    margin: var(--mg);
+    margin: 0 var(--mg);
   }
 
   .title-option {
@@ -151,7 +176,7 @@
   }
 
   .card-section3 {
-    padding-top: 2rem;
+    padding: 2rem 0 1rem;
   }
 }
 
@@ -162,7 +187,7 @@
   // grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   justify-items: center;
-  padding: 2rem 0;
+  padding: 1rem 0.5rem;
   line-height: 1.4;
 
   .column-2 {
@@ -244,6 +269,7 @@
   flex-direction: column;
   gap: 1rem;
   font-size: 1.4rem;
+  word-break: keep-all;
 
   & > li {
     display: flex;
@@ -280,12 +306,20 @@
   box-shadow: 0px 0px 4px 0px rgba(7, 170, 89, 0.8) !important;
 }
 
-.card-detail.card-badge::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto;
-  height: 2rem;
-  border-radius: 1.2rem 1.2rem 0 0;
+.card-detail.card-badge {
+  color: #fff;
+  
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   inset: 0 0 auto;
+  //   height: 13rem;
+  //   border-radius: 1.2rem 1.2rem 0 0;
+  // }
+
+  .ico-root.bookmark {
+    background: url(/src/assets/images/icon/ico_bookmark_w.svg) no-repeat center center / 2rem;
+  }
 }
 
 .card-section-toggle.card-badge {
@@ -293,21 +327,21 @@
   margin-top: -1px
 }
 
-.card-b-01 {
-  .card-detail.card-badge::before {background: linear-gradient(180deg, #c0c0c0, #b6b6b6)}
+.card-t-auto {
+  .card-detail.card-badge {background: linear-gradient(177.5deg, rgba(144, 150, 151, 0.6) 15.35%, rgba(114, 119, 120, 0.6) 96.82%)}
   .card-section-toggle.card-badge { border-top-color: #d9d9d9 }
 }
-.card-b-02 {
-  .card-detail.card-badge::before {background: linear-gradient(180deg, #0f7d00, #0d6d00)}
+.card-t-normal {
+  .card-detail.card-badge {background: linear-gradient(102.73deg, #0F7D00 53.66%, #036132 93.42%)}
   .card-section-toggle.card-badge { border-top-color: #0f7d00 }
 }
-.card-b-03 {
-  .card-detail.card-badge::before {background: linear-gradient(180deg, #dd0000, #ca0000)}
+.card-t-edit {
+  .card-detail.card-badge {background: linear-gradient(102.73deg, #DD0000 53.66%, #C10000 93.42%)}
   .card-section-toggle.card-badge { border-top-color: #dd0000 }
 }
 
 .departures-legend-list .legend {
-  &.card-b-01 { background-color: #d9d9d9 }
-  &.card-b-02 { background-color: #0f7d00 }
-  &.card-b-03 { background-color: #dd0000 }
+  &.card-t-auto { background-color: #d9d9d9 }
+  &.card-t-normal { background-color: #0f7d00 }
+  &.card-t-edit { background-color: #dd0000 }
 }

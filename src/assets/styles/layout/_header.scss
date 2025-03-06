@@ -1,11 +1,7 @@
-@use '../base/mixin';
-
 .header-portal {
   z-index: 99;
-  // position: fixed;
-  // inset: 0 0 auto 0;
   position: relative;
-  @include mixin.width;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   height: var(--header-h);

@@ -110,6 +110,12 @@ hr {
   flex-direction: column;
 }
 
+.flex-column-gap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem
+}
+
 #root {
   display: flex;
   flex-direction: column;

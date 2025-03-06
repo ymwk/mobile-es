@@ -18,7 +18,7 @@ const DeparturesDetailPage: React.FC = () => {
               isSnow={true}
               isArt={true}
               isTobt={true}
-              className={'card-b-02'}
+              type={'normal'}
             />
           </div>
         </main>

@@ -5,19 +5,19 @@ import logo_default from '@assets/images/logo/logo_incheon.svg';
 export interface DeparturescardProps {
   company: string;
   logo?: any;
-  className?: string;
   isBookmark?: boolean;
   isSnow?: boolean;
   isArt?: boolean;
   isTobt?: boolean;
+  type?: 'normal' | 'auto' | 'edit' | any;
 }
 
 const Departurescard: React.FC<DeparturescardProps> = (props) => {
-  const { company, logo, className, isBookmark, isSnow, isArt, isTobt, ...other } = props;
+  const { company, logo, isBookmark, isSnow, isArt, isTobt, type, ...other } = props;
 
   return (
     <>
-      <div className={`arrivalscard-root ${className ? className : ''}`} {...other}>
+      <div className={`arrivalscard-root ${type ? 'card-t-'+type : ''}`} {...other}>
         <div className="card-detail card-badge">
           <div className="card-logo">
             <img src={logo ? logo : logo_default} alt={company} />

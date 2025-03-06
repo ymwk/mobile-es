@@ -80,7 +80,7 @@
     text-align: center
   }
 
-  tbody tr:nth-child(even) {
+  tbody tr:active {
     background-color: #E1F5FF
   }
 
@@ -100,7 +100,7 @@
       background-color: #61CA96;
       color: #fff
     }
-    tbody tr:nth-child(even) {
+    tbody tr:active {
       background-color: #D4FFEA
     }
   }
@@ -112,11 +112,6 @@ table caption {
   font-size: 1.2rem;
 
   em { font-size: 1.3rem }
-}
-
-.td-num {
-  text-align: right !important;
-  padding-right: 2rem !important
 }
 
 .table-header {
@@ -339,6 +334,8 @@ table caption {
 }
 
 .table-airline {
+  width: 100%;
+  border-collapse: collapse;
   background-color: #fff;
   font-size: 1.5rem;
 
@@ -351,12 +348,44 @@ table caption {
   }
 
   tbody td {
-    height: 5.8rem;
+    height: 5.9rem;
     padding: 1rem;
     border-bottom: 1px solid #f0f0f0;
     vertical-align: middle;
-    font-weight: 600
+    text-align: center;
+    color: #666;
+
+    em {
+      color: #222;
+      font-weight: 600;
+    }
+  }
+
+  tfoot {
+    th, td {
+      height: 4.2rem;
+      padding: 1rem;
+      vertical-align: middle;
+      text-align: center;
+      background-color: #ABDEE3;
+    }
   }
 
   .flt-wrap { color: #666 }
+}
+
+.text-left {
+  text-align: left !important;
+  padding-left: 1.5em !important
+}
+
+.text-right {
+  text-align: right !important;
+  padding-right: 1.5em !important
+}
+
+.table-gap {
+  .search-result-top {
+    margin-top: calc(var(--vpd) - 0.5rem)
+  }
 }

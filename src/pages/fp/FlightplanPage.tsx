@@ -92,6 +92,48 @@ const FlightplanPage: React.FC = () => {
                       <td>233</td>
                       <td>631</td>
                     </tr>
+                    <tr
+                      onClick={() => {
+                        navigate('/fp-arrivals');
+                      }}
+                    >
+                      <td>
+                        <i className="badge-root">L</i>
+                      </td>
+                      <td>A</td>
+                      <td>LH345</td>
+                      <td>FRA</td>
+                      <td>-</td>
+                      <td>631</td>
+                    </tr>
+                    <tr
+                      onClick={() => {
+                        navigate('/fp-arrivals');
+                      }}
+                    >
+                      <td>
+                        <i className="badge-root c-b02">LM</i>
+                      </td>
+                      <td>D</td>
+                      <td>LH345</td>
+                      <td>FRA</td>
+                      <td>10</td>
+                      <td>631</td>
+                    </tr>
+                    <tr
+                      onClick={() => {
+                        navigate('/fp-arrivals');
+                      }}
+                    >
+                      <td>
+                        <i className="badge-root c-b03">S</i>
+                      </td>
+                      <td>A</td>
+                      <td>LH345</td>
+                      <td>FRA</td>
+                      <td>233</td>
+                      <td>631</td>
+                    </tr>
                   </tbody>
                 </table>
               </>

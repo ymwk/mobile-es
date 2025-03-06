@@ -73,6 +73,10 @@
     background: url(/src/assets/images/icon/ico_bookmark.svg) no-repeat center center / 2rem;
   }
 
+  &.bookmark-w {
+    background: url(/src/assets/images/icon/ico_bookmark_w.svg) no-repeat center center / 2rem;
+  }
+
   &.back {
     transform: rotate(90deg);
     background: url(/src/assets/images/icon/ico_arr.svg) no-repeat center center / 2rem
