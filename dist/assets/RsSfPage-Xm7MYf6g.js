@@ -1,0 +1,1 @@
+import{j as r}from"./index-B5EiQsbd.js";import{H as a}from"./HeaderComponent-CRnmLXiW.js";import"./img_pass_pin-BOHjPure.js";import"./IconButtonComponent-d-VUu6Rf.js";const m=()=>r.jsx(r.Fragment,{children:r.jsxs("div",{className:"wrapper",children:[r.jsx(a,{title:"Special Flight 신청관리"}),r.jsx("main",{className:"portal-main"})]})});export{m as default};
