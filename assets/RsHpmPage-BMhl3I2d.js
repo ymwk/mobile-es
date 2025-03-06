@@ -1,0 +1,1 @@
+import{j as a}from"./index-DNDsQ1Uc.js";import{H as r}from"./HeaderComponent-DBfXnnaj.js";import"./img_pass_pin-DMHS3LR0.js";import"./IconButtonComponent-CtRFvbeP.js";const i=()=>a.jsx(a.Fragment,{children:a.jsxs("div",{className:"wrapper",children:[a.jsx(r,{title:"Hangar Pad Management"}),a.jsx("main",{className:"portal-main"})]})});export{i as default};
