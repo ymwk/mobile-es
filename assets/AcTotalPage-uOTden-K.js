@@ -1,1 +1,0 @@
-import{j as a}from"./index-4NJodCap.js";import{H as r}from"./HeaderComponent-CjQnNOUG.js";import"./img_pass_pin-DLsEmVwv.js";import"./IconButtonComponent-DzvBoamf.js";const o=()=>a.jsx(a.Fragment,{children:a.jsxs("div",{className:"wrapper",children:[a.jsx(r,{title:"Total Panel"}),a.jsx("main",{className:"portal-main"})]})});export{o as default};
