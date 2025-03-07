@@ -103,8 +103,9 @@
 
 .search-result-top {
   display: flex;
+  align-items: center;
   min-height: 1.8rem;
-  margin-bottom: .7rem;
+  margin-bottom: .5rem;
   font-size: 1.5rem;
   line-height: 1.2;
   
@@ -113,6 +114,7 @@
     align-items: center;
     gap: 0.8rem;
     color: var(--primary-t);
+    padding: 3px 0;
 
     &::before {
       content: '';
@@ -127,7 +129,9 @@
     display: inline-flex;
     align-items: center;
     margin-left: 1.8rem;
+    padding: 3px 0;
     color: var(--primary-t);
+
 
     &::before {
       content: '';
@@ -148,16 +152,10 @@
       color: var(--primary-t);
     }
   }
-
-  .help {
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-bottom: 5px 
-  }
 }
 
 .portal-cont .search-result-top:first-child {
-  margin-top: -0.5rem
+  margin-top: -0.8rem
 }
 
 .flt-search {

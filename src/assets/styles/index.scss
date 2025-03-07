@@ -12,14 +12,16 @@
 // coomponent
 @use './component/tabs';
 @use './component/modal';
-@use './component/input/select';
-@use './component/input/textfield';
-@use './component/input/radiochk';
-@use './component/input/switch';
-@use './component/input/datepk';
-@use './component/button/button';
-@use './component/button/actionbutton';
+@use './component/select';
+@use './component/textfield';
+@use './component/radiochk';
+@use './component/switch';
+@use './component/datepk';
+@use './component/button';
+@use './component/actionbutton';
 @use './component/stepper';
+@use './component/tooltip';
+@use './component/toast';
 
 // layout
 @use './layout/header';
@@ -28,7 +30,6 @@
 
 // content
 @use './content/swiper';
-@use './content/tooltip';
 @use './content/table';
 @use './content/searchgroup';
 @use './content/arrivalscard';

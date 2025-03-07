@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { TouchEventHandler, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Departurescard from './DeparturescardComponent';
 import logo_koreanair from '@assets/images/logo/logo_koreanair.png';
@@ -45,8 +45,34 @@ const DeparturesList: React.FC = () => {
     <>
       <div className="arrivalscard-list">
         {arrivalArray.map((item, idx) => {
+          const [isTouch, setIsTouch] = useState(false);
+          const [prevTouch, setPrevTouch] = useState<React.Touch | null>(null);
+
+          const handleTouchMove: TouchEventHandler = (event) => {            
+            const touch = event.touches[0]!;
+            setPrevTouch(touch);
+            if (!prevTouch) return;
+
+            const diff = touch.pageX - prevTouch.pageX;
+            if (diff > 0) {
+              setIsTouch(true);
+            } else if (diff < 0) {
+              setIsTouch(false);
+            }
+          }
+          
           return (
-            <div className="arrivalscard-wrap" key={idx}>
+            <div
+              className={`arrivalscard-wrap ${isTouch ? 'open' : ''}`}
+              key={idx}
+              onClick={() => {
+                navigate(`${item.url}`);
+              }}
+              onTouchMove={handleTouchMove}
+            >
+              <button type="button" className="button-card">
+                알림
+              </button>
               <Departurescard
                 company={item.company}
                 logo={item.logo}
@@ -55,13 +81,6 @@ const DeparturesList: React.FC = () => {
                 isArt={item.art}
                 isTobt={item.tobt}
                 type={item.type}
-              />
-              <button
-                type="button"
-                className="arrivalscard-link"
-                onClick={() => {
-                  navigate(`${item.url}`);
-                }}
               />
             </div>
           );

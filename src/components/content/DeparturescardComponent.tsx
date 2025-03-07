@@ -17,7 +17,10 @@ const Departurescard: React.FC<DeparturescardProps> = (props) => {
 
   return (
     <>
-      <div className={`arrivalscard-root ${type ? 'card-t-'+type : ''}`} {...other}>
+      <div
+        className={`arrivalscard-root ${type ? 'card-t-' + type : ''}`}
+        {...other}
+      >
         <div className="card-detail card-badge">
           <div className="card-logo">
             <img src={logo ? logo : logo_default} alt={company} />

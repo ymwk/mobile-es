@@ -3,7 +3,6 @@ import { IconButton } from '@components/button';
 import { Tooltip, ClickAwayListener, Grow } from '@mui/material';
 
 interface TooltipHelpProps {
-  className?: string;
   children?: React.ReactNode;
 }
 
@@ -36,7 +35,7 @@ const TooltipHelp: React.FC<TooltipHelpProps> = (props) => {
             modifiers: [
               {
                 name: 'offset',
-                options: {
+                options: { 
                   offset: [0, -20],
                 },
               },

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header } from '@components/layout';
 import { Tabs, TabContent } from '@components/tabs';
+import { TooltipHelp } from '@components/popover';
 
 import ArrIcon from '@assets/images/pic/pic_landing.png';
 import DepIcon from '@assets/images/pic/pic_takeoff.png';
@@ -98,8 +99,12 @@ const OperstatPage: React.FC = () => {
             <div className="tabs-child">11 December</div>
             <main className="portal-main search-main">
               <div className="table-gap">
-                <div className="search-result-top">
-                  <span className="help">Top 5 Airlines</span>
+                <div className="tooltip-wrapper">
+                  <span>Top 5 Airlines</span>
+                  <TooltipHelp>
+                    <div className="tooltip-title">Top 5 Airlines 기준</div>
+                    <p>일 운항횟수의 상위 30위권 내에서 TOBT 40분 전 준수율 상위 5위 산정</p>
+                  </TooltipHelp>
                 </div>
                 <table className="table-airline table-fixed">
                   <thead>
@@ -129,8 +134,12 @@ const OperstatPage: React.FC = () => {
                   </tbody>
                 </table>
 
-                <div className="search-result-top">
-                  <span className="help">Bottom 5 Airlines</span>
+                <div className="tooltip-wrapper">
+                  <span>Bottom 5 Airlines</span>
+                  <TooltipHelp>
+                    <div className="tooltip-title">Bottom 5 Airlines 기준</div>
+                    <p>일 운항횟수의 상위 30위권 내에서 TOBT 40분 전 준수율 하위 5위 산정</p>
+                  </TooltipHelp>
                 </div>
                 <table className="table-airline table-fixed">
                   <thead>

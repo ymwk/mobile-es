@@ -1,1 +1,2 @@
-export * from './TooltipHelpComponent'
+export * from './TooltipHelpComponent';
+export * from './ToastHelpComponent';

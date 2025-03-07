@@ -9,22 +9,34 @@
     font-family: var(--pretandard);
     color: var(--default);
     font-weight: 500;
+    word-break: keep-all;
   }
+
   .tooltip-title {
     padding-right: 3rem;
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
     font-weight: 600;
-    color: var(--primary-t)
+    color: var(--primary-t);
   }
 
   .button-icon {
     position: absolute;
     top: 0.6rem;
     right: 0.4rem;
-    
+
     .ico-root {
       font-size: 3rem;
     }
   }
+}
+
+.tooltip-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: calc(var(--vpd) - 1rem);
+  min-height: 1.8rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header } from '@components/layout';
 import { Tabs, TabContent } from '@components/tabs';
+import { ToastHelp } from '@components/popover/ToastHelpComponent';
 
 import logo_koreanair from '@assets/images/logo/logo_koreanair.png';
 import logo_asiana from '@assets/images/logo/logo_asiana.jpg';
@@ -42,7 +43,10 @@ const RatenoPage: React.FC = () => {
         <main className="portal-main search-main">
           <div className="portal-cont">
             <div className="search-result-top">
-              <span className="count">정시율 순위</span>
+              <div className="toast-wrapper">
+                정시율 순위
+                <ToastHelp title="정시율 순위">총 편수의 상위 30위권 내에서 정시율 상위 5위산정</ToastHelp>
+              </div>
             </div>
             <Tabs type="cdm-sm">
               <TabContent label="Top 5 Airlines">

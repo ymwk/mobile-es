@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header } from '@components/layout';
 import { Tabs, TabContent } from '@components/tabs';
+import { ToastHelp } from '@components/popover';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
@@ -139,7 +140,13 @@ const TranostatPage: React.FC = () => {
                 <main className="portal-main search-main">
                   <div className="portal-cont">
                     <div className="stats-graph">
-                      <span className="graph-help">항공 교통량 증가 순위</span>
+                      <div className="graph-help toast-wrapper">
+                        <span>항공 교통량 증가 순위</span>
+                        <ToastHelp title="항공 교통량 증가 순위">
+                          총 교통량의 상위 30위권 내에서 교통량 증가율 상위 5위산정
+                        </ToastHelp>
+                      </div>
+
                       <div className="graph-area">
                         <ul className="key-x">
                           <li>Incheon</li>
@@ -249,7 +256,12 @@ const TranostatPage: React.FC = () => {
                 <main className="portal-main search-main">
                   <div className="portal-cont">
                     <div className="stats-graph">
-                      <span className="graph-help">항공 교통량 증가 순위</span>
+                      <div className="graph-help toast-wrapper">
+                        <span>항공 교통량 증가 순위</span>
+                        <ToastHelp title="항공 교통량 증가 순위">
+                          총 교통량의 상위 30위권 내에서 교통량 증가율 상위 5위산정
+                        </ToastHelp>
+                      </div>
                       <div className="graph-area">
                         <ul className="key-x">
                           <li>Incheon</li>
@@ -354,7 +366,12 @@ const TranostatPage: React.FC = () => {
                 <main className="portal-main search-main">
                   <div className="portal-cont">
                     <div className="stats-graph">
-                      <span className="graph-help">항공 교통량 증가 순위</span>
+                      <div className="graph-help toast-wrapper">
+                        <span>항공 교통량 증가 순위</span>
+                        <ToastHelp title="항공 교통량 증가 순위">
+                          총 교통량의 상위 30위권 내에서 교통량 증가율 상위 5위산정
+                        </ToastHelp>
+                      </div>
                       <div className="graph-area">
                         <ul className="key-x">
                           <li>Incheon</li>

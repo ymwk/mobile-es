@@ -103,7 +103,15 @@
   }
 
   &.help {
-    background: url(/src/assets/images/icon/ico_help.svg) no-repeat center center / 2.8rem
+    background: url(/src/assets/images/icon/ico_help_s.svg) no-repeat center center / 1.6rem;
+    // width: 1.6rem;
+    // height: 1.6rem;
+    // border: 1px solid currentColor;
+    // border-radius: 50%;
+    // font-size: 1.3rem;
+    // &::after {
+    //   content: '?'
+    // }
   }
 
   &.snow {
@@ -295,3 +303,9 @@
   &.c-b02 { background-color: #4ECE2F }
   &.c-b03 { background-color: #FF2C8A }
 }
+
+.title-bar .ico-root.help,
+.departures-legend-btn .ico-root.help {
+  opacity: 0.5;
+  background-size: 1.8rem;
+} 
