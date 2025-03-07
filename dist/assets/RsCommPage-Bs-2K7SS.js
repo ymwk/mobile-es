@@ -1,1 +1,0 @@
-import{j as r}from"./index-DWR_RJCG.js";import{H as s}from"./HeaderComponent-C0YrUNyB.js";import"./img_pass_pin-DsUSS5l9.js";import"./IconButtonComponent-33nTl8w0.js";const i=()=>r.jsx(r.Fragment,{children:r.jsxs("div",{className:"wrapper",children:[r.jsx(s,{title:"공용시설 신청관리"}),r.jsx("main",{className:"portal-main"})]})});export{i as default};
