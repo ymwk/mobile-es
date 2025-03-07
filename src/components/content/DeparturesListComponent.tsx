@@ -1,6 +1,7 @@
 import React, { TouchEventHandler, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Departurescard from './DeparturescardComponent';
+import { IconButton } from '@components/button';
 import logo_koreanair from '@assets/images/logo/logo_koreanair.png';
 import logo_asiana from '@assets/images/logo/logo_asiana.jpg';
 
@@ -70,9 +71,8 @@ const DeparturesList: React.FC = () => {
               }}
               onTouchMove={handleTouchMove}
             >
-              <button type="button" className="button-card">
-                알림
-              </button>
+              <IconButton icon="push" label="알림설정" className="button-card" />
+
               <Departurescard
                 company={item.company}
                 logo={item.logo}

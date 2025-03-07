@@ -23,6 +23,7 @@ interface IconButtonProps {
     | 'history'
     | 'pdf'
     | 'home'
+    | 'push'
     | 'search';
   label: string;
   className?: string;
