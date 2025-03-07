@@ -1,1 +1,0 @@
-import{j as s}from"./index-5ACTrcf-.js";import{H as e}from"./HeaderComponent-Fyf43UAK.js";import"./img_pass_pin-DRylvjUR.js";import"./IconButtonComponent-CWWms3Wx.js";const m=()=>s.jsx(s.Fragment,{children:s.jsxs("div",{className:"wrapper",children:[s.jsx(e,{title:"Gate IDD Message Sending"}),s.jsx("main",{className:"portal-main"})]})});export{m as default};
