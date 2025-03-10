@@ -8,11 +8,11 @@ interface props {
   onClose: () => void;
 }
 
-export const MilestonehistoryModal: React.FC<props> = (props) => {
+export const MilestonearrivalshistoryModal: React.FC<props> = (props) => {
   const { isOpen, onClose } = props;
 
   return (
-    <Modal id={'modal'} isOpen={isOpen} onClose={onClose} title={'출발 마일스톤 변경이력 조회'}>
+    <Modal id={'modal'} isOpen={isOpen} onClose={onClose} title={'도착 마일스톤 변경이력 조회'}>
       <>
         <div className="modal-column">
           <table className="table-data">
@@ -30,7 +30,7 @@ export const MilestonehistoryModal: React.FC<props> = (props) => {
                 <td>ABD</td>
               </tr>
               <tr>
-                <th>DES</th>
+                <th>ORG</th>
                 <td>ORD</td>
               </tr>
               <tr>

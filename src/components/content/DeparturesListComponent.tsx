@@ -1,7 +1,9 @@
 import React, { TouchEventHandler, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useModal } from '@hooks/useModal';
 import Departurescard from './DeparturescardComponent';
 import { IconButton } from '@components/button';
+import { PushModal } from '@pages/modal/PushModal';
 import logo_koreanair from '@assets/images/logo/logo_koreanair.png';
 import logo_asiana from '@assets/images/logo/logo_asiana.jpg';
 
@@ -42,6 +44,16 @@ const arrivalArray = [
 const DeparturesList: React.FC = () => {
   const navigate = useNavigate();
 
+  const PushModalOpen = () => {
+    const { isOpen, openModal, closeModal } = useModal();
+    return (
+      <>
+        <IconButton icon="push" label="알림설정" className="button-card" onClick={openModal} />
+        <PushModal isOpen={isOpen} onClose={closeModal} />
+      </>
+    );
+  };
+
   return (
     <>
       <div className="arrivalscard-list">
@@ -63,16 +75,8 @@ const DeparturesList: React.FC = () => {
           }
           
           return (
-            <div
-              className={`arrivalscard-wrap ${isTouch ? 'open' : ''}`}
-              key={idx}
-              onClick={() => {
-                navigate(`${item.url}`);
-              }}
-              onTouchMove={handleTouchMove}
-            >
-              <IconButton icon="push" label="알림설정" className="button-card" />
-
+            <div className={`arrivalscard-wrap ${isTouch ? 'open' : ''}`} key={idx} onTouchMove={handleTouchMove}>
+              <PushModalOpen />
               <Departurescard
                 company={item.company}
                 logo={item.logo}
@@ -81,6 +85,9 @@ const DeparturesList: React.FC = () => {
                 isArt={item.art}
                 isTobt={item.tobt}
                 type={item.type}
+                onClick={() => {
+                  navigate(`${item.url}`);
+                }}
               />
             </div>
           );

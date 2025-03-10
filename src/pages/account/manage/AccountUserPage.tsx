@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Header } from '@components/layout';
 import { ActionButton } from '@components/button';
 import { SearchGroup } from '@components/content/SearchGroupComponent';
 const AccountUserPage: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="wrapper">
@@ -21,7 +23,11 @@ const AccountUserPage: React.FC = () => {
 
             <table className="table-list">
               <thead>
-                <tr>
+                <tr
+                  onClick={() => {
+                    navigate('/account-edit-manage');
+                  }}
+                >
                   <th>구분</th>
                   <th>아이디</th>
                   <th>성명</th>
@@ -30,7 +36,11 @@ const AccountUserPage: React.FC = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr
+                  onClick={() => {
+                    navigate('/account-edit-manage');
+                  }}
+                >
                   <td>신규</td>
                   <td>hhh123</td>
                   <td>홍길동</td>
@@ -44,7 +54,11 @@ const AccountUserPage: React.FC = () => {
                   <td>25-06-15</td>
                   <td>1차승인</td>
                 </tr>
-                <tr>
+                <tr
+                  onClick={() => {
+                    navigate('/account-edit-manage');
+                  }}
+                >
                   <td>변경</td>
                   <td>hhh123</td>
                   <td>홍길동</td>

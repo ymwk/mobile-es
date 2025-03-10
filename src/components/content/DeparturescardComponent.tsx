@@ -10,18 +10,17 @@ export interface DeparturescardProps {
   isArt?: boolean;
   isTobt?: boolean;
   type?: 'normal' | 'auto' | 'edit' | any;
+  onClick?: any;
 }
 
 const Departurescard: React.FC<DeparturescardProps> = (props) => {
-  const { company, logo, isBookmark, isSnow, isArt, isTobt, type, ...other } = props;
+  const { company, logo, isBookmark, isSnow, isArt, isTobt, type, onClick, ...other } = props;
 
   return (
     <>
-      <div
-        className={`arrivalscard-root ${type ? 'card-t-' + type : ''}`}
-        {...other}
-      >
+      <div className={`arrivalscard-root ${type ? 'card-t-' + type : ''}`} {...other}>
         <div className="card-detail card-badge">
+          <div className="path" />
           <div className="card-logo">
             <img src={logo ? logo : logo_default} alt={company} />
           </div>
@@ -33,7 +32,6 @@ const Departurescard: React.FC<DeparturescardProps> = (props) => {
           <div className="card-option">
             <div className="icons">
               {isSnow && <i className="ico-root snow" />}
-              {/* <i className={`ico-root bookmark ${isBookmark ? 'active' : ''}`} /> */}
               <BookmarkAlertOpen isBookmark={isBookmark} />
             </div>
             <span className="msg">
@@ -62,6 +60,8 @@ const Departurescard: React.FC<DeparturescardProps> = (props) => {
             <em className={`time ${isArt ? 'mile-t-03' : ''}`}>12:10</em>
           </li>
         </ul>
+
+        <button className="button-wrap" onClick={onClick} />
       </div>
     </>
   );

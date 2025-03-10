@@ -8,6 +8,10 @@
   flex-direction: column;
   gap: 1rem;
   font-size: 1.5rem;
+
+  .form-textfield:read-only {
+    background-color: inherit
+  }
 }
 
 .search-row {
@@ -17,10 +21,28 @@
 
   .label {
     white-space: nowrap;
+    font-size: 1.4rem
   }
 
   &.flex-grow {
     gap: 0.5rem
+  }
+}
+
+.search-time {
+  position: relative;
+  margin-left: auto;
+  padding-left: 2rem;
+
+  .form-textfield {
+    width: 6.5rem;
+    text-align: center;
+  }
+
+  button {
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: 6.5rem
   }
 }
 
@@ -81,11 +103,6 @@
   input {
     padding: 0;
     text-align: center;
-
-    &:read-only {
-      background-color: inherit;
-      color: inherit
-    }
   }
 }
 
@@ -170,7 +187,10 @@
 
   .form-textfield {
     padding-left: 4rem;
-
-    &:read-only { background-color: inherit }
   }
+}
+
+.textfield-time {
+  width: 6.5rem;
+  text-align: center;
 }

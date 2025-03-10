@@ -152,7 +152,7 @@ const FlystatPage: React.FC = () => {
                       <td>1편(2분)</td>
                     </tr>
                     <tr>
-                      <th>출발 주기장</th>
+                      <th>출발 유도로</th>
                       <td>0편(0분)</td>
                     </tr>
                   </tbody>

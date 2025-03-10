@@ -95,7 +95,7 @@
   }
 
   &.push {
-    background: url(/src/assets/images/icon/ico_bell-blue.svg) no-repeat center center / 1.6rem;
+    background: url(/src/assets/images/icon/ico_bell_blue.svg) no-repeat center center / 1.6rem;
   }
 
   &.set {
@@ -116,6 +116,14 @@
     // &::after {
     //   content: '?'
     // }
+  }
+
+  &.snow-b {
+    width: 2.6rem;
+    height: 2.6rem;
+    border: 1px solid #E7E7E7;
+    border-radius: 4px;
+    background: #fff url(/src/assets/images/icon/ico_snow.svg) no-repeat center center / 1.6rem
   }
 
   &.snow {
@@ -238,6 +246,12 @@
     &::after { transform: translateX(-50%) rotate(225deg) }
   }
   &.bookmark { background-image: url(/src/assets/images/icon/ico_bookmark_on.svg) }
+}
+
+.card-detail.card-badge {
+  .button-icon:not(.active) .ico-root.bookmark {
+    background: url(/src/assets/images/icon/ico_bookmark_w.svg) no-repeat center center / 2rem;
+  }
 }
 
 .button-icon {

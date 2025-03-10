@@ -73,11 +73,12 @@
 
   td {
     height: 4.2rem;
-    padding: 0.5rem;
+    padding: 0.4rem;
     border-bottom: 1px solid #E3E0E0;
     vertical-align: middle;
     font-size: 1.3rem;
-    text-align: center
+    text-align: center;
+    word-break: break-all;
   }
 
   tbody tr:active {
@@ -102,6 +103,16 @@
     }
     tbody tr:active {
       background-color: #D4FFEA
+    }
+  }
+
+  &.c-t03 {
+    thead th {
+      background-color: #8CADDD;
+      color: #fff
+    }
+    tbody tr:active {
+      background-color: #DFECFF
     }
   }
 }
@@ -304,6 +315,12 @@ table caption {
 
 .table-fixed {
   table-layout: fixed !important;
+}
+
+.table-wrap {
+  th, td {
+    word-break: break-all;
+  }
 }
 
 .table-center {

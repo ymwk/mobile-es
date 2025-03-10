@@ -1,5 +1,8 @@
 import React from 'react';
+import { useModal } from '@hooks/useModal';
+import { IconButton } from '@components/button';
 import { BookmarkAlertOpen, LangAlertOpen } from '@components/content/ModalopenComponent';
+import { MilestonearrivalshistoryModal } from '@pages/modal/MilestonearrivalshistoryModal';
 import logo_default from '@assets/images/logo/logo_incheon.svg';
 
 interface ArrivalscardProps {
@@ -9,6 +12,16 @@ interface ArrivalscardProps {
   isBookmark?: boolean;
   className?: string;
 }
+
+const MilestoneModalOpen = () => {
+  const { isOpen, openModal, closeModal } = useModal();
+  return (
+    <>
+      <IconButton icon="history" label="마일스톤 변경이력 조회" onClick={openModal} />
+      <MilestonearrivalshistoryModal isOpen={isOpen} onClose={closeModal} />
+    </>
+  );
+};
 
 const Arrivalscard: React.FC<ArrivalscardProps> = (props) => {
   const { company, logo, extend, className, isBookmark, ...other } = props;
@@ -59,6 +72,9 @@ const Arrivalscard: React.FC<ArrivalscardProps> = (props) => {
             <div className="card-section2">
               <div className="title-bar">
                 <span className="title">TIMES</span>
+                <div className="title-option">
+                  <MilestoneModalOpen />
+                </div>
               </div>
 
               <ul className="card-schedule">

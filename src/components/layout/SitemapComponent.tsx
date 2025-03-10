@@ -15,40 +15,34 @@ const Sitemap = () => {
       link: '',
       child: [
         {
-          name: '도착 운항정보',
+          name: '도착편 운항정보',
           link: '/arrivals',
         },
         {
-          name: '출발 운항정보',
+          name: '출발편 운항정보',
           link: '/departures',
         },
         {
-          name: '기상정보',
-          link: '/weather',
+          name: 'TTOT(목표 이륙시간)',
+          link: '/ttot',
+        },
+        {
+          name: '통계',
+          link: '/stats',
+        },
+        {
+          name: '즐겨찾기',
+          link: '/bookmark',
         },
         {
           name: 'NOTAM/ATFM​',
           link: '/notam',
         },
+        {
+          name: '기상정보',
+          link: '/weather',
+        },
       ],
-    },
-    {
-      name: 'TTOT(목표 이륙시간)',
-      icon: 'ep',
-      link: '/ttot',
-      child: [],
-    },
-    {
-      name: '통계',
-      icon: 'ca',
-      link: '/stats',
-      child: [],
-    },
-    {
-      name: '즐겨찾기',
-      icon: 'notice',
-      link: '/bookmark',
-      child: [],
     },
     {
       name: '항공기관제',

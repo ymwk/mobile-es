@@ -8,11 +8,11 @@ interface props {
   onClose: () => void;
 }
 
-export const MilestonehistoryModal: React.FC<props> = (props) => {
+export const AntiicinghistoryModal: React.FC<props> = (props) => {
   const { isOpen, onClose } = props;
 
   return (
-    <Modal id={'modal'} isOpen={isOpen} onClose={onClose} title={'출발 마일스톤 변경이력 조회'}>
+    <Modal id={'modal'} isOpen={isOpen} onClose={onClose} title={'제방빙 마일스톤 변경이력 조회'}>
       <>
         <div className="modal-column">
           <table className="table-data">

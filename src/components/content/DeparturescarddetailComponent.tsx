@@ -8,6 +8,7 @@ import { ReqModal } from '@pages/modal/ReqModal';
 import { TOBTModal } from '@pages/modal/TOBTModal';
 import { EEZTModal } from '@pages/modal/EEZTModal';
 import { MilestonehistoryModal } from '@pages/modal/MilestonehistoryModal';
+import { AntiicinghistoryModal } from '@pages/modal/AntiicinghistoryModal';
 import { TooltipHelp } from '@components/popover';
 import logo_default from '@assets/images/logo/logo_incheon.svg';
 
@@ -54,15 +55,25 @@ const Departurescarddetail: React.FC<DeparturescardProps> = (props) => {
     const { isOpen, openModal, closeModal } = useModal();
     return (
       <>
-        <IconButton icon="history" label="마일스톤 변경이력 조회" onClick={openModal} />
+        <IconButton icon="history" label="출발 마일스톤 변경이력 조회" onClick={openModal} />
         <MilestonehistoryModal isOpen={isOpen} onClose={closeModal} />
+      </>
+    );
+  };
+
+  const AntiicinghistoryModalOpen = () => {
+    const { isOpen, openModal, closeModal } = useModal();
+    return (
+      <>
+        <IconButton icon="history" label="제방빙 마일스톤 변경이력 조회" onClick={openModal} />
+        <AntiicinghistoryModal isOpen={isOpen} onClose={closeModal} />
       </>
     );
   };
 
   return (
     <>
-      <div className={`arrivalscard-root ${type ? 'card-t-'+type : ''}`} {...other}>
+      <div className={`arrivalscard-root ${type ? 'card-t-' + type : ''}`} {...other}>
         <div className="card-detail">
           <div className="card-logo">
             <img src={logo ? logo : logo_default} alt={company} />
@@ -173,19 +184,27 @@ const Departurescarddetail: React.FC<DeparturescardProps> = (props) => {
 
             <div className="title-option">
               <HandleSwitchChange />
-              <MilestoneModalOpen />
+              <AntiicinghistoryModalOpen />
             </div>
           </div>
 
           <ul className="card-schedule">
             <li>
-              <span>ELDT</span>
+              <span>AZRT</span>
+              <em className="time">11:55</em>
+            </li>
+            <li>
+              <span>EPIT</span>
               <em className="time">11:55</em>
             </li>
             <li>
               <span>EEZT</span>
               <em className="time">15:45</em>
               <EEZTModalOpen />
+            </li>
+            <li>
+              <span>EPOT</span>
+              <em className="time">11:55</em>
             </li>
             <li className="column-2">
               <span>DEICING POSITION</span>

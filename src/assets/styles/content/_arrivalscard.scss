@@ -8,20 +8,33 @@
   position: relative;
   margin: -2px calc(var(--spd) * -1) -2px -2px;
   padding: 2px var(--spd) 2px 2px;
-  border-radius: 0.8rem 0 0 0.8rem;
   overflow: hidden;
-  transition: background-color .3s;
 
   .arrivalscard-link {
     position: absolute;
     inset: 0;
   }
 
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 0.8rem 0 0 0.8rem;
+    transition: all .3s;
+  }
+
   &.open {
-    background-color: #02C2CE;
+    &::before {
+      background-color: #02C2CE;
+      transform: translateX(0);
+    }
 
     .arrivalscard-root {
-      transform: translateX(5.4rem)
+      transform: translateX(5.4rem);
+
+      &::before, &::after {
+        background: #02C2CE;
+      }
     }
   }
   .button-card {
@@ -32,7 +45,8 @@
     height: 3.2rem;
     border-radius: 50%;
     background-color: #fff;
-    transform: translateY(-50%);
+    transform: translateY(-70%);
+    transition: background-color .3s;
   }
 }
 
@@ -61,6 +75,7 @@
     background: linear-gradient(to top, rgba(245, 245, 245, 100) 60%, rgba(245, 245, 245, 0) 100%);
     box-shadow: inset 0 -3px 2px 0 #00000011;
     transform: translate(-50%, -50%);
+    transition: all .3s;
   }
 
   &::after {
@@ -90,6 +105,7 @@
 
   // section1
   .card-detail {
+    overflow: hidden;
     position: relative;
     display: flex;
     padding: 2rem  var(--mg);
@@ -107,6 +123,16 @@
     }
 
     > * { position: relative }
+
+    // .path {
+    //   position: absolute !important;
+    //   top: 0;
+    //   left: 50%;
+    //   transform: translateX(-50%);
+    //   width: 1024px;
+    //   height: 250px;
+    //   clip-path: path( "M 0 0 L 504.5 0 C 504.5 4 507 7.5 512 7.5 C 517 7.5 519.5 4 519.5 0 L 1024 0 L 1024 250 L 0 250 Z");
+    // }
   }
 
   .card-logo {
@@ -339,10 +365,6 @@
   //   height: 13rem;
   //   border-radius: 1.2rem 1.2rem 0 0;
   // }
-
-  .ico-root.bookmark {
-    background: url(/src/assets/images/icon/ico_bookmark_w.svg) no-repeat center center / 2rem;
-  }
 }
 
 .card-section-toggle.card-badge {

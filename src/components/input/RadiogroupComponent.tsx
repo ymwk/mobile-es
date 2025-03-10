@@ -33,7 +33,6 @@ const Radiogroup: React.FC<RadiogroupProps> = ({ id, items, name, className, typ
         return (
           <label className="label" key={item.value}>
             <input
-              key={item.label}
               id={id}
               type="radio"
               name={name}

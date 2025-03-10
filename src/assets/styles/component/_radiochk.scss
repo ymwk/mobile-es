@@ -117,6 +117,8 @@
 
 
 .radiogroup-root {
+  z-index: 9999;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   gap: 3rem;
@@ -138,7 +140,7 @@
     width: 1.8rem;
     height: 1.8rem;
     margin: 0;
-    border: 2px solid currentColor;
+    border: 1px solid currentColor;
     border-radius: 50%;
     background-color: #fff;
     transition: background-color .2s, color .2s, border-color .2s;
@@ -208,7 +210,8 @@
   }
 
   &.type3 {
-    gap: 0;
+    gap: 6px;
+
     .label {
       height: 4.8rem;
       padding: 1rem 1.5rem 1rem 3.9rem;
@@ -222,7 +225,7 @@
       justify-content: center;
     }
 
-    [type="radio"] {
+    [type="radio"] { 
       position: absolute;
       inset: 0;
       width: 100%;
@@ -290,5 +293,22 @@
         }
       }
     }
+  }
+}
+
+.radiogroup-root.refreshset-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 1.3rem;
+}
+
+.radiogroup-root.timescope-radio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20%, auto));
+  gap: 4px;
+  font-size: 1.3rem;
+
+  .label {
+    padding: 1rem 0.5rem 1rem 2.9rem;
   }
 }

@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 
 interface TabsProps {
   type?: 'login' | 'main' | 'cdm' | 'modal' | 'cdm-sm' | 'cdm-ttot';
+  className?: string
   // children?: React.ReactNode
   children?: any;
   onTabChange?: (tabLabel: string) => void;
 }
 
 const Tabs: React.FC<TabsProps> = (props) => {
-  const { type = 'cdm', children, onTabChange } = props;
+  const { type = 'cdm', className, children, onTabChange } = props;
   const [activeTab, setActiveTab] = useState(children[0].props.label);
 
   const handleTabClick = (tabLabel: string) => {
@@ -19,7 +20,11 @@ const Tabs: React.FC<TabsProps> = (props) => {
   };
 
   return (
-    <div className={`tabs-root ${type}`}>
+    <div
+      className={`tabs-root ${type} ${children.length > 4 && children.length < 8 ? 'tabs-flex-3' : ''} ${
+        className ? className : ''
+      }`}
+    >
       {/*tabButton*/}
       <div className="tabs-btn-wrap">
         {children &&
