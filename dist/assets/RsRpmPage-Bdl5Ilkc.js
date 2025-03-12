@@ -1,0 +1,1 @@
+import{j as a}from"./index-CiJyN_gL.js";import{H as r}from"./HeaderComponent-D1ol0wRG.js";import"./img_pass_pin-DrXz9NbY.js";import"./IconButtonComponent-D__q9I26.js";const i=()=>a.jsx(a.Fragment,{children:a.jsxs("div",{className:"wrapper",children:[a.jsx(r,{title:"Runup Pad Management"}),a.jsx("main",{className:"portal-main"})]})});export{i as default};
