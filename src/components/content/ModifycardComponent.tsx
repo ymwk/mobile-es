@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface RscardProps {
+interface ModifycardProps {
   type?: 'request' | 'approved' | 'rejected' | string;
   hdc?: string;
   aln?: string;
@@ -12,7 +12,7 @@ interface RscardProps {
   add1?: boolean;
 }
 
-const RsCard: React.FC<RscardProps> = (props) => {
+const ModifyCard: React.FC<ModifycardProps> = (props) => {
   const { type, hdc, aln, ter, from, to, open, close, add1 } = props;
 
   return (
@@ -69,4 +69,4 @@ const RsCard: React.FC<RscardProps> = (props) => {
   );
 };
 
-export default RsCard;
+export default ModifyCard;

@@ -1,11 +1,10 @@
 import React from 'react';
 import { Header } from '@components/layout';
-import { IconButton } from '@components/button';
+import { IconButton, ActionButton } from '@components/button';
 import { Textfield } from '@components/input';
-import { ActionButton } from '@components/button';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import RsCard from '@components/content/RscardComponent';
+import ModifyCard from '@components/content/ModifycardComponent';
 
 const cardArray = [
   {
@@ -116,7 +115,7 @@ const RsModifyPage: React.FC = () => {
             <div className="arrivalscard-list">
               {cardArray.map((item, idx) => (
                 <div className="arrivalscard-wrap" key={idx}>
-                  <RsCard
+                  <ModifyCard
                     type={item.type}
                     hdc={item.hdc}
                     aln={item.aln}

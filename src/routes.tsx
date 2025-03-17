@@ -87,6 +87,7 @@ const RsModify = lazy(() => import('@pages/rs/RsModifyPage'));
 const RsModifyDetail = lazy(() => import('@pages/rs/RsModifyDetailPage'));
 const RsModifyRequest = lazy(() => import('@pages/rs/RsModifyRequestPage'));
 const RsCRM = lazy(() => import('@pages/rs/RsCrmPage'));
+const RsCRMDetail = lazy(() => import('@pages/rs/RsCrmDetailPage'));
 const RsSearch = lazy(() => import('@pages/rs/RsSearchPage'));
 const RsComm = lazy(() => import('@pages/rs/RsCommPage'));
 const RsGIMS = lazy(() => import('@pages/rs/RsGimsPage'));
@@ -199,6 +200,7 @@ export const routes = [
       { path: '/rs-modify-detail', element: <RsModifyDetail /> },
       { path: '/rs-modify-request', element: <RsModifyRequest /> },
       { path: '/rs-crm', element: <RsCRM /> },
+      { path: '/rs-crm-detail', element: <RsCRMDetail /> },
       { path: '/rs-search', element: <RsSearch /> },
       { path: '/rs-cpmm', element: <RsComm /> },
       { path: '/rs-gims', element: <RsGIMS /> },
@@ -306,6 +308,7 @@ export const pages = [
   { route: '/rs-modify-detail' },
   { route: '/rs-modify-request' },
   { route: '/rs-crm' },
+  { route: '/rs-crm-detail' },
   { route: '/rs-search' },
   { route: '/rs-cpmm' },
   { route: '/rs-gims' },

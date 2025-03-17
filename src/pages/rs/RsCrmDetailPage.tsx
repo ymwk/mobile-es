@@ -2,30 +2,14 @@ import React from 'react';
 import { Header } from '@components/layout';
 import { ActionButton } from '@components/button';
 import { useNavigate } from 'react-router-dom';
-import { useModal } from '@hooks/useModal';
-import { Alert } from '@components/modal';
 
-const RsModifyDetailPage: React.FC = () => {
+const RsCrmDetailPage: React.FC = () => {
   const navigate = useNavigate();
-
-  const DeleteAlertOpen = () => {
-    const { isOpen, openModal, closeModal } = useModal();
-
-    return (
-      <>
-        <ActionButton label="삭제" onClick={openModal} />
-
-        <Alert isOpen={isOpen} onClose={closeModal} onConfirm={closeModal}>
-          <p>삭제하시겠습니까?</p>
-        </Alert>
-      </>
-    );
-  };
 
   return (
     <>
       <div className="wrapper">
-        <Header title="현행배정 변경/삭제" />
+        <Header title="Change Request Monitoring" />
 
         <main className="portal-main search-main">
           <div className="portal-cont">
@@ -247,19 +231,12 @@ const RsModifyDetailPage: React.FC = () => {
         </main>
         <div className="portal-action">
           <div className="action-inner">
-            <DeleteAlertOpen />
-            <ActionButton
-              label="수정"
-              onClick={() => {
-                navigate('/rs-modify-request');
-              }}
-            />
             <ActionButton
               type="submit"
               styleType="confirm"
               label="목록"
               onClick={() => {
-                navigate('/rs-modify');
+                navigate('/rs-crm');
               }}
             />
           </div>
@@ -269,4 +246,4 @@ const RsModifyDetailPage: React.FC = () => {
   );
 };
 
-export default RsModifyDetailPage;
+export default RsCrmDetailPage;

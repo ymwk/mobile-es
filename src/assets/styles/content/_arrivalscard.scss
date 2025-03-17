@@ -325,6 +325,33 @@
 }
 
 .runupcard-root {
+  .card-schedule {
+    display: flex;
+    gap: 0.5rem;
+
+    & > li { flex: 1 }
+
+    &.flex-column {
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+      min-width: 8rem;
+      padding-left: 1.5rem;
+
+      & > li { flex: 0 }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: var(--mg);
+        bottom: var(--mg);
+        right: 0;
+        border-right: 1px dashed #979797
+      }
+    }
+  }
+
   .card-schedule + .card-schedule {
     &::after {
       content: '';
@@ -338,25 +365,6 @@
   &.card-t-request { background-color: #E0DFDF }
   &.card-t-approved { background-color: #D2F4CE }
   &.card-t-rejected { background-color: #FFC9C9 }
-
-  .card-schedule.flex-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0;
-    min-width: 8rem;
-    padding-left: 1.5rem;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: var(--mg);
-      bottom: var(--mg);
-      right: 0;
-      border-right: 1px dashed #979797
-    }
-  }
 
   .flex-row .card-schedule + .card-schedule::after { left: 0 }
 }
