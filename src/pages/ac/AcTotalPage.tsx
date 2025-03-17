@@ -2,23 +2,12 @@ import React from 'react';
 import { Header } from '@components/layout';
 import { ActionButton } from '@components/button';
 import { Tabs, TabContent } from '@components/tabs';
-import { IconButton } from '@components/button';
 import { useModal } from '@hooks/useModal';
-import { FltModal } from '@pages/modal/FltModal';
 import { Textfield } from '@components/input';
 import { TimescopeModal } from '@pages/modal/TimescopeModal';
+import { FltModalOpen } from '@components/content/ModalopenComponent';
 
 const AcTotalPage: React.FC = () => {
-
-  const FltModalOpen = () => {
-    const { isOpen, openModal, closeModal } = useModal();
-    return (
-      <>
-        <IconButton icon="search" onClick={openModal} label="편명조회" />
-        <FltModal isOpen={isOpen} onClose={closeModal} />
-      </>
-    );
-  };
 
   const TimesetModalOpen = () => {
     const { isOpen, openModal, closeModal } = useModal();
@@ -38,10 +27,7 @@ const AcTotalPage: React.FC = () => {
         <div className="search-root">
           <div className="search-row">
             <span className="label">FLT</span>
-            <div className="flt-search">
-              <Textfield value="OZ" readOnly />
-              <FltModalOpen />
-            </div>
+            <FltModalOpen />
             <div className="search-row search-time">
               <span className="label">Time Scope</span>
               <Textfield value="1H" readOnly />

@@ -2,6 +2,14 @@
   display: flex;
   align-items: center;
   gap: 0.3rem !important;
+  font-size: 1.5rem
+}
+
+.datepk-wrap {
+  min-width: 13rem;
+  position: relative;
+  display: flex;
+  gap: 0.4rem;
 }
 
 .datepk-header {
@@ -34,6 +42,22 @@
     background-color: #fff !important;
     color: inherit !important;
   }
+}
+
+.form-datepk-wrap {
+  .datepk-wrap {
+    width: 50%
+  }
+
+  .select-root {
+    width: 25%;
+    min-width: 8rem
+  }
+}
+
+.runup-datepk-wrap {
+  max-width: 15rem;
+  margin-bottom: 0.5rem
 }
 
 // .MuiDateCalendar-root {}

@@ -117,7 +117,7 @@
 
 
 .radiogroup-root {
-  z-index: 9999;
+  z-index: 9;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -268,7 +268,6 @@
 
   &.type4 {
     flex-wrap: nowrap;
-    gap: 1rem;
     font-size: 1.3rem;
 
     [type="radio"] {
@@ -310,5 +309,11 @@
 
   .label {
     padding: 1rem 0.5rem 1rem 2.9rem;
+  }
+}
+
+.search-root {
+  .radiogroup-root {
+    gap: 1rem
   }
 }

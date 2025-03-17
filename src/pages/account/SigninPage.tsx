@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { Footer } from '@components/layout';
 import Notice from '@components/content/NoticeComponent';
@@ -68,15 +67,6 @@ const SignupPage: React.FC = () => {
 
   return (
     <>
-      <div
-        style={{
-          position: 'absolute',
-          top: 20,
-          left: 20,
-        }}
-      >
-        <Link to="/test">TABLE</Link>
-      </div>
       <div className="wrapper index-wrapper">
         <header className="index-header">
           <h1 className="index-logo">

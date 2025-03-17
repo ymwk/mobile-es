@@ -4,6 +4,8 @@ import { Alert } from '@components/modal';
 import { IconButton } from '@components/button';
 import { HourpkModal } from '@pages/modal/HourpkModal';
 import { TimepkModal } from '@pages/modal/TimepkModal';
+import { FltModal } from '@pages/modal/FltModal';
+import { Textfield } from '@components/input';
 
 export interface BookmarkProps {
   isBookmark?: boolean;
@@ -81,5 +83,17 @@ export const TimepkModalOpen = () => {
       <button type="button" className="timepk-btn" onClick={openModal} />
       <TimepkModal isOpen={isOpen} onClose={closeModal} />
     </>
+  );
+};
+
+// Flt
+export const FltModalOpen = () => {
+  const { isOpen, openModal, closeModal } = useModal();
+  return (
+    <div className="flt-search">
+      <Textfield value="OZ" readOnly />
+      <IconButton icon="search" onClick={openModal} label="편명조회" />
+      <FltModal isOpen={isOpen} onClose={closeModal} />
+    </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Header } from '@components/layout';
+import ImgSystem from '@assets/images/pic/pic_system.png';
 
 const ErrorPage: React.FC = () => {
   return (
@@ -9,6 +10,9 @@ const ErrorPage: React.FC = () => {
 
         <main className="portal-main">
           <div className="account-complete">
+            <div>
+              <img src={ImgSystem} alt="" className="account-system-img" />
+            </div>
             <p className="title-em">시스템 점검 중입니다.</p>
             <p className="desc">
               현재 시스템을 새롭게 하기 위하여

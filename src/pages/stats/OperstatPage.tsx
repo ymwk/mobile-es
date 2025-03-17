@@ -98,7 +98,7 @@ const OperstatPage: React.FC = () => {
           <TabContent label="TOBT / TSAT">
             <div className="tabs-child">11 December</div>
             <main className="portal-main search-main">
-              <div className="table-gap">
+              <div className="table-wrap">
                 <div className="tooltip-wrapper">
                   <span>Top 5 Airlines</span>
                   <TooltipHelp>
@@ -133,7 +133,9 @@ const OperstatPage: React.FC = () => {
                     ))}
                   </tbody>
                 </table>
-
+              </div>
+              
+              <div className="table-wrap">
                 <div className="tooltip-wrapper">
                   <span>Bottom 5 Airlines</span>
                   <TooltipHelp>

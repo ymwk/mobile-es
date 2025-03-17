@@ -39,7 +39,7 @@ function Datepk(
     return (
       <input
         type="text"
-        value={label ? label : today.format('YYYY-MM-DD')}
+        value={label ? label : today.format(format ? format : 'YYYY-MM-DD')}
         className="form-textfield form-datepk"
         onClick={() => setOpen?.((prev) => !prev)}
         readOnly

@@ -1,7 +1,6 @@
 import { lazy } from 'react';
 import Layout from '@pages/_layout';
 
-const Test = lazy(() => import('@pages/TestPage'));
 const List = lazy(() => import('@pages/ListPage'));
 const Index = lazy(() => import('@pages/account/SigninPage'));
 const PortalIndex = lazy(() => import('@pages/portal/MainPage'));
@@ -76,9 +75,17 @@ const AcDeicing = lazy(() => import('@pages/ac/AcDeicingPage'));
 
 const RsSCA = lazy(() => import('@pages/rs/RsScaPage'));
 const RsSF = lazy(() => import('@pages/rs/RsSfPage'));
+const RsSFDetail = lazy(() => import('@pages/rs/RsSfDetailPage'));
+const RsSFEdit = lazy(() => import('@pages/rs/RsSfEditPage'));
 const RsRPM = lazy(() => import('@pages/rs/RsRpmPage'));
+const RsRPMDetail = lazy(() => import('@pages/rs/RsRpmDetailPage'));
+const RsRpmRequest = lazy(() => import('@pages/rs/RsRpmRequestPage'));
 const RsHPM = lazy(() => import('@pages/rs/RsHpmPage'));
+const RsHPMDetail = lazy(() => import('@pages/rs/RsHpmDetailPage'));
+const RsHpmRequest = lazy(() => import('@pages/rs/RsHpmRequestPage'));
 const RsModify = lazy(() => import('@pages/rs/RsModifyPage'));
+const RsModifyDetail = lazy(() => import('@pages/rs/RsModifyDetailPage'));
+const RsModifyRequest = lazy(() => import('@pages/rs/RsModifyRequestPage'));
 const RsCRM = lazy(() => import('@pages/rs/RsCrmPage'));
 const RsSearch = lazy(() => import('@pages/rs/RsSearchPage'));
 const RsComm = lazy(() => import('@pages/rs/RsCommPage'));
@@ -91,7 +98,6 @@ export const routes = [
     path: '/',
     element: <Layout />,
     children: [
-      { path: '/test', element: <Test /> },
       { path: '/list', element: <List /> },
       { path: '/', element: <Index /> },
 
@@ -181,9 +187,17 @@ export const routes = [
       // 자원배정
       { path: '/rs-sca', element: <RsSCA /> },
       { path: '/rs-sf', element: <RsSF /> },
+      { path: '/rs-sf-detail', element: <RsSFDetail /> },
+      { path: '/rs-sf-edit', element: <RsSFEdit /> },
       { path: '/rs-rpm', element: <RsRPM /> },
+      { path: '/rs-rpm-detail', element: <RsRPMDetail /> },
+      { path: '/rs-rpm-request', element: <RsRpmRequest /> },
       { path: '/rs-hpm', element: <RsHPM /> },
+      { path: '/rs-hpm-detail', element: <RsHPMDetail /> },
+      { path: '/rs-hpm-request', element: <RsHpmRequest /> },
       { path: '/rs-modify', element: <RsModify /> },
+      { path: '/rs-modify-detail', element: <RsModifyDetail /> },
+      { path: '/rs-modify-request', element: <RsModifyRequest /> },
       { path: '/rs-crm', element: <RsCRM /> },
       { path: '/rs-search', element: <RsSearch /> },
       { path: '/rs-cpmm', element: <RsComm /> },
@@ -193,7 +207,6 @@ export const routes = [
 ];
 
 export const pages = [
-  { route: '/test' },
   { route: '/list' },
   { route: '/' },
   { route: '/portal' },
@@ -281,9 +294,17 @@ export const pages = [
   // 자원배정
   { route: '/rs-sca' },
   { route: '/rs-sf' },
+  { route: '/rs-sf-detail' },
+  { route: '/rs-sf-edit' },
   { route: '/rs-rpm' },
+  { route: '/rs-rpm-detail' },
+  { route: '/rs-rpm-request' },
   { route: '/rs-hpm' },
+  { route: '/rs-hpm-detail' },
+  { route: '/rs-hpm-request' },
   { route: '/rs-modify' },
+  { route: '/rs-modify-detail' },
+  { route: '/rs-modify-request' },
   { route: '/rs-crm' },
   { route: '/rs-search' },
   { route: '/rs-cpmm' },

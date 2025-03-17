@@ -105,6 +105,14 @@ hr {
   flex-grow: 1;
 }
 
+.flex-primary {
+  flex: 1 0 auto
+}
+
+.flex-row {
+  display: flex;
+}
+
 .flex-column {
   display: flex;
   flex-direction: column;

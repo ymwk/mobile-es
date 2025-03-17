@@ -57,7 +57,7 @@ const TobtcPage: React.FC = () => {
           <TabContent label="Day">
             <div className="tabs-child">11 December</div>
             <main className="portal-main search-main">
-              <div className="table-gap">
+              <div className="table-wrap">
                 <div className="tooltip-wrapper">
                   <span>Bottom 5 Airlines</span>
                   <TooltipHelp>
@@ -96,7 +96,9 @@ const TobtcPage: React.FC = () => {
                     ))}
                   </tbody>
                 </table>
+              </div>
 
+              <div className="table-wrap">
                 <div className="tooltip-wrapper">
                   <span>Top 5 Airlines</span>
                   <TooltipHelp>
@@ -141,7 +143,7 @@ const TobtcPage: React.FC = () => {
           <TabContent label="Week">
             <div className="tabs-child">5 December ~ 11 December</div>
             <main className="portal-main search-main">
-              <div className="table-gap">
+              <div className="table-wrap">
                 <div className="tooltip-wrapper">
                   <span>Avg. Daily5 / Bottom Airlines</span>
                   <TooltipHelp>
@@ -180,7 +182,9 @@ const TobtcPage: React.FC = () => {
                     ))}
                   </tbody>
                 </table>
+              </div>
 
+              <div className="table-wrap">
                 <div className="tooltip-wrapper">
                   <span>Avg. Daily5 / Top Airlines</span>
                   <TooltipHelp>
@@ -225,7 +229,7 @@ const TobtcPage: React.FC = () => {
           <TabContent label="Year to date">
             <div className="tabs-child">1 January ~ 11 December</div>
             <main className="portal-main search-main">
-              <div className="table-gap">
+              <div className="table-wrap">
                 <div className="tooltip-wrapper">
                   <span>Avg. Daily5 / Bottom Airlines</span>
                   <TooltipHelp>
@@ -264,7 +268,9 @@ const TobtcPage: React.FC = () => {
                     ))}
                   </tbody>
                 </table>
-
+              </div>
+              
+              <div className="table-wrap">
                 <div className="tooltip-wrapper">
                   <span>Avg. Daily5 / Top Airlines</span>
                   <TooltipHelp>

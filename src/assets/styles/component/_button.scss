@@ -12,6 +12,7 @@
   font-weight: 600;
   font-size: 1.5rem;
   white-space: nowrap;
+  line-height: 1;
 
   &:disabled { 
     color: #9B9B9B;
@@ -20,7 +21,7 @@
 
   &.confirm {
     background-color: var(--primary);
-    color: #fff
+    color: #fff;
   }
 
   &.action {

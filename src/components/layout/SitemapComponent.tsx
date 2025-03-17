@@ -34,14 +34,6 @@ const Sitemap = () => {
           name: '즐겨찾기',
           link: '/bookmark',
         },
-        {
-          name: 'NOTAM/ATFM​',
-          link: '/notam',
-        },
-        {
-          name: '기상정보',
-          link: '/weather',
-        },
       ],
     },
     {
@@ -136,6 +128,14 @@ const Sitemap = () => {
         {
           name: '사용자 정보관리',
           link: '/account-user-edit',
+        },
+        {
+          name: 'NOTAM/ATFM​',
+          link: '/notam',
+        },
+        {
+          name: '기상정보',
+          link: '/weather',
         },
       ],
     },

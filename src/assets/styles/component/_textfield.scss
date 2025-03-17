@@ -50,6 +50,7 @@
   border-radius: 0.4rem;
   padding: 0 1.2rem;
   font-size: 1.5rem;
+  color: #333;
 
   &.form-search {
     padding-left: 4rem;
@@ -66,7 +67,7 @@ input.form-textfield {
   &:disabled { opacity: 0.6 }
   &:read-only {
     background-color: #edeeef;
-    color: #9b9b9b;
+    color: inherit;
   }
 }
 
@@ -136,6 +137,12 @@ input.form-textfield {
     outline: 0;
     border-color: var(--primary);
   }
+
+  &:disabled { opacity: 0.6 }
+  &:read-only {
+    background-color: #edeeef;
+    color: inherit;
+  }
 }
 
 .form-filefield {
@@ -170,4 +177,10 @@ input.form-textfield {
   height: 2.8rem;
   color: var(--primary-t);
   text-align: center;
+}
+
+.textfield-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem
 }

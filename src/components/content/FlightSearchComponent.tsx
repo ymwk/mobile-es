@@ -1,32 +1,17 @@
 import { useState } from 'react';
-import { Textfield, Radiogroup } from '@components/input';
+import { Radiogroup } from '@components/input';
 import { IconButton } from '@components/button';
-import { useModal } from '@hooks/useModal';
-import { FltModal } from '@pages/modal/FltModal';
+import { FltModalOpen } from './ModalopenComponent';
 
 function FlightSearch(props: { getRadioValue: (val: string) => void }) {
   const [radioval, setRadioVal] = useState('');
-  
-  const FltModalOpen = () => {
-    const { isOpen, openModal, closeModal } = useModal();
-    return (
-      <>
-        <IconButton icon="search" onClick={openModal} label="편명조회" />
-        <FltModal isOpen={isOpen} onClose={closeModal} />
-      </>
-    );
-  }
-
   return (
     <>
       <form method="post">
         <div className="search-root">
           <div className="search-row">
             <span>FLT</span>
-            <div className='flt-search'>
-              <Textfield value="OZ" readOnly/>
-              <FltModalOpen/>
-            </div>
+            <FltModalOpen />
 
             <Radiogroup
               name={'search-radio'}
