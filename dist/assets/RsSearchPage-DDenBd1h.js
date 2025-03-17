@@ -1,1 +1,0 @@
-import{j as r}from"./index-CygorJVP.js";import{H as a}from"./HeaderComponent-KgMQGfLy.js";import"./img_pass_pin-CJ3yjVMo.js";import"./IconButtonComponent-Bb2g7JdG.js";const i=()=>r.jsx(r.Fragment,{children:r.jsxs("div",{className:"wrapper",children:[r.jsx(a,{title:"현행배정 조회"}),r.jsx("main",{className:"portal-main"})]})});export{i as default};

@@ -1,0 +1,1 @@
+import{j as r}from"./index-CGvb5FS0.js";import{H as s}from"./HeaderComponent-CkSIyrY3.js";import"./img_pass_pin-B6SR2n5t.js";const t=()=>r.jsx(r.Fragment,{children:r.jsxs("div",{className:"wrapper",children:[r.jsx(s,{title:"공용시설 신청관리"}),r.jsx("main",{className:"portal-main"})]})});export{t as default};
