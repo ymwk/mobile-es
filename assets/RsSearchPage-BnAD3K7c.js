@@ -1,0 +1,1 @@
+import{j as r}from"./index-CGvb5FS0.js";import{H as a}from"./HeaderComponent-CkSIyrY3.js";import"./img_pass_pin-B6SR2n5t.js";const m=()=>r.jsx(r.Fragment,{children:r.jsxs("div",{className:"wrapper",children:[r.jsx(a,{title:"현행배정 조회"}),r.jsx("main",{className:"portal-main"})]})});export{m as default};
