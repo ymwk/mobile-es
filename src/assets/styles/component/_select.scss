@@ -24,4 +24,12 @@
       border-color: var(--primary);
     }
   }
+
+  &.select-narrow {
+    background-position: right 0.6rem center;
+
+    select {
+      padding: 0 2rem 0 0.8rem
+    }
+  }
 }

@@ -3,6 +3,16 @@
   font-size: 1.8rem;
 }
 
+.stats-gap {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  .stats-top {
+    margin-bottom: 1rem
+  }
+}
+
 .stats-portal {
   flex-grow: 1;
   display: grid;
@@ -269,14 +279,6 @@
   background-color: #fff;
   height: 43rem;
 
-  .graph-help {
-    position: absolute;
-    top: 2rem;
-    right: 1.5rem;
-    font-size: 1.4rem;
-    color: #333
-  }
-
   .graph-area {
     position: absolute;
     bottom: 4.5rem;
@@ -354,6 +356,12 @@
       border-radius: 1rem;
       transition: transform .5s var(--ease);
     }
+  }  
+
+  .tooltip-wrapper {
+    position: absolute;
+    top: 2rem;
+    right: 1.5rem;
   }
 }
 

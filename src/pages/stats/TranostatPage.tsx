@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header } from '@components/layout';
 import { Tabs, TabContent } from '@components/tabs';
-import { ToastHelp } from '@components/popover';
+import { TooltipHelp } from '@components/popover';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
@@ -108,6 +108,7 @@ const TranostatPage: React.FC = () => {
                 clickable: true,
               }}
               modules={[Pagination]}
+              touchStartPreventDefault={false}
             >
               <SwiperSlide>
                 <div className="tabs-child">11 December</div>
@@ -140,11 +141,11 @@ const TranostatPage: React.FC = () => {
                 <main className="portal-main search-main">
                   <div className="portal-cont">
                     <div className="stats-graph">
-                      <div className="graph-help toast-wrapper">
+                      <div className="tooltip-wrapper">
                         <span>항공 교통량 증가 순위</span>
-                        <ToastHelp title="항공 교통량 증가 순위">
-                          총 교통량의 상위 30위권 내에서 교통량 증가율 상위 5위산정
-                        </ToastHelp>
+                        <TooltipHelp title="항공 교통량 증가 순위">
+                          <p>총 교통량의 상위 30위권 내에서 교통량 증가율 상위 5위산정</p>
+                        </TooltipHelp>
                       </div>
 
                       <div className="graph-area">
@@ -219,6 +220,7 @@ const TranostatPage: React.FC = () => {
                 clickable: true,
               }}
               modules={[Pagination]}
+              touchStartPreventDefault={false}
             >
               <SwiperSlide>
                 <div className="tabs-child">11 December</div>
@@ -256,11 +258,11 @@ const TranostatPage: React.FC = () => {
                 <main className="portal-main search-main">
                   <div className="portal-cont">
                     <div className="stats-graph">
-                      <div className="graph-help toast-wrapper">
+                      <div className="tooltip-wrapper">
                         <span>항공 교통량 증가 순위</span>
-                        <ToastHelp title="항공 교통량 증가 순위">
-                          총 교통량의 상위 30위권 내에서 교통량 증가율 상위 5위산정
-                        </ToastHelp>
+                        <TooltipHelp title="항공 교통량 증가 순위">
+                          <p>총 교통량의 상위 30위권 내에서 교통량 증가율 상위 5위산정</p>
+                        </TooltipHelp>
                       </div>
                       <div className="graph-area">
                         <ul className="key-x">
@@ -334,6 +336,7 @@ const TranostatPage: React.FC = () => {
                 clickable: true,
               }}
               modules={[Pagination]}
+              touchStartPreventDefault={false}
             >
               <SwiperSlide>
                 <div className="tabs-child">11 December</div>
@@ -366,11 +369,11 @@ const TranostatPage: React.FC = () => {
                 <main className="portal-main search-main">
                   <div className="portal-cont">
                     <div className="stats-graph">
-                      <div className="graph-help toast-wrapper">
+                      <div className="tooltip-wrapper">
                         <span>항공 교통량 증가 순위</span>
-                        <ToastHelp title="항공 교통량 증가 순위">
-                          총 교통량의 상위 30위권 내에서 교통량 증가율 상위 5위산정
-                        </ToastHelp>
+                        <TooltipHelp title="항공 교통량 증가 순위">
+                          <p>총 교통량의 상위 30위권 내에서 교통량 증가율 상위 5위산정</p>
+                        </TooltipHelp>
                       </div>
                       <div className="graph-area">
                         <ul className="key-x">

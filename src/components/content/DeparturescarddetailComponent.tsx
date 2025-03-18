@@ -177,8 +177,7 @@ const Departurescarddetail: React.FC<DeparturescardProps> = (props) => {
         <div className="card-section3">
           <div className="title-bar">
             <span className="title">DE-ICING</span>
-            <TooltipHelp>
-              <div className="tooltip-title">Alfa South Zone(AS)</div>
+            <TooltipHelp title="Alfa South Zone(AS)">
               <p>Zone No : 821, 822, 823, 825</p>
             </TooltipHelp>
 
@@ -208,7 +207,7 @@ const Departurescarddetail: React.FC<DeparturescardProps> = (props) => {
             </li>
             <li className="column-2">
               <span>DEICING POSITION</span>
-              <em className="time">
+              <em className="zone">
                 AS<small>ZONE</small>831
               </em>
             </li>

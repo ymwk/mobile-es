@@ -3,11 +3,12 @@ import { IconButton } from '@components/button';
 import { Tooltip, ClickAwayListener, Grow } from '@mui/material';
 
 interface TooltipHelpProps {
+  title?: string;
   children?: React.ReactNode;
 }
 
 const TooltipHelp: React.FC<TooltipHelpProps> = (props) => {
-  const { children } = props;
+  const { title, children } = props;
   const [open, setOpen] = React.useState(false);
 
   const handleTooltipClose = () => {
@@ -27,6 +28,7 @@ const TooltipHelp: React.FC<TooltipHelpProps> = (props) => {
         // disableFocusListener
         disableHoverListener
         disableTouchListener
+        // leaveDelay={50000}
         slots={{
           transition: Grow,
         }}
@@ -35,7 +37,7 @@ const TooltipHelp: React.FC<TooltipHelpProps> = (props) => {
             modifiers: [
               {
                 name: 'offset',
-                options: { 
+                options: {
                   offset: [0, -20],
                 },
               },
@@ -46,6 +48,7 @@ const TooltipHelp: React.FC<TooltipHelpProps> = (props) => {
         classes={{ popper: 'tooltip-root' }}
         title={
           <React.Fragment>
+            <div className="tooltip-title">{title}</div>
             {children}
             <IconButton label="닫기" icon="close" onClick={handleTooltipClose} />
           </React.Fragment>

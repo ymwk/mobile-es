@@ -98,78 +98,85 @@ const OperstatPage: React.FC = () => {
           <TabContent label="TOBT / TSAT">
             <div className="tabs-child">11 December</div>
             <main className="portal-main search-main">
-              <div className="table-wrap">
-                <div className="tooltip-wrapper">
-                  <span>Top 5 Airlines</span>
-                  <TooltipHelp>
-                    <div className="tooltip-title">Top 5 Airlines 기준</div>
-                    <p>일 운항횟수의 상위 30위권 내에서 TOBT 40분 전 준수율 상위 5위 산정</p>
-                  </TooltipHelp>
+              <div className="portal-cont">
+                <div className="stats-gap">
+                  <div>
+                    <div className="stats-top">
+                      <div className="tooltip-wrapper">
+                        <span>Top 5 Airlines</span>
+                        <TooltipHelp title="Top 5 Airlines 기준">
+                          <p>일 운항횟수의 상위 30위권 내에서 TOBT 40분 전 준수율 상위 5위 산정</p>
+                        </TooltipHelp>
+                      </div>
+                    </div>
+                    <table className="table-airline table-fixed">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>TOBT</th>
+                          <th>TSAT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {Airlines.map((item, idx) => (
+                          <tr key={idx}>
+                            <td className="text-left">
+                              <div className="flt-wrap">
+                                <img src={item.logo} alt={item.air} />
+                                <span className="air">{item.air}</span>
+                              </div>
+                            </td>
+                            <td>
+                              <em>{item.tobt}</em>
+                            </td>
+                            <td>
+                              <em>{item.tsat}</em>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div>
+                    <div className="stats-top">
+                      <div className="tooltip-wrapper">
+                        <span>Bottom 5 Airlines</span>
+                        <TooltipHelp title="Bottom 5 Airlines 기준">
+                          일 운항횟수의 상위 30위권 내에서 TOBT 40분 전 준수율 하위 5위 산정
+                        </TooltipHelp>
+                      </div>
+                    </div>
+
+                    <table className="table-airline table-fixed">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>TOBT</th>
+                          <th>TSAT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {Airlines.map((item, idx) => (
+                          <tr key={idx}>
+                            <td className="text-left">
+                              <div className="flt-wrap">
+                                <img src={item.logo} alt={item.air} />
+                                <span className="air">{item.air}</span>
+                              </div>
+                            </td>
+                            <td>
+                              <em>{item.tobt}</em>
+                            </td>
+                            <td>
+                              <em>{item.tsat}</em>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-                <table className="table-airline table-fixed">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>TOBT</th>
-                      <th>TSAT</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {Airlines.map((item, idx) => (
-                      <tr key={idx}>
-                        <td className="text-left">
-                          <div className="flt-wrap">
-                            <img src={item.logo} alt={item.air} />
-                            <span className="air">{item.air}</span>
-                          </div>
-                        </td>
-                        <td>
-                          <em>{item.tobt}</em>
-                        </td>
-                        <td>
-                          <em>{item.tsat}</em>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              
-              <div className="table-wrap">
-                <div className="tooltip-wrapper">
-                  <span>Bottom 5 Airlines</span>
-                  <TooltipHelp>
-                    <div className="tooltip-title">Bottom 5 Airlines 기준</div>
-                    <p>일 운항횟수의 상위 30위권 내에서 TOBT 40분 전 준수율 하위 5위 산정</p>
-                  </TooltipHelp>
-                </div>
-                <table className="table-airline table-fixed">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>TOBT</th>
-                      <th>TSAT</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {Airlines.map((item, idx) => (
-                      <tr key={idx}>
-                        <td className="text-left">
-                          <div className="flt-wrap">
-                            <img src={item.logo} alt={item.air} />
-                            <span className="air">{item.air}</span>
-                          </div>
-                        </td>
-                        <td>
-                          <em>{item.tobt}</em>
-                        </td>
-                        <td>
-                          <em>{item.tsat}</em>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
               </div>
             </main>
           </TabContent>

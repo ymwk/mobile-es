@@ -61,7 +61,7 @@ const RsHpmPage: React.FC = () => {
       <div className="wrapper">
         <Header title="Hangar Pad Management" />
 
-        <div className="radiogroup-root">
+        <div className="search-root">
           <div className="runup-datepk-wrap">
             <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ko">
               <Datepk />

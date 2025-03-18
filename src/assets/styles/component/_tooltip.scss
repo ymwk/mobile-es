@@ -1,20 +1,41 @@
+.tooltip-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 1.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+
+  .button-icon {
+    margin: -1rem
+  }
+}
+.search-result-top .tooltip-wrapper { margin-left: auto }
+.stats-top .tooltip-wrapper {
+  font-size: 1.6rem
+}
+
 .tooltip-root {
   .MuiTooltip-tooltip {
     position: relative;
-    padding: 1.6rem 2rem;
+    padding: 1.5rem 1.8rem;
     border-radius: 0.8rem;
     border: 1px solid var(--primary);
     background-color: #fff;
     font-size: 1.4rem;
+    line-height: 1.4;
     font-family: var(--pretandard);
     color: var(--default);
     font-weight: 500;
     word-break: keep-all;
+    min-width: 30rem;
+    max-width: 36rem;
   }
 
   .tooltip-title {
-    padding-right: 3rem;
-    margin-bottom: 1.5rem;
+    padding-right: 5rem;
+    margin-bottom: 1.3rem;
     font-size: 1.8rem;
     font-weight: 600;
     line-height: 1.4;
@@ -23,8 +44,9 @@
 
   .button-icon {
     position: absolute;
-    top: 0.6rem;
-    right: 0.4rem;
+    top: 0.9rem;
+    right: 1rem;
+    margin: 0;
 
     .ico-root {
       font-size: 3rem;
@@ -32,12 +54,20 @@
   }
 }
 
-.tooltip-wrapper {
+.tooltip-list {
   display: flex;
-  align-items: center;
-  margin-top: calc(var(--vpd) - 1rem);
-  min-height: 1.8rem;
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 1.2;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  li {
+    position: relative;
+    padding-left: 0.8rem;
+
+    &::before {
+      content: '•';
+      position: absolute;
+      top: 0;
+      left: 0
+    }
+  }
 }

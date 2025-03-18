@@ -57,258 +57,279 @@ const TobtcPage: React.FC = () => {
           <TabContent label="Day">
             <div className="tabs-child">11 December</div>
             <main className="portal-main search-main">
-              <div className="table-wrap">
-                <div className="tooltip-wrapper">
-                  <span>Bottom 5 Airlines</span>
-                  <TooltipHelp>
-                    <div className="tooltip-title">Bottom 5 Airlines 기준</div>
-                    <p>일 운항횟수의 상위 30위권 내에서 TOBT 40분 전 준수율 하위 5위 산정</p>
-                  </TooltipHelp>
-                </div>
-                <table className="table-airline">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>-90m ~ -40m</th>
-                      <th>-40m ~ -10m</th>
-                      <th>-10m ~ AOBT</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {Airlines.map((item, idx) => (
-                      <tr key={idx}>
-                        <td className="text-left">
-                          <div className="flt-wrap">
-                            <img src={item.logo} alt={item.air} />
-                            <span className="air">{item.air}</span>
-                          </div>
-                        </td>
-                        <td className="text-right">
-                          <em>{item.val1}</em>
-                        </td>
-                        <td className="text-right">
-                          <em>{item.val2}</em>
-                        </td>
-                        <td className="text-right">
-                          <em>{item.val3}</em>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              <div className="portal-cont">
+                <div className="stats-gap">
+                  <div>
+                    <div className="stats-top">
+                      <div className="tooltip-wrapper">
+                        <span>Bottom 5 Airlines</span>
+                        <TooltipHelp title="Bottom 5 Airlines 기준">
+                          <p>일 운항횟수의 상위 30위권 내에서 TOBT 40분 전 준수율 하위 5위 산정</p>
+                        </TooltipHelp>
+                      </div>
+                    </div>
+                    <table className="table-airline">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>-90m ~ -40m</th>
+                          <th>-40m ~ -10m</th>
+                          <th>-10m ~ AOBT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {Airlines.map((item, idx) => (
+                          <tr key={idx}>
+                            <td className="text-left">
+                              <div className="flt-wrap">
+                                <img src={item.logo} alt={item.air} />
+                                <span className="air">{item.air}</span>
+                              </div>
+                            </td>
+                            <td className="text-right">
+                              <em>{item.val1}</em>
+                            </td>
+                            <td className="text-right">
+                              <em>{item.val2}</em>
+                            </td>
+                            <td className="text-right">
+                              <em>{item.val3}</em>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
 
-              <div className="table-wrap">
-                <div className="tooltip-wrapper">
-                  <span>Top 5 Airlines</span>
-                  <TooltipHelp>
-                    <div className="tooltip-title">Top 5 Airlines 기준</div>
-                    <p>일 운항횟수의 상위 30위권 내에서 TOBT 40분 전 준수율 상위 5위 산정</p>
-                  </TooltipHelp>
+                  <div>
+                    <div className="stats-top">
+                      <div className="tooltip-wrapper">
+                        <span>Top 5 Airlines</span>
+                        <TooltipHelp title="Top 5 Airlines 기준">
+                          <p>일 운항횟수의 상위 30위권 내에서 TOBT 40분 전 준수율 상위 5위 산정</p>
+                        </TooltipHelp>
+                      </div>
+                    </div>
+
+                    <table className="table-airline">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>-90m ~ -40m</th>
+                          <th>-40m ~ -10m</th>
+                          <th>-10m ~ AOBT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {Airlines.map((item, idx) => (
+                          <tr key={idx}>
+                            <td className="text-left">
+                              <div className="flt-wrap">
+                                <img src={item.logo} alt={item.air} />
+                                <span className="air">{item.air}</span>
+                              </div>
+                            </td>
+                            <td className="text-right">
+                              <em>{item.val1}</em>
+                            </td>
+                            <td className="text-right">
+                              <em>{item.val2}</em>
+                            </td>
+                            <td className="text-right">
+                              <em>{item.val3}</em>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-                <table className="table-airline">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>-90m ~ -40m</th>
-                      <th>-40m ~ -10m</th>
-                      <th>-10m ~ AOBT</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {Airlines.map((item, idx) => (
-                      <tr key={idx}>
-                        <td className="text-left">
-                          <div className="flt-wrap">
-                            <img src={item.logo} alt={item.air} />
-                            <span className="air">{item.air}</span>
-                          </div>
-                        </td>
-                        <td className="text-right">
-                          <em>{item.val1}</em>
-                        </td>
-                        <td className="text-right">
-                          <em>{item.val2}</em>
-                        </td>
-                        <td className="text-right">
-                          <em>{item.val3}</em>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
               </div>
             </main>
           </TabContent>
           <TabContent label="Week">
             <div className="tabs-child">5 December ~ 11 December</div>
             <main className="portal-main search-main">
-              <div className="table-wrap">
-                <div className="tooltip-wrapper">
-                  <span>Avg. Daily5 / Bottom Airlines</span>
-                  <TooltipHelp>
-                    <div className="tooltip-title">Avg. Daily5 / Bottom Airlines 기준</div>
-                    <p>일 운항횟수의 상위 30위권 내에서 TOBT 40분 전 준수율 하위 5위 산정</p>
-                  </TooltipHelp>
-                </div>
-                <table className="table-airline">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>-90m ~ -40m</th>
-                      <th>-40m ~ -10m</th>
-                      <th>-10m ~ AOBT</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {Airlines.map((item, idx) => (
-                      <tr key={idx}>
-                        <td className="text-left">
-                          <div className="flt-wrap">
-                            <img src={item.logo} alt={item.air} />
-                            <span className="air">{item.air}</span>
-                          </div>
-                        </td>
-                        <td className="text-right">
-                          <em>{item.val1}</em>
-                        </td>
-                        <td className="text-right">
-                          <em>{item.val2}</em>
-                        </td>
-                        <td className="text-right">
-                          <em>{item.val3}</em>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              <div className="portal-cont">
+                <div className="stats-gap">
+                  <div>
+                    <div className="stats-top">
+                      <div className="tooltip-wrapper">
+                        <span>Avg. Daily5 / Bottom Airlines</span>
+                        <TooltipHelp title="Avg. Daily5 / Bottom Airlines 기준">
+                          <p>일 운항횟수의 상위 30위권 내에서 TOBT 40분 전 준수율 하위 5위 산정</p>
+                        </TooltipHelp>
+                      </div>
+                    </div>
+                    <table className="table-airline">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>-90m ~ -40m</th>
+                          <th>-40m ~ -10m</th>
+                          <th>-10m ~ AOBT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {Airlines.map((item, idx) => (
+                          <tr key={idx}>
+                            <td className="text-left">
+                              <div className="flt-wrap">
+                                <img src={item.logo} alt={item.air} />
+                                <span className="air">{item.air}</span>
+                              </div>
+                            </td>
+                            <td className="text-right">
+                              <em>{item.val1}</em>
+                            </td>
+                            <td className="text-right">
+                              <em>{item.val2}</em>
+                            </td>
+                            <td className="text-right">
+                              <em>{item.val3}</em>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
 
-              <div className="table-wrap">
-                <div className="tooltip-wrapper">
-                  <span>Avg. Daily5 / Top Airlines</span>
-                  <TooltipHelp>
-                    <div className="tooltip-title">Avg. Daily5 / Top Airlines 기준</div>
-                    <p>일 운항횟수의 상위 30위권 내에서 TOBT 40분 전 준수율 상위 5위 산정</p>
-                  </TooltipHelp>
+                  <div>
+                    <div className="stats-top">
+                      <div className="tooltip-wrapper">
+                        <span>Avg. Daily5 / Top Airlines</span>
+                        <TooltipHelp title="Avg. Daily5 / Top Airlines 기준">
+                          <p>일 운항횟수의 상위 30위권 내에서 TOBT 40분 전 준수율 상위 5위 산정</p>
+                        </TooltipHelp>
+                      </div>
+                    </div>
+                    <table className="table-airline">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>-90m ~ -40m</th>
+                          <th>-40m ~ -10m</th>
+                          <th>-10m ~ AOBT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {Airlines.map((item, idx) => (
+                          <tr key={idx}>
+                            <td className="text-left">
+                              <div className="flt-wrap">
+                                <img src={item.logo} alt={item.air} />
+                                <span className="air">{item.air}</span>
+                              </div>
+                            </td>
+                            <td className="text-right">
+                              <em>{item.val1}</em>
+                            </td>
+                            <td className="text-right">
+                              <em>{item.val2}</em>
+                            </td>
+                            <td className="text-right">
+                              <em>{item.val3}</em>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-                <table className="table-airline">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>-90m ~ -40m</th>
-                      <th>-40m ~ -10m</th>
-                      <th>-10m ~ AOBT</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {Airlines.map((item, idx) => (
-                      <tr key={idx}>
-                        <td className="text-left">
-                          <div className="flt-wrap">
-                            <img src={item.logo} alt={item.air} />
-                            <span className="air">{item.air}</span>
-                          </div>
-                        </td>
-                        <td className="text-right">
-                          <em>{item.val1}</em>
-                        </td>
-                        <td className="text-right">
-                          <em>{item.val2}</em>
-                        </td>
-                        <td className="text-right">
-                          <em>{item.val3}</em>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
               </div>
             </main>
           </TabContent>
           <TabContent label="Year to date">
             <div className="tabs-child">1 January ~ 11 December</div>
             <main className="portal-main search-main">
-              <div className="table-wrap">
-                <div className="tooltip-wrapper">
-                  <span>Avg. Daily5 / Bottom Airlines</span>
-                  <TooltipHelp>
-                    <div className="tooltip-title">Avg. Daily5 / Bottom Airlines 기준</div>
-                    <p>일 운항횟수의 상위 30위권 내에서 TOBT 40분 전 준수율 하위 5위 산정</p>
-                  </TooltipHelp>
+              <div className="portal-cont">
+                <div className="stats-gap">
+                  <div>
+                    <div className="stats-top">
+                      <div className="tooltip-wrapper">
+                        <span>Avg. Daily5 / Bottom Airlines</span>
+                        <TooltipHelp title="Avg. Daily5 / Bottom Airlines 기준">
+                          <p>일 운항횟수의 상위 30위권 내에서 TOBT 40분 전 준수율 하위 5위 산정</p>
+                        </TooltipHelp>
+                      </div>
+                    </div>
+
+                    <table className="table-airline">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>-90m ~ -40m</th>
+                          <th>-40m ~ -10m</th>
+                          <th>-10m ~ AOBT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {Airlines.map((item, idx) => (
+                          <tr key={idx}>
+                            <td className="text-left">
+                              <div className="flt-wrap">
+                                <img src={item.logo} alt={item.air} />
+                                <span className="air">{item.air}</span>
+                              </div>
+                            </td>
+                            <td className="text-right">
+                              <em>{item.val1}</em>
+                            </td>
+                            <td className="text-right">
+                              <em>{item.val2}</em>
+                            </td>
+                            <td className="text-right">
+                              <em>{item.val3}</em>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div>
+                    <div className="stats-top">
+                      <div className="tooltip-wrapper">
+                        <span>Avg. Daily5 / Top Airlines</span>
+                        <TooltipHelp title="Avg. Daily5 / Top Airlines 기준">
+                          <p>일 운항횟수의 상위 30위권 내에서 TOBT 40분 전 준수율 상위 5위 산정</p>
+                        </TooltipHelp>
+                      </div>
+                    </div>
+
+                    <table className="table-airline">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>-90m ~ -40m</th>
+                          <th>-40m ~ -10m</th>
+                          <th>-10m ~ AOBT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {Airlines.map((item, idx) => (
+                          <tr key={idx}>
+                            <td className="text-left">
+                              <div className="flt-wrap">
+                                <img src={item.logo} alt={item.air} />
+                                <span className="air">{item.air}</span>
+                              </div>
+                            </td>
+                            <td className="text-right">
+                              <em>{item.val1}</em>
+                            </td>
+                            <td className="text-right">
+                              <em>{item.val2}</em>
+                            </td>
+                            <td className="text-right">
+                              <em>{item.val3}</em>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-                <table className="table-airline">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>-90m ~ -40m</th>
-                      <th>-40m ~ -10m</th>
-                      <th>-10m ~ AOBT</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {Airlines.map((item, idx) => (
-                      <tr key={idx}>
-                        <td className="text-left">
-                          <div className="flt-wrap">
-                            <img src={item.logo} alt={item.air} />
-                            <span className="air">{item.air}</span>
-                          </div>
-                        </td>
-                        <td className="text-right">
-                          <em>{item.val1}</em>
-                        </td>
-                        <td className="text-right">
-                          <em>{item.val2}</em>
-                        </td>
-                        <td className="text-right">
-                          <em>{item.val3}</em>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              
-              <div className="table-wrap">
-                <div className="tooltip-wrapper">
-                  <span>Avg. Daily5 / Top Airlines</span>
-                  <TooltipHelp>
-                    <div className="tooltip-title">Avg. Daily5 / Top Airlines 기준</div>
-                    <p>일 운항횟수의 상위 30위권 내에서 TOBT 40분 전 준수율 상위 5위 산정</p>
-                  </TooltipHelp>
-                </div>
-                <table className="table-airline">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>-90m ~ -40m</th>
-                      <th>-40m ~ -10m</th>
-                      <th>-10m ~ AOBT</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {Airlines.map((item, idx) => (
-                      <tr key={idx}>
-                        <td className="text-left">
-                          <div className="flt-wrap">
-                            <img src={item.logo} alt={item.air} />
-                            <span className="air">{item.air}</span>
-                          </div>
-                        </td>
-                        <td className="text-right">
-                          <em>{item.val1}</em>
-                        </td>
-                        <td className="text-right">
-                          <em>{item.val2}</em>
-                        </td>
-                        <td className="text-right">
-                          <em>{item.val3}</em>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
               </div>
             </main>
           </TabContent>
