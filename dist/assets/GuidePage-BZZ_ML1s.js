@@ -1,1 +1,0 @@
-import{j as r}from"./index-9hRXQRTq.js";import{H as a}from"./HeaderComponent-BUtL7DKN.js";import"./img_pass_pin-BqO-OtRV.js";const i=()=>r.jsx(r.Fragment,{children:r.jsxs("div",{className:"wrapper",children:[r.jsx(a,{title:"이용가이드"}),r.jsx("main",{className:"portal-main"})]})});export{i as default};
