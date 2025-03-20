@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Header } from '@components/layout';
 import { ActionButton } from '@components/button';
 
 const FlightplandetailPage: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="wrapper">
@@ -81,7 +83,13 @@ const FlightplandetailPage: React.FC = () => {
 
         <div className="portal-action">
           <div className="action-inner">
-            <ActionButton label="목록" onClick={() => {}} styleType="confirm" />
+            <ActionButton
+              label="목록"
+              styleType="confirm"
+              onClick={() => {
+                navigate('/fp');
+              }}
+            />
           </div>
         </div>
       </div>

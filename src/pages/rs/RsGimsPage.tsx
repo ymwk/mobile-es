@@ -55,7 +55,9 @@ const RsGimsPage: React.FC = () => {
             </div>
             {/* search-result-top end */}
 
-            <Gimscard company={'아시아나'} logo={logo_asiana} getIsOpen={getIsOpen} />
+            <div className="arrivalscard-list">
+              <Gimscard company={'아시아나'} logo={logo_asiana} getIsOpen={getIsOpen} />
+            </div>
           </div>
         </main>
 

@@ -7,9 +7,7 @@
   font-weight: 600;
   line-height: 1.2;
 
-  .button-icon {
-    margin: -1rem
-  }
+  .button-icon { margin: -1rem }
 }
 .search-result-top .tooltip-wrapper { margin-left: auto }
 .stats-top .tooltip-wrapper {
@@ -52,6 +50,17 @@
       font-size: 3rem;
     }
   }
+}
+
+.tooltip-btn {
+  margin: -1rem 0;
+  display: inline-flex;
+  align-items: center;
+  color: #333;
+
+  &.reverse { flex-direction: row-reverse }
+
+  .ico-root { width: 3rem }
 }
 
 .tooltip-list {
