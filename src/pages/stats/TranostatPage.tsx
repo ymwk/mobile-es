@@ -112,7 +112,7 @@ const TranostatPage: React.FC = () => {
             >
               <SwiperSlide>
                 <div className="tabs-child">11 December</div>
-                <main className="portal-main search-main">
+                <main className="portal-main">
                   <div className="portal-cont">
                     <table className="table-airline">
                       <thead>
@@ -138,7 +138,7 @@ const TranostatPage: React.FC = () => {
                 </main>
               </SwiperSlide>
               <SwiperSlide>
-                <main className="portal-main search-main">
+                <main className="portal-main">
                   <div className="portal-cont">
                     <div className="stats-graph">
                       <div className="tooltip-wrapper">
@@ -224,7 +224,7 @@ const TranostatPage: React.FC = () => {
             >
               <SwiperSlide>
                 <div className="tabs-child">11 December</div>
-                <main className="portal-main search-main">
+                <main className="portal-main">
                   <div className="portal-cont">
                     <table className="table-airline">
                       <thead>
@@ -255,7 +255,7 @@ const TranostatPage: React.FC = () => {
                 </main>
               </SwiperSlide>
               <SwiperSlide>
-                <main className="portal-main search-main">
+                <main className="portal-main">
                   <div className="portal-cont">
                     <div className="stats-graph">
                       <div className="tooltip-wrapper">
@@ -340,7 +340,7 @@ const TranostatPage: React.FC = () => {
             >
               <SwiperSlide>
                 <div className="tabs-child">11 December</div>
-                <main className="portal-main search-main">
+                <main className="portal-main">
                   <div className="portal-cont">
                     <table className="table-airline">
                       <thead>
@@ -366,7 +366,7 @@ const TranostatPage: React.FC = () => {
                 </main>
               </SwiperSlide>
               <SwiperSlide>
-                <main className="portal-main search-main">
+                <main className="portal-main">
                   <div className="portal-cont">
                     <div className="stats-graph">
                       <div className="tooltip-wrapper">
