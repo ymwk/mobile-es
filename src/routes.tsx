@@ -5,6 +5,7 @@ const List = lazy(() => import('@pages/ListPage'));
 const Index = lazy(() => import('@pages/account/SigninPage'));
 const PortalIndex = lazy(() => import('@pages/portal/MainPage'));
 const Error = lazy(() => import('@pages/portal/ErrorPage'));
+const Loading = lazy(() => import('@pages/portal/LoadergPage'));
 
 const Guide = lazy(() => import('@pages/portal/GuidePage'));
 const Manual = lazy(() => import('@pages/portal/ManualPage'));
@@ -95,8 +96,6 @@ const RsCommDetail = lazy(() => import('@pages/rs/RsCommDetailPage'));
 const RsCommRequest = lazy(() => import('@pages/rs/RsCommRequestPage'));
 const RsGIMS = lazy(() => import('@pages/rs/RsGimsPage'));
 
-
-
 export const routes = [
   {
     path: '/',
@@ -108,6 +107,7 @@ export const routes = [
       // 포털
       { path: '/portal', element: <PortalIndex /> },
       { path: '/error', element: <Error /> },
+      { path: '/loading', element: <Loading /> },
 
       // 설정
       { path: '/setting', element: <Setting /> },
@@ -219,6 +219,7 @@ export const pages = [
   { route: '/' },
   { route: '/portal' },
   { route: '/error' },
+  { route: '/loading' },
 
   // 설정
   { route: '/setting' },
